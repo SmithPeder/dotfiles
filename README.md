@@ -1,6 +1,6 @@
 # Config for my dotfiles
 
-## vim, tmux and zsh
+## Config files
 
 > Vim
 
@@ -14,3 +14,10 @@
 
 `dotconf/zsh/.zsh_manager.sh` file contains the start point of the zsh shell confing
 
+## Setup
+```bash
+$ vim ~/.vimrc
+```
+```vim
+so /home/smith/dotfiles/vim/vimrc.vim
+```
