@@ -36,5 +36,5 @@ source-file /home/USER/dotconf//tmux.conf
 
 In your `~/.zshrc` create a source to `dotconf/zsh/zshrc_manager.sh`
 ```vim
-source '/home/smith/dotfiles/zsh/zshrc_manager.sh'
+source '/home/USER/dotconf/zsh/zshrc_manager.sh'
 ```
