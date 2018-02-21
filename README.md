@@ -1,13 +1,16 @@
 # Config for my dotfiles
 
-## Vim, Tmux and zsh
+## vim, tmux and zsh
 
 > Vim
-The `dotconf/.vimrc` file contains the configurations for Vim
+
+`dotconf/.vimrc` file contains the configurations for Vim
 
 > tmux
-The `dotconf/.tmux.conf` file contains the configurations for tmux terminal multiplexer
+
+`dotconf/.tmux.conf` file contains the configurations for tmux terminal multiplexer
 
 > zsh
-The `dotconf/zsh/.zsh_manager.sh` file contains the start point of the zsh shell confing
+
+`dotconf/zsh/.zsh_manager.sh` file contains the start point of the zsh shell confing
 
