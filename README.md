@@ -2,12 +2,12 @@
 
 ## Vim, Tmux and zsh
 
-###Vim
+> Vim
 The `dotconf/.vimrc` file contains the configurations for Vim
 
-###tmux
+> tmux
 The `dotconf/.tmux.conf` file contains the configurations for tmux terminal multiplexer
 
-###zsh
+> zsh
 The `dotconf/zsh/.zsh_manager.sh` file contains the start point of the zsh shell confing
 
