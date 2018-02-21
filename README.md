@@ -15,13 +15,14 @@
 `dotconf/zsh/zsh_manager.sh` file contains the start point of the zsh shell confing
 
 ## Setup
-> Clone
+> Clone the repo
 
 First clone the repo into home folder
 ```bash
 git clone git@github.com:SmithPeder/dotconf.git ~/
 ```
 
+> Set sources
 In your `~/.vimrc` file create a source to `dotconf/vimrc` file 
 ```vim
 so /home/USER/dotconf/vimrc.vim
