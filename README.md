@@ -19,7 +19,7 @@
 
 First clone the repo into home folder
 ```bash
-git clone git clone git@github.com:whatever folder-name ~/
+git clone git@github.com:SmithPeder/dotconf.git ~/
 ```
 
 In your `~/.vimrc` file create a source to `dotconf/vimrc` file 
