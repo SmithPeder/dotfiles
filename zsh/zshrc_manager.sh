@@ -7,5 +7,6 @@ time_out () { perl -e 'alarm shift; exec @ARGV' "$@"; }
 		echo "tmux not installed on this system"
 	fi
 
+
 # Get zsh config
 	source ~/dotfiles/zsh/zshrc.sh

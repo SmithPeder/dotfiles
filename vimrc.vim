@@ -17,11 +17,10 @@
 
 	call vundle#begin('~/.vim/bundle')
 	" ------------------------------------------------
-	Plugin 'VundleVim/Vundle.vim'
-	Plugin 'https://github.com/joshdick/onedark.vim'
-	Plugin 'https://github.com/itchyny/lightline.vim'
-	" Plugin 'https://github.com/edkolev/tmuxline.vim'
-	Plugin 'https://github.com/airblade/vim-gitgutter'
+		Plugin 'VundleVim/Vundle.vim'
+		Plugin 'https://github.com/joshdick/onedark.vim'
+		Plugin 'https://github.com/itchyny/lightline.vim'
+		Plugin 'https://github.com/airblade/vim-gitgutter'
 	" ------------------------------------------------	
 	call vundle#end()
 	filetype plugin indent on

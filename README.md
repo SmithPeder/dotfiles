@@ -37,4 +37,3 @@ In your `~/.zshrc` create a source to `dotconf/zsh/zshrc_manager.sh`
 ```vim
 source '/home/smith/dotfiles/zsh/zshrc_manager.sh'
 ```
-
