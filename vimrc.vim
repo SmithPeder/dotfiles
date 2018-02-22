@@ -33,3 +33,18 @@
 	let g:onedark_termcolors = 256
 	syntax on
 	colorscheme onedark
+
+" Prettier, yapf, isort, eslint, flake
+let g:ale_javascript_prettier_use_local_config=1
+let g:ale_fixers = {
+	\ 'javascript': ['prettier'],
+	\ 'css': ['prettier'],
+	\ 'python': ['yapf', 'isort'],
+\}
+
+let g:ale_linters = {
+	\ 'javascript': ['eslint', 'flow'],
+	\ 'css': ['stylelint', 'prettier'],
+	\ 'python': ['pycodestyle', 'flake8'],
+\}
+let g:ale_fix_on_save = 1
