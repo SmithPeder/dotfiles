@@ -1,8 +1,8 @@
-# Vars
+# History
 	HISTFILE=~/.zsh_history
 	SAVEHIST=1000 
-	setopt inc_append_history # To save every command before it is executed 
-	setopt share_history # setopt inc_append_history
+	setopt inc_append_history
+	setopt share_history
 	
 # Settings
 	export VISUAL=vim
@@ -13,10 +13,11 @@ source ~/dotconf/zsh/plugins/fixls.zsh
 	# Custom cd
 	c() {
 		cd $1;
-		ls -l;
+		ls -la;
 	}
 	alias cd="c"
 
+	# Custom ls
 	l() {
 		ls -la
 	}
