@@ -2,7 +2,7 @@
 
 ## Config files
 
-> Vim
+> vim
 
 `dotconf/vimrc.vim` file contains the configurations for Vim
 
@@ -12,7 +12,7 @@
 
 > zsh
 
-`dotconf/zsh/zsh_manager.sh` file contains the start point of the zsh shell confing
+`dotconf/zsh/zsh_manager.sh` file contains the start point of the zsh shell config
 
 ## Setup
 > Clone the repo
@@ -24,7 +24,7 @@ git clone git@github.com:SmithPeder/dotconf.git ~/
 
 > Set sources
 
-In your `~/.vimrc` file create a source to `dotconf/vimrc` file 
+In your `~/.vimrc` file create a source to `dotconf/vimrc` 
 ```vim
 so /home/USER/dotconf/vimrc.vim
 ```
