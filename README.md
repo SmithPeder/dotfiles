@@ -38,3 +38,6 @@ In your `~/.zshrc` create a source to `dotconf/zsh/zshrc_manager.sh`
 ```vim
 source '/home/USER/dotconf/zsh/zshrc_manager.sh'
 ```
+
+## Current style
+![terminal](https://i.imgur.com/xLVMBxh.png)
