@@ -9,4 +9,4 @@ time_out () { perl -e 'alarm shift; exec @ARGV' "$@"; }
 
 
 # Get zsh config
-	source ~/dotconf/zsh/zshrc.sh
+	source ~/dotfiles/zsh/zshrc.sh

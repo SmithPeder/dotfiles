@@ -1,5 +1,5 @@
 " General settings
-	syntax on
+	syntax on 
 	let mapleader=","
 	set autoindent
 	set tabstop=4
@@ -20,6 +20,7 @@
 		Plugin 'VundleVim/Vundle.vim'
 		Plugin 'https://github.com/joshdick/onedark.vim'
 		Plugin 'https://github.com/itchyny/lightline.vim'
+		Plugin 'https://github.com/scrooloose/nerdtree'
 		Plugin 'https://github.com/airblade/vim-gitgutter'
 		Plugin 'https://github.com/w0rp/ale'
 	" ------------------------------------------------	
@@ -34,6 +35,10 @@
 	let g:onedark_termcolors = 256
 	syntax on
 	colorscheme onedark
+
+" Vim tree
+	map <C-n> :NERDTreeToggle<CR>
+	autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Prettier, yapf, isort, eslint, flake config
 	let g:ale_javascript_prettier_use_local_config=1
