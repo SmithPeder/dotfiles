@@ -4,39 +4,39 @@
 
 > vim
 
-`dotconf/vimrc.vim` file contains the configurations for Vim
+`dotfiles/vimrc.vim` file contains the configurations for Vim
 
 > tmux
 
-`dotconf/tmux.conf` file contains the configurations for tmux terminal multiplexer
+`dotfiles/tmux.conf` file contains the configurations for tmux terminal multiplexer
 
 > zsh
 
-`dotconf/zsh/zsh_manager.sh` file contains the start point of the zsh shell config
+`dotfiles/zsh/zsh_manager.sh` file contains the start point of the zsh shell config
 
 ## Setup
 > Clone the repo
 
 First clone the repo into home folder
 ```bash
-git clone git@github.com:SmithPeder/dotconf.git ~/
+git clone git@github.com:SmithPeder/dotfiles.git ~/
 ```
 
 > Set sources
 
-In your `~/.vimrc` file create a source to `dotconf/vimrc` 
+In your `~/.vimrc` file create a source to `dotfiles/vimrc` 
 ```vim
-so /home/USER/dotconf/vimrc.vim
+so /home/USER/dotfiles/vimrc.vim
 ```
 
-In your `~/.tmux.conf` create a source to `dotconf/tmux.conf`
+In your `~/.tmux.conf` create a source to `dotfiles/tmux.conf`
 ```vim
-source-file /home/USER/dotconf//tmux.conf
+source-file /home/USER/dotfiles/tmux.conf
 ```
 
-In your `~/.zshrc` create a source to `dotconf/zsh/zshrc_manager.sh`
+In your `~/.zshrc` create a source to `dotfiles/zsh/zshrc_manager.sh`
 ```vim
-source '/home/USER/dotconf/zsh/zshrc_manager.sh'
+source '/home/USER/dotfiles/zsh/zshrc_manager.sh'
 ```
 
 ## Current style
