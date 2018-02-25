@@ -61,7 +61,7 @@ Open vim and run `:Plugininstall`. This will download and add every plugin in `v
   
 All new plugins needs to be added between `call vundle#begin()` and `call vundle#end()`
 <p align="center"> 
-<img src="https://i.imgur.com/8kWXsfM.png">
+<img src="https://i.imgur.com/jAYskkL.png">
 </p>
 <br/>
 ## Current style
