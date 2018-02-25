@@ -41,6 +41,8 @@ In your `~/.zshrc` create a source to `dotfiles/zsh/zshrc_manager.sh`
 source '/home/USER/dotfiles/zsh/zshrc_manager.sh'
 ```
 
+<br/>
+
 > Vundle plugin manager 
 
 [https://github.com/VundleVim/Vundle.vim](https://github.com/VundleVim/Vundle.vim)
@@ -52,10 +54,17 @@ This could be done manually or with `git`.
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ```
 
-**Run the installer command** 
-Open vim and run `:Plugininstall`. This will download and add every plugin in `vimrc.vim`
+<br/>
 
-
-
+**Run the installer command**  
+Open vim and run `:Plugininstall`. This will download and add every plugin in `vimrc.vim`  
+  
+All new plugins needs to be added between `call vundle#begin()` and `call vundle#end()`
+<p align="center"> 
+<img src="https://i.imgur.com/8kWXsfM.png">
+</p>
+<br/>
 ## Current style
-![terminal](https://i.imgur.com/xLVMBxh.png)
+<p align="center"> 
+<img src="https://i.imgur.com/xLVMBxh.png">
+</p>
