@@ -63,7 +63,7 @@ All new plugins needs to be added between `call vundle#begin()` and `call vundle
 <p align="center"> 
 <img src="https://i.imgur.com/jAYskkL.png">
 </p>
-<br/>
+
 ## Current style
 <p align="center"> 
 <img src="https://i.imgur.com/xLVMBxh.png">
