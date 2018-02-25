@@ -52,14 +52,15 @@ This could be done manually or with `git`.
 ```bach
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ```
-
-<br/>
- 
 Then open vim and run `:Plugininstall`. This will download and add every plugin in `vimrc.vim`.
-All new plugins needs to be added between `call vundle#begin()` and `call vundle#end()`
-<p align="center"> 
-<img src="https://i.imgur.com/jAYskkL.png">
-</p>
+All new plugins needs to be added between
+```vim
+call vundle#begin('~/.vim/bundle')
+  Plugin 'VundleVim/Vundle.vim'
+  Plugin '----------'
+  Plugin '----------'
+call vundle#end()
+```
 
 ## Current style
 <p align="center"> 
