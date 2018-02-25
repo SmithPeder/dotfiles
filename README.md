@@ -52,8 +52,8 @@ This could be done manually or with `git`.
 ```bach
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ```
-Then open vim and run `:Plugininstall`. This will download and add every plugin in `vimrc.vim`.
-All new plugins needs to be added between
+Then open vim and run `:Plugininstall`. This will download and add every plugin in `vimrc.vim`.  
+All new plugins needs to be added between the two `call` tags. Check the Vundle github page for more info.
 ```vim
 call vundle#begin('~/.vim/bundle')
   Plugin 'VundleVim/Vundle.vim'
