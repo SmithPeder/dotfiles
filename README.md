@@ -1,5 +1,5 @@
 # Config for my dotfiles
-
+*System inspired by [@Parth](https://github.com/Parth/dotfiles)*
 ## Config files
 
 > vim
