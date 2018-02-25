@@ -41,7 +41,7 @@ source '/home/USER/dotfiles/zsh/zshrc_manager.sh'
 
 > 3. Vundle plugin manager 
 
-*Add Vundle*
+**Add Vundle**
 [link-style](https://github.com/VundleVim/Vundle.vim)
 This vim config uses Vundle to handle plugins. Therefore `vundle.vim` needs to be placed in your `~/.vim/bundle` folder.
 .This could be done manually or with `git`.
@@ -49,7 +49,7 @@ This vim config uses Vundle to handle plugins. Therefore `vundle.vim` needs to b
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ```
 
-*:PluginInstall*
+**:PluginInstall**
 Open vim and run `:Plugininstall`
 
 
