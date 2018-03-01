@@ -4,7 +4,7 @@
 	setopt inc_append_history
 	setopt share_history
 	
-# Settings
+# Export setting to vim
 	export VISUAL=vim
 
 source ~/dotfiles/zsh/plugins/fixls.zsh
@@ -13,15 +13,13 @@ source ~/dotfiles/zsh/plugins/fixls.zsh
 	# Custom cd
 	c() {
 		cd $1;
-		ls -la;
 	}
 	alias cd="c"
 
-	# Custom ls
-	l() {
-		ls -la
+	list() {
+		ls -a -1;
 	}
-	alias ls="l"
+	alias l="list"
 
 # For vim mappings: 
 	stty -ixon

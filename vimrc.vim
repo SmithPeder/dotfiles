@@ -29,7 +29,6 @@
 		Plugin 'https://github.com/scrooloose/nerdtree'
 		Plugin 'https://github.com/airblade/vim-gitgutter'
 		Plugin 'https://github.com/w0rp/ale'
-		Plugin 'https://github.com/ying17zi/vim-live-latex-preview'
 		Plugin 'https://github.com/JamshedVesuna/vim-markdown-preview'
 	" ------------------------------------------------	
 	call vundle#end()
