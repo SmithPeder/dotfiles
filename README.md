@@ -6,7 +6,7 @@
 
 # Terminal
 
-*System inspired by [@Parth](https://github.com/Parth/dotfiles)*
+*zsh settings inspired by [@Parth](https://github.com/Parth/dotfiles)*
 
 > vim
 
@@ -74,15 +74,11 @@ call vundle#end()
 # LaTeX
 > This is a WIP LaTeX setup guid.e
 
-Before doing anything I would recommend installing all TeX packages
-```bash
-sudo apt-get install texlive-full
-```
-
 # Markdown
 Markdown setup to edit markdown files using `vim`. This will let you edit a markdown file in vim, and with `:w` the
-markdown file will be autocompied by `grip` into HTML. Then `grip` will then render the HTML file to `localhost`. Running
-`$ grip` will start the localhost server, and display a preview `PORT` for the page. 
+markdown file will be autocompied by `grip` into HTML. Running `~/dotfiles: $ grip` will start the server, and a preview of the 
+HTML page will be available at `localhost:PORT` for the page. 
+
 - First install `grip`
 ```bash
 sudo apt-get install grip
