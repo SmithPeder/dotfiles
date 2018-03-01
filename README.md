@@ -72,7 +72,7 @@ call vundle#end()
 
 
 # LaTeX
-> This is a WIP LaTeX setup guid.e
+> This is a WIP LaTeX setup guide
 
 # Markdown
 Markdown setup to edit markdown files using `vim`. This will let you edit a markdown file in vim, and with `:w` the
