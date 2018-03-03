@@ -66,8 +66,9 @@ call vundle#end()
 ```
 
 ## Current style
+Example running two pages with tmux, left one has `NERDTree` active, right one has `UNDOTree` active
 <p align="center"> 
-<img src="https://i.imgur.com/xLVMBxh.png">
+<img src="https://i.imgur.com/ACnxX1w.png">
 </p>
 
 
@@ -76,7 +77,7 @@ call vundle#end()
 
 # Markdown
 Markdown setup to edit markdown files using `vim`. This will let you edit a markdown file in vim, and with `:w` the
-markdown file will be autocompied by `grip` into HTML. Running `~/dotfiles: $ grip` will start the server, and a preview of the 
+markdown file will be auto compiled by `grip` into HTML. Running `~/dotfiles: $ grip` will start the server, and a preview of the 
 HTML page will be available at `localhost:PORT` for the page. 
 
 - First install `grip`

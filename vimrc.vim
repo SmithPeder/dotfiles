@@ -9,6 +9,7 @@
 	set cursorline
 	hi Cursor ctermfg=White ctermbg=Yellow cterm=bold guifg=white guibg=yellow gui=bold
 	set mouse=a
+	:set spell spelllang=en_us
 
 " Remaps to learn 'HJKL'
 	noremap <Up> <NOP>
@@ -31,6 +32,7 @@
 		Plugin 'https://github.com/w0rp/ale'
 		Plugin 'https://github.com/JamshedVesuna/vim-markdown-preview'
 		Plugin 'https://github.com/davidhalter/jedi-vim'
+		Plugin 'https://github.com/mbbill/undotree'
 	" ------------------------------------------------	
 	call vundle#end()
 	filetype plugin indent on
@@ -71,7 +73,10 @@
 " Jedi vim settings
 	autocmd FileType python setlocal completeopt-=preview
 
-" Autocomplete brackets
+" UndoTree
+	nnoremap <F7> :UndotreeToggle<cr>
+
+" Auto complete brackets
 "	When creating curly with newline
 	inoremap {<CR> {<CR>}<Esc>ko<Tab>
 "	When creating curly without newline
@@ -82,7 +87,7 @@
 
 "	When creating square with newline
 	inoremap [<CR> [<CR>]<Esc>ko<Tab>
-"	When creating squrea without newline
+"	When creating square without newline
 	inoremap [ []<left>
 
 "	When creating single quote
@@ -93,7 +98,7 @@
 "	When creating arrows
 	inoremap < <><left>
 
-"	Double-tab wil no bring you out of a (),{} and so on insertmode
-"	Kinda kinky since normal tab wil now wait for the 'one more tab input'
+"	Double-tab will no bring you out of a (),{} and so on insert mode
+"	Kinda kinky since normal tab will now wait for the 'one more tab input'
 "	but if you just press tab and start typing it works like normal
 	inoremap <Tab><Tab> <C-o>A
