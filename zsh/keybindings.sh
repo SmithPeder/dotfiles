@@ -23,3 +23,5 @@
 	}
 	zle -N goto_home
 	bindkey "^h" goto_home
+
+source ~/.zshlocal
