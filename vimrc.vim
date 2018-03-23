@@ -1,6 +1,7 @@
 " General settings
 	syntax on 
 	let mapleader=","
+    set encoding=utf8
 	set autoindent
 	set tabstop=4
 	set shiftwidth=4
@@ -15,7 +16,14 @@
 	noremap <Up> <NOP>
 	noremap <Down> <NOP>
 	noremap <Left> <NOP>
-	noremap <Right> <NOP>	
+	noremap <Right> <NOP>
+
+" Indenting
+	set smartindent
+	set tabstop=4
+	set shiftwidth=4
+	set expandtab
+	set smarttab
 
 " Vundel
 	set nocompatible
@@ -33,6 +41,7 @@
 		Plugin 'https://github.com/JamshedVesuna/vim-markdown-preview'
 		Plugin 'https://github.com/davidhalter/jedi-vim'
 		Plugin 'https://github.com/mbbill/undotree'
+		Plugin 'https://github.com/pangloss/vim-javascript'
 	" ------------------------------------------------	
 	call vundle#end()
 	filetype plugin indent on
@@ -78,27 +87,27 @@
 
 " Auto complete brackets
 "	When creating curly with newline
-	inoremap {<CR> {<CR>}<Esc>ko<Tab>
+""	inoremap {<CR> {<CR>}<Esc>ko
 "	When creating curly without newline
-	inoremap { {}<left>
+""	inoremap { {}<left>
 
 "	When creating normal parentheses
-	inoremap ( ()<left>
+""	inoremap ( ()<left>
 
 "	When creating square with newline
-	inoremap [<CR> [<CR>]<Esc>ko<Tab>
+""	inoremap [<CR> [<CR>]<Esc>ko
 "	When creating square without newline
-	inoremap [ []<left>
+""	inoremap [ []<left>
 
 "	When creating single quote
-	inoremap ' ''<left>
+""	inoremap ' ''<left>
 "	When creating double quote
-	inoremap " ""<left>
+""	inoremap " ""<left>
 
 "	When creating arrows
-	inoremap < <><left>
+"	inoremap < <><left>
 
 "	Double-tab will no bring you out of a (),{} and so on insert mode
 "	Kinda kinky since normal tab will now wait for the 'one more tab input'
 "	but if you just press tab and start typing it works like normal
-	inoremap <Tab><Tab> <C-o>A
+"	inoremap <Tab><Tab> <C-o>A
