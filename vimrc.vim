@@ -11,6 +11,7 @@
 	hi Cursor ctermfg=White ctermbg=Yellow cterm=bold guifg=white guibg=yellow gui=bold
 	set mouse=a
 	:set spell spelllang=en_us
+    :map <F8> :setlocal spell! spelllang=en_us<CR>
 
 " Remaps to learn 'HJKL'
 	noremap <Up> <NOP>
@@ -46,7 +47,7 @@
 	call vundle#end()
 	filetype plugin indent on
 
-" Colors
+" Color
 	set laststatus=2
 	let g:lightline = {
 	  \ 'colorscheme': 'onedark',
