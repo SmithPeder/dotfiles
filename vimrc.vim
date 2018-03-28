@@ -11,6 +11,7 @@
 	hi Cursor ctermfg=White ctermbg=Yellow cterm=bold guifg=white guibg=yellow gui=bold
 	set mouse=a
 	:set spell spelllang=en_us
+    :set nospell
     :map <F8> :setlocal spell! spelllang=en_us<CR>
 
 " Remaps to learn 'HJKL'
