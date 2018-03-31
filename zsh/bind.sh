@@ -24,4 +24,22 @@
 	zle -N goto_home
 	bindkey "^h" goto_home
 
-source ~/.zshlocal
+# Custom cd
+    c() {
+        cd $1;
+    }
+    alias cd="c"
+
+# Custom list
+    list() {
+        ls -a -1;
+    }
+    alias l="list"
+
+# Run list when directory changes
+    function chpwd() {
+        ls -a -1
+    }
+
+# Soruce local bindings that should not be on comitted
+source ~/dotfiles/zsh/bind_local.sh
