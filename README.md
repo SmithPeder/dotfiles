@@ -1,5 +1,5 @@
 # Table of Contents
-
+This repository contains a backup of all terminal-specific config files currently in use on my Linux system. This `README` is to work as a guide to setting up the dotfiles. The repository also contains some instructions for things like writing `Markdown` and `LaTeX` with this `vim` config.
 1. [Terminal](#Terminal)
 2. [LaTeX](#Latex)
 3. [Markdown](#Markdown)
@@ -18,44 +18,44 @@
 
 > zsh
 
-`dotfiles/zsh/zsh_manager.sh` file contains the start point of the zsh shell config
+`dotfiles/zsh/zshrc_init.sh` file contains the start point of the zsh shell config
 
 ## Download
-- Just clone the repo into home folder. This is the main config folder for all changes.
-```bash
+Just clone the repo into home folder. This is the main config folder for all changes.
+```zsh
 git clone git@github.com:SmithPeder/dotfiles.git ~/
 ```
 ## Setup
 
-- First set the sources
+- <b>1)</b> First set the sources. `vim`, `tmux` and `zsh` must be installed before these config files will be present. All tree files should be in the home directory by default. <i>Note that `USER` must be changed to your username</i>
 
-In your `~/.vimrc` file create a source to `dotfiles/vimrc` 
+In `~/.vimrc` file create a source to `dotfiles/vimrc` 
 ```vim
 so /home/USER/dotfiles/vimrc.vim
 ```
 
-In your `~/.tmux.conf` create a source to `dotfiles/tmux.conf`
+In `~/.tmux.conf` create a source to `dotfiles/tmux.conf`
 ```vim
 source-file /home/USER/dotfiles/tmux.conf
 ```
 
-In your `~/.zshrc` create a source to `dotfiles/zsh/zshrc_manager.sh`
+In `~/.zshrc` create a source to `dotfiles/zsh/zshrc_init.sh`
 ```vim
-source '/home/USER/dotfiles/zsh/zshrc_manager.sh'
+source '/home/USER/dotfiles/zsh/zshrc_init.sh'
 ```
 
 
-- Then setup the [Vundle](https://github.com/VundleVim/Vundle.vim) plugin manager
+- <b>2)</b> Then setup the [Vundle](https://github.com/VundleVim/Vundle.vim) plugin manager
 
-This vim config uses Vundle to handle plugins. Therefore `vundle.vim` needs to be placed in your `~/.vim/bundle` folder.
+This `vim` config uses Vundle to handle plugins. Therefore `vundle.vim` needs to be placed in your `~/.vim/bundle` folder.
 This could be done manually or with `git`.
-```bach
+```zsh
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ```
-- Lastly open vim and run `:Plugininstall`. 
+- <b>3)</b> Lastly open `vim` and run `:Plugininstall`. 
 
 This will download and add every plugin in `vimrc.vim`.  
-All new plugins needs to be added between the two `call` tags. 
+To add new plugins add them between the two `call vundle#` tags. 
 Check the [Vundle](https://github.com/VundleVim/Vundle.vim) github page for more info.
 ```vim
 call vundle#begin('~/.vim/bundle')
@@ -77,18 +77,21 @@ Example running two pages with tmux, left one has `NERDTree` active, right one h
 
 # Markdown
 Markdown setup to edit markdown files using `vim`. This will let you edit a markdown file in vim, and with `:w` the
-markdown file will be auto compiled by `grip` into HTML. Running `~/dotfiles: $ grip` will start the server, and a preview of the 
-HTML page will be available at `localhost:PORT` for the page. 
+markdown file will be auto compiled by `grip` into `HTML`. Running `~/dotfiles: $ grip` will start the server, and a preview of the 
+`HTML` page will be available at `localhost:PORT` for the page. 
 
-- First install `grip`
+- <b>1)</b> First install `grip`
 ```bash
 sudo apt-get install grip
 ```
-- Second add the `vim-markdown-preview` plugin
+
+> Step 2 and 3 are completed if this repo is cloned
+
+- <b>2)</b> Then add the `vim-markdown-preview` plugin
 ```vim
 Plugin 'https://github.com/JamshedVesuna/vim-markdown-preview'
 ```
-- Third enable preview
+- <b>3)</b> Lastly enable preview
 ```vim
 let vim_markdown_preview_github=1
 ```
