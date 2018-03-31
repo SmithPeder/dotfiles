@@ -43,8 +43,7 @@ In `~/.zshrc` create a source to `dotfiles/zsh/zshrc_init.sh`
 ```vim
 source '/home/USER/dotfiles/zsh/zshrc_init.sh'
 ```
-
-
+> NOTE: There is a file `zsh/bind_local.sh` that is listed in the `.gitignore`. This file is used for keybindings that contain things like API keys, SSH addresses and so forth. If you remove the file remember to remove the source to the file, located in `zsh/bind.sh`
 - <b>2)</b> Then setup the [Vundle](https://github.com/VundleVim/Vundle.vim) plugin manager
 
 This `vim` config uses Vundle to handle plugins. Therefore `vundle.vim` needs to be placed in your `~/.vim/bundle` folder.
@@ -73,7 +72,7 @@ Example running two pages with tmux, left one has `NERDTree` active, right one h
 
 
 # LaTeX
-> This is a WIP LaTeX setup guide
+> This is a work in progress LaTeX setup guide
 
 # Markdown
 Markdown setup to edit markdown files using `vim`. This will let you edit a markdown file in vim, and with `:w` the
