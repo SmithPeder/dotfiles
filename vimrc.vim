@@ -43,6 +43,7 @@
 
         " Gutters
 		Plugin 'scrooloose/nerdtree'
+        Plugin 'Xuyuanp/nerdtree-git-plugin'
         Plugin 'mbbill/undotree'
 		Plugin 'airblade/vim-gitgutter'
 		
@@ -76,6 +77,21 @@
 
 " Undo tree remap
     nnoremap <F7> :UndotreeToggle<cr>
+
+" Git for nerdtree
+    let g:NERDTreeIndicatorMapCustom = {
+         \ "Modified"  : "✹",
+         \ "Staged"    : "✚",
+         \ "Untracked" : "✭",
+         \ "Renamed"   : "➜",
+         \ "Unmerged"  : "═",
+         \ "Deleted"   : "✖",
+         \ "Dirty"     : "✗",
+         \ "Clean"     : "✔︎",
+         \ 'Ignored'   : '☒',
+         \ "Unknown"   : "?"
+         \ }
+    let g:NERDTreeShowIgnoredStatus = 1
 
 " Markdown preview settings
 	let vim_markdown_preview_github=1
