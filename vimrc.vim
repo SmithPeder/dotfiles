@@ -61,7 +61,7 @@
 	call vundle#end()
 	filetype plugin indent on
 
-" Color
+" Style settings for onedark and lightline
 	set laststatus=2
 	let g:lightline = {
 	  \ 'colorscheme': 'onedark',
@@ -70,14 +70,25 @@
 	syntax on
 	colorscheme onedark
 
-" Vim tree
+" Vim tree setting
 	map <C-n> :NERDTreeToggle<CR>
 	autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-" Undo tree
+" Undo tree remap
     nnoremap <F7> :UndotreeToggle<cr>
+
 " Markdown preview settings
 	let vim_markdown_preview_github=1
 
 " Jedi vim settings
 	autocmd FileType python setlocal completeopt-=preview
+
+" Syntastic settings
+    set statusline+=%#warningmsg#
+    set statusline+=%{SyntasticStatuslineFlag()}
+    set statusline+=%*
+
+    let g:syntastic_always_populate_loc_list = 1
+    let g:syntastic_auto_loc_list = 1
+    let g:syntastic_check_on_open = 1
+    let g:syntastic_check_on_wq = 0
