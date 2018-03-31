@@ -73,8 +73,9 @@
 
 " Vim tree setting
 	map <C-n> :NERDTreeToggle<CR>
-	autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
+	" Close if tree is the only thing left
+    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+    
 " Undo tree remap
     nnoremap <F7> :UndotreeToggle<cr>
 
@@ -108,3 +109,4 @@
     let g:syntastic_auto_loc_list = 1
     let g:syntastic_check_on_open = 1
     let g:syntastic_check_on_wq = 0
+
