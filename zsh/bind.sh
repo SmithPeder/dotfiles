@@ -15,6 +15,20 @@
 	zle -N git_prepare
 	bindkey "^g" git_prepare
 
+# Git add
+    git_add() {
+        git add -A;
+    }
+    alias ga="git_add"
+
+# Git commit
+    git_commit() {
+        git commit;
+    }
+    alias gm="git_commit"
+
+
+
 # Go to home
 	function goto_home() { 
 		BUFFER="cd ~/"$BUFFER

@@ -13,6 +13,12 @@
 	:set spell spelllang=en_us
     :set nospell
     :map <F8> :setlocal spell! spelllang=en_us<CR>
+    :set tabstop=4
+    :set shiftwidth=4
+    :set expandtab
+   
+    noremap! <C-BS> <C-w>
+    noremap! <C-h> <C-w>
 
 " Remaps to learn 'HJKL'
 	noremap <Up> <NOP>
@@ -69,7 +75,7 @@
 	  \ }
 	let g:onedark_termcolors = 256
 	syntax on
-	colorscheme onedark
+    colorscheme onedark
 
 " Vim tree setting
 	map <C-n> :NERDTreeToggle<CR>
