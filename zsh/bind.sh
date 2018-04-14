@@ -25,9 +25,13 @@
     git_commit() {
         git commit;
     }
-    alias gm="git_commit"
+    alias gc="git_commit"
 
-
+# Git status
+    git_status(){
+        git status;
+    }
+    alias gs="git_status"
 
 # Go to home
 	function goto_home() { 
