@@ -33,6 +33,11 @@
     }
     alias gs="git_status"
 
+# Git status
+    git_push(){
+        git push;
+    }
+    alias gp="git_push"
 # Go to home
 	function goto_home() { 
 		BUFFER="cd ~/"$BUFFER
