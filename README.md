@@ -74,6 +74,11 @@ Example running two pages with tmux, left one has `NERDTree` active, right one h
 # LaTeX
 > This is a work in progress LaTeX setup guide
 
+It build on [Vimtex](https://github.com/lervag/vimtex)
+```vim
+Plugin 'lervag/vimtex'
+```
+
 # Markdown
 Markdown setup to edit markdown files using `vim`. This will let you edit a markdown file in vim, and with `:w` the
 markdown file will be auto compiled by `grip` into `HTML`. Running `~/dotfiles: $ grip` will start the server, and a preview of the 
@@ -94,4 +99,4 @@ Plugin 'https://github.com/JamshedVesuna/vim-markdown-preview'
 ```vim
 let vim_markdown_preview_github=1
 ```
-
+> As stated in the README of `vimtex` reading the documentation using `:h vimtex` i necessary

@@ -65,6 +65,9 @@
 
         " Find
         Plugin 'kien/ctrlp.vim'
+
+        " LaTeX
+        Plugin 'lervag/vimtex'
     " ------------------------------------------------  
     call vundle#end()
     filetype plugin indent on
