@@ -1,10 +1,10 @@
 # Run tmux if exists
-	if command -v tmux>/dev/null; then
-		[ -z $TMUX ] && exec tmux
-	else
-		echo "tmux not installed on this system"
-	fi
+    if command -v tmux>/dev/null; then
+        [ -z $TMUX ] && exec tmux
+    else
+        echo "tmux not installed on this system"
+    fi
 
 
 # Get zsh config
-	source ~/dotfiles/zsh/zshrc.sh
+    source ~/dotfiles/zsh/zshrc.sh
