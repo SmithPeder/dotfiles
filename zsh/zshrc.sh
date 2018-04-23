@@ -21,6 +21,8 @@ source ~/dotfiles/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 # Keybindings
 source ~/dotfiles/zsh/bind.sh
 
+export PATH=$PATH:~/pycharm/bin
+
 # Fix for arrow-key searching
 # start typing + [Up-Arrow] - fuzzy find history forward
 if [[ "${terminfo[kcuu1]}" != "" ]]; then
@@ -36,3 +38,4 @@ if [[ "${terminfo[kcud1]}" != "" ]]; then
 fi
 
 source ~/dotfiles/zsh/prompt.sh
+source /etc/profile
