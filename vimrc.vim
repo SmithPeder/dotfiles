@@ -4,6 +4,7 @@
     set encoding=utf8
     set number
     set ttimeoutlen=10
+    set scrolloff=10
     set cursorline
     hi Cursor ctermfg=White ctermbg=Yellow cterm=bold guifg=white guibg=yellow gui=bold
     set mouse=a
@@ -28,6 +29,7 @@
     set expandtab
     set smarttab
     set autoindent
+    set colorcolumn=100
 
 " Vundel
     set nocompatible
@@ -43,6 +45,7 @@
         Plugin 'joshdick/onedark.vim'
         Plugin 'itchyny/lightline.vim'
         Plugin 'ajh17/spacegray.vim'
+        Plugin 'chriskempson/base16-vim'
 
         " Gutters
         Plugin 'scrooloose/nerdtree'
@@ -78,18 +81,13 @@
       \ 'colorscheme': 'onedark',
       \ }
     let g:onedark_termcolors = 256
-    syntax on
-    " colorscheme onedark !NOTINUSE
-
-" Style settings for spacegray
-    colorscheme spacegray
-    let g:spacegray_use_italics = 1
-    let g:spacegray_low_contrast = 1
+    colorscheme onedark 
 
 " Vim tree setting
     map <C-n> :NERDTreeToggle<CR>
     " Close if tree is the only thing left
     autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+    autocmd BufEnter * lcd %:p:h
     
 " Undo tree remap
     nnoremap <F7> :UndotreeToggle<cr>
