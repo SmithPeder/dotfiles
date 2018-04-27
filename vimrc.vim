@@ -1,5 +1,5 @@
 " General settings
-    syntax on 
+    syntax on
     let mapleader=","
     set encoding=utf8
     set number
@@ -8,10 +8,11 @@
     set cursorline
     hi Cursor ctermfg=White ctermbg=Yellow cterm=bold guifg=white guibg=yellow gui=bold
     set mouse=a
+    set nowrap
 
 " Toggle spelling with F8
     map <F8> :setlocal spell! spelllang=en_us<CR>
-    
+
 " Use Ctrl Backspace for remove last word effect
     noremap! <C-BS> <C-w>
     noremap! <C-h> <C-w>
@@ -22,10 +23,10 @@
     noremap <Left> <NOP>
     noremap <Right> <NOP>
 
-" Indenting with 4 spaces per tab, and 4 spaces per indent
+" Indenting with 2 spaces per tab, and 2 spaces per indent
     set smartindent
-    set tabstop=4
-    set shiftwidth=4
+    set tabstop=2
+    set shiftwidth=2
     set expandtab
     set smarttab
     set autoindent
@@ -40,7 +41,7 @@
     " ------------------------------------------------
         " PluginManager, add new with :PluginInstall
         Plugin 'VundleVim/Vundle.vim'
-        
+
         " Style
         Plugin 'joshdick/onedark.vim'
         Plugin 'itchyny/lightline.vim'
@@ -52,7 +53,7 @@
         Plugin 'Xuyuanp/nerdtree-git-plugin'
         Plugin 'mbbill/undotree'
         Plugin 'airblade/vim-gitgutter'
-        
+
         " Markdown
         Plugin 'JamshedVesuna/vim-markdown-preview'
 
@@ -63,15 +64,15 @@
         Plugin 'pangloss/vim-javascript'
         Plugin 'mxw/vim-jsx'
 
-        " Syntax
-        Plugin 'scrooloose/syntastic'
-
         " Find
         Plugin 'kien/ctrlp.vim'
 
         " LaTeX
         Plugin 'lervag/vimtex'
-    " ------------------------------------------------  
+
+        " Lint
+        Plugin 'w0rp/ale'
+    " ------------------------------------------------
     call vundle#end()
     filetype plugin indent on
 
@@ -81,14 +82,13 @@
       \ 'colorscheme': 'onedark',
       \ }
     let g:onedark_termcolors = 256
-    colorscheme onedark 
+    colorscheme onedark
 
 " Vim tree setting
     map <C-n> :NERDTreeToggle<CR>
-    " Close if tree is the only thing left
-    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-    autocmd BufEnter * lcd %:p:h
-    
+    let NERDTreeMinimalUI = 1
+    let NERDTreeDirArrows = 1
+
 " Undo tree remap
     nnoremap <F7> :UndotreeToggle<cr>
 
@@ -113,13 +113,8 @@
 " Jedi vim settings
     autocmd FileType python setlocal completeopt-=preview
 
-" Syntastic settings
-    set statusline+=%#warningmsg#
-    set statusline+=%{SyntasticStatuslineFlag()}
-    set statusline+=%*
-
-    let g:syntastic_always_populate_loc_list = 1
-    let g:syntastic_auto_loc_list = 1
-    let g:syntastic_check_on_open = 1
-    let g:syntastic_check_on_wq = 0
-
+" Ale settings
+  let g:ale_fixers = {
+  \   'javascript': ['eslint'],
+  \}
+  let g:ale_fix_on_save = 1
