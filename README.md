@@ -65,7 +65,7 @@ call vundle#end()
 ```
 
 ## Current style
-Example running two pages with tmux, left one has `NERDTree` active, right one has `UNDOTree` active
+Example running three pages with tmux. 
 <p align="center"> 
 <img src="https://i.imgur.com/dWGdoQj.png">
 </p>
