@@ -6,9 +6,10 @@
   set ttimeoutlen=10
   set scrolloff=10
   set cursorline
-  hi Cursor ctermfg=White ctermbg=Yellow cterm=bold guifg=white guibg=yellow gui=bold
   set mouse=a
   set nowrap
+  set noswapfile
+  set ignorecase
 
 " Toggle spelling with F8
   map <F8> :setlocal spell! spelllang=en_us<CR>
@@ -40,6 +41,19 @@
   inoremap <C-h> :tabprevious<CR>
   inoremap <C-t> :tabnew<CR>
 
+" DIY autoclosing
+  inoremap (( ()<left>                        "autocomplete ()
+  inoremap [[ []<left>                        "autocomplete []
+  inoremap {{ {}<left>                        "autocomplete {}
+  inoremap "" ""<left>                        "autocomplete ""
+  inoremap '' ''<left>                        "autocomplete ''
+  inoremap `` ``<left>                        "autocomplete ``
+  inoremap << <><left>                        "autocomplete <>
+
+  inoremap (<cr> (<cr>)<esc>O<Tab>            "autocomplete (), return with tab
+  inoremap {<cr> {<cr>}<esc>O<Tab>            "autocomplete {}, return with tab
+  inoremap [<cr> [<cr>]<esc>O<Tab>            "autocomplete [], return with tab
+  
 " Vundel
   set nocompatible
   filetype off
@@ -47,7 +61,7 @@
 
   call vundle#begin('~/.vim/bundle')
 " ------------------------------------------------
-" PluginManager, add new with :PluginInstall
+" PluginManager, add new with :soruce % -> :PluginInstall
   Plugin 'VundleVim/Vundle.vim'
 
   Plugin 'joshdick/onedark.vim'               "onedark style
@@ -67,6 +81,7 @@
   Plugin 'kien/ctrlp.vim'                     "beloved fuzzyfinder
   Plugin 'lervag/vimtex'                      "large LaTeX repo
   Plugin 'w0rp/ale'                           "support linting
+
 " ------------------------------------------------
   call vundle#end()
   filetype plugin indent on
