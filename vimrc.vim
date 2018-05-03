@@ -32,6 +32,14 @@
   set autoindent
   set colorcolumn=100
 
+" Navigate tabs
+  noremap <C-l> :tabnext<CR>
+  noremap <C-h> :tabprevious<CR>
+  noremap <C-t> :tabnew<CR>
+  inoremap <C-l> :tabnext<CR>
+  inoremap <C-h> :tabprevious<CR>
+  inoremap <C-t> :tabnew<CR>
+
 " Vundel
   set nocompatible
   filetype off
@@ -42,42 +50,28 @@
 " PluginManager, add new with :PluginInstall
   Plugin 'VundleVim/Vundle.vim'
 
-  " Style
-  Plugin 'joshdick/onedark.vim'
-  Plugin 'itchyny/lightline.vim'
-  Plugin 'ajh17/spacegray.vim'
-  Plugin 'chriskempson/base16-vim'
-  Plugin 'cocopon/iceberg.vim'
-
-  " Gutters
-  Plugin 'scrooloose/nerdtree'
-  Plugin 'Xuyuanp/nerdtree-git-plugin'
-  Plugin 'mbbill/undotree'
-  Plugin 'airblade/vim-gitgutter'
-  
-  " Markdown
-  Plugin 'JamshedVesuna/vim-markdown-preview'
-  
-  " Python
-  Plugin 'davidhalter/jedi-vim'
-
-  " JavaScript
-  Plugin 'pangloss/vim-javascript'
-  Plugin 'mxw/vim-jsx'
-  
-  " Find
-  Plugin 'kien/ctrlp.vim'
-
-  " LaTeX
-  Plugin 'lervag/vimtex'
- 
-  " Lint
-  Plugin 'w0rp/ale'
+  Plugin 'joshdick/onedark.vim'               "onedark style
+  Plugin 'itchyny/lightline.vim'              "bottom line
+  Plugin 'ajh17/spacegray.vim'                "spacegray style
+  Plugin 'chriskempson/base16-vim'            "base-16 style
+  Plugin 'cocopon/iceberg.vim'                "iceberg style
+  Plugin 'scrooloose/nerdtree'                "document tree
+  Plugin 'Xuyuanp/nerdtree-git-plugin'        "git flags
+  Plugin 'jistr/vim-nerdtree-tabs'            "enhance tabs for nerdtree
+  Plugin 'mbbill/undotree'                    "list all undos you can do
+  Plugin 'airblade/vim-gitgutter'             "show vim diff in gutter
+  Plugin 'JamshedVesuna/vim-markdown-preview' "support markdown editing
+  Plugin 'davidhalter/jedi-vim'               "better python support
+  Plugin 'pangloss/vim-javascript'            "better javascript support
+  Plugin 'mxw/vim-jsx'                        "allow jsx syntax
+  Plugin 'kien/ctrlp.vim'                     "beloved fuzzyfinder
+  Plugin 'lervag/vimtex'                      "large LaTeX repo
+  Plugin 'w0rp/ale'                           "support linting
 " ------------------------------------------------
   call vundle#end()
   filetype plugin indent on
 
-" Style settings for onedark and lightline
+" Style settings for syntax and lightline
   set laststatus=2
   let g:lightline = {
     \ 'colorscheme': 'onedark',
@@ -85,14 +79,20 @@
   let g:onedark_termcolors = 256
   colorscheme iceberg
 
-" Vim tree setting
+" NERDTREE tree setting
   map <C-n> :NERDTreeToggle<CR>
   let NERDTreeMinimalUI = 1
   let NERDTreeDirArrows = 1
+  autocmd vimenter * NERDTree
+  autocmd StdinReadPre * let s:std_in=1
+  autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+  let g:nerdtree_tabs_open_on_console_startup=1
+  let g:nerdtree_tabs_focus_on_files=1
+  let g:NERDTreeWinSize=25
 
 " Undo tree remap
   nnoremap <F7> :UndotreeToggle<cr>
-
+  
 " Git for nerdtree
   let g:NERDTreeIndicatorMapCustom = {
     \ "Modified"  : "✹",
