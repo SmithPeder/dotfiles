@@ -14,10 +14,6 @@
 " Toggle spelling with F8
   map <F8> :setlocal spell! spelllang=en_us<CR>
 
-" Use Ctrl Backspace for remove last word effect
-  noremap! <C-BS> <C-w>
-  noremap! <C-h> <C-w>
-
 " Don't use arrow keys
   noremap <Up> <NOP>
   noremap <Down> <NOP>
@@ -37,22 +33,31 @@
   noremap <C-l> :tabnext<CR>
   noremap <C-h> :tabprevious<CR>
   noremap <C-t> :tabnew<CR>
-  inoremap <C-l> :tabnext<CR>
-  inoremap <C-h> :tabprevious<CR>
-  inoremap <C-t> :tabnew<CR>
+  inoremap <C-l> <esc>:tabnext<CR>
+  inoremap <C-h> <esc>:tabprevious<CR>
+  inoremap <C-t> <esc>:tabnew<CR>
+
+" Ctrl s to save
+  noremap <C-s> :w<CR>
+
+" Save while in insert mode, and stay in insert mode
+  inoremap <C-s> <esc>:w<CR>a
+
+" Ctrl c to quit
+  noremap <C-c> :q<CR>
 
 " DIY autoclosing
-  inoremap (( ()<left>                        "autocomplete ()
-  inoremap [[ []<left>                        "autocomplete []
-  inoremap {{ {}<left>                        "autocomplete {}
-  inoremap "" ""<left>                        "autocomplete ""
-  inoremap '' ''<left>                        "autocomplete ''
-  inoremap `` ``<left>                        "autocomplete ``
-  inoremap << <><left>                        "autocomplete <>
+  inoremap (( ()<left>
+  inoremap [[ []<left>
+  inoremap {{ {}<left>
+  inoremap "" ""<left>
+  inoremap '' ''<left>
+  inoremap `` ``<left>
+  inoremap << <><left>
 
-  inoremap (<cr> (<cr>)<esc>O<Tab>            "autocomplete (), return with tab
-  inoremap {<cr> {<cr>}<esc>O<Tab>            "autocomplete {}, return with tab
-  inoremap [<cr> [<cr>]<esc>O<Tab>            "autocomplete [], return with tab
+  inoremap (<cr> (<cr>)<esc>O<Tab>
+  inoremap {<cr> {<cr>}<esc>O<Tab>
+  inoremap [<cr> [<cr>]<esc>O<Tab>
   
 " Vundel
   set nocompatible
