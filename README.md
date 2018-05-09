@@ -67,7 +67,7 @@ call vundle#end()
 ## Current style
 Example running three pages with tmux. 
 <p align="center"> 
-<img src="https://i.imgur.com/dWGdoQj.png">
+<img src="https://imgur.com/vcmqqXg">
 </p>
 
 
