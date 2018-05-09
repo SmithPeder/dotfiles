@@ -104,6 +104,7 @@
   let NERDTreeDirArrows = 1
   autocmd vimenter * NERDTree
   autocmd StdinReadPre * let s:std_in=1
+  autocmd VimEnter * wincmd p
   autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
   let g:nerdtree_tabs_open_on_console_startup=1
   let g:nerdtree_tabs_focus_on_files=1
