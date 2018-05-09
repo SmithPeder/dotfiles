@@ -21,6 +21,7 @@ source ~/dotfiles/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 # Keybindings
 source ~/dotfiles/zsh/bind.sh
 
+# Pycharm path
 export PATH=$PATH:~/pycharm/bin
 
 # Fix for arrow-key searching

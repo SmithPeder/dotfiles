@@ -65,7 +65,7 @@
   set rtp+=~/.vim/bundle/Vundle.vim
 
   call vundle#begin('~/.vim/bundle')
-" ------------------------------------------------
+" --------------------------------------------------------------------------
 " PluginManager, add new with :soruce % -> :PluginInstall
   Plugin 'VundleVim/Vundle.vim'
 
@@ -80,14 +80,13 @@
   Plugin 'mbbill/undotree'                    "list all undos you can do
   Plugin 'airblade/vim-gitgutter'             "show vim diff in gutter
   Plugin 'JamshedVesuna/vim-markdown-preview' "support markdown editing
-  Plugin 'davidhalter/jedi-vim'               "better python support
   Plugin 'pangloss/vim-javascript'            "better javascript support
   Plugin 'mxw/vim-jsx'                        "allow jsx syntax
   Plugin 'kien/ctrlp.vim'                     "beloved fuzzyfinder
   Plugin 'lervag/vimtex'                      "large LaTeX repo
   Plugin 'w0rp/ale'                           "support linting
-
-" ------------------------------------------------
+  Plugin 'valloric/youcompleteme'             "completion
+" --------------------------------------------------------------------------
   call vundle#end()
   filetype plugin indent on
 
@@ -139,3 +138,8 @@
     \  'javascript': ['eslint'],
   \}
   let g:ale_fix_on_save = 1
+
+" CTRLP .ignore files/folders
+  let g:ctrlp_max_files = 0
+  noremap <M-p> :CtrlPBuffer<CR>
+  set wildignore+=*/venv/*,*/target/*,*/node_modules/*,*/*.class,*/*.pyc,*/*.o
