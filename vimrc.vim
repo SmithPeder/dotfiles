@@ -11,8 +11,15 @@
   set noswapfile
   set ignorecase
 
+" Able to jump out to the end of the line with C-e in insertmode
+  inoremap <C-e> <C-o>A 
+
 " Toggle spelling with F8
   map <F8> :setlocal spell! spelllang=en_us<CR>
+
+" Enable word delete with ctrl backspace
+  noremap! <C-BS> <C-w>
+  noremap! <C-h> <C-w>
 
 " Don't use arrow keys
   noremap <Up> <NOP>
@@ -34,7 +41,7 @@
   noremap <C-h> :tabprevious<CR>
   noremap <C-t> :tabnew<CR>
   inoremap <C-l> <esc>:tabnext<CR>
-  inoremap <C-h> <esc>:tabprevious<CR>
+  "inoremap <C-h> <esc>:tabprevious<CR>
   inoremap <C-t> <esc>:tabnew<CR>
 
 " Ctrl s to save
@@ -144,3 +151,22 @@
   let g:ctrlp_max_files = 0
   noremap <M-p> :CtrlPBuffer<CR>
   set wildignore+=*/venv/*,*/target/*,*/node_modules/*,*/*.class,*/*.pyc,*/*.o
+
+" Autocomplete english
+  function! Tab_Or_Complete()
+    if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
+      return "\<C-N>"
+    else
+      return "\<Tab>"
+    endif
+   endfunction
+  inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
+  set dictionary="/usr/dict/words"
+
+" Abbreviations
+  :abbr supe superuser
+  :abbr autoc autocomplete
+" ------------------------------------------------ 
+  :abbr auth authentication
+" ------------------------------------------------
+
