@@ -4,7 +4,7 @@ setopt PROMPT_SUBST
 # Full lineup of the promt
 set_prompt() {
     # White [ at the start
-    PS1="%{$fg[white]%}[ %{$reset_color%}"
+    PS1="%{$fg[white]%}[%{$reset_color%}"
     # Path 
     PS1+="%{$fg[white]%}${PWD/#$HOME/~}%{$reset_color%}"
     # Status Code
@@ -22,7 +22,7 @@ set_prompt() {
       fi
     fi
     # White ] at the end
-    PS1+="%{$fg[white]%} ] %{$reset_color%}% "
+    PS1+="%{$fg[white]%}] %{$reset_color%}% "
 }
 
 precmd_functions+=set_prompt
