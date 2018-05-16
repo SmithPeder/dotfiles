@@ -113,6 +113,7 @@
   Plugin 'w0rp/ale'                           "support linting
   Plugin 'valloric/youcompleteme'             "completion
   Plugin 'gko/vim-coloresque'                 "detect hex, rgb, hsl colors
+  Plugin 'tpope/vim-surround'                 "change a surrounding pair
 " --------------------------------------------------------------------------
   call vundle#end()
   filetype plugin indent on
