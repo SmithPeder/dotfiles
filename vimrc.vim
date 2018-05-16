@@ -112,6 +112,7 @@
   Plugin 'lervag/vimtex'                      "large LaTeX repo
   Plugin 'w0rp/ale'                           "support linting
   Plugin 'valloric/youcompleteme'             "completion
+  Plugin 'gko/vim-coloresque'                 "detect hex, rgb, hsl colors
 " --------------------------------------------------------------------------
   call vundle#end()
   filetype plugin indent on
