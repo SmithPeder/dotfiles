@@ -1,18 +1,23 @@
 " General settings
   syntax on
-  let mapleader=","
   set encoding=utf8
   set number
   set ttimeoutlen=10
   set scrolloff=10
-  set cursorline
   set mouse=a
   set nowrap
   set noswapfile
   set ignorecase
 
+" Map <Leader>
+  let mapleader = ","
+  let g:mapleader = ","
+
 " Able to jump out to the end of the line with C-e in insertmode
-  inoremap <C-e> <C-o>A 
+  inoremap <C-e> <C-o>A
+
+" Clear hlsearch
+  nmap <silent> <leader>c :noh<CR>
 
 " Toggle spelling with F8
   map <F8> :setlocal spell! spelllang=en_us<CR>
@@ -27,14 +32,27 @@
   noremap <Left> <NOP>
   noremap <Right> <NOP>
 
+" Git commit puts you in insert mode
+  autocmd FileType gitcommit exec 'au VimEnter * startinsert'
+
 " Indenting with 2 spaces per tab, and 2 spaces per indent
+  filetype indent on
+  set autoindent
   set smartindent
   set tabstop=2
   set shiftwidth=2
   set expandtab
   set smarttab
-  set autoindent
+
+" Search
+  set hlsearch
+  set incsearch
+  set ignorecase
+  set smartcase
+
+" Show where column and row
   set colorcolumn=100
+  set cursorline
 
 " Navigate tabs
   noremap <C-l> :tabnext<CR>
@@ -62,6 +80,7 @@
   inoremap `` ``<left>
   inoremap << <><left>
 
+" DIY autoclosing for paragraph
   inoremap (<cr> (<cr>)<esc>O<Tab>
   inoremap {<cr> {<cr>}<esc>O<Tab>
   inoremap [<cr> [<cr>]<esc>O<Tab>
@@ -122,31 +141,17 @@
   nnoremap <F7> :UndotreeToggle<cr>
   
 " Git for nerdtree
-  let g:NERDTreeIndicatorMapCustom = {
-    \ "Modified"  : "✹",
-    \ "Staged"    : "✚",
-    \ "Untracked" : "✭",
-    \ "Renamed"   : "➜",
-    \ "Unmerged"  : "═",
-    \ "Deleted"   : "✖",
-    \ "Dirty"     : "✗",
-    \ "Clean"     : "✔︎",
-    \ 'Ignored'   : '☒',
-    \ "Unknown"   : "?"
-  \ }
   let g:NERDTreeShowIgnoredStatus = 1
 
 " Markdown preview settings
   let vim_markdown_preview_github=1
 
-" Jedi vim settings
-  autocmd FileType python setlocal completeopt-=preview
-
 " Ale settings
   let g:ale_fixers = {
-    \  'javascript': ['eslint'],
+    \  'javascript': ['prettier'],
   \}
-  let g:ale_fix_on_save = 1
+  let g:ale_fix_on_save = 1                   "lint on save
+  let g:ale_lint_on_text_changed = 'never'    "dont lint on text changed
 
 " CTRLP .ignore files/folders
   let g:ctrlp_max_files = 0
