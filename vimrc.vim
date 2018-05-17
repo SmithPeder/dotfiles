@@ -2,11 +2,11 @@
   syntax on
   set encoding=utf8
   set number
-  set ttimeoutlen=10
+  set ttimeoutlen=10         "used for key code delays
   set scrolloff=10
   set mouse=a
   set nowrap
-  set noswapfile
+  set noswapfile             "no stupid .swp file
   set ignorecase
 
 " Map <Leader>
@@ -112,7 +112,6 @@
   Plugin 'lervag/vimtex'                      "large LaTeX repo
   Plugin 'w0rp/ale'                           "support linting
   Plugin 'valloric/youcompleteme'             "completion
-  Plugin 'gko/vim-coloresque'                 "detect hex, rgb, hsl colors
   Plugin 'tpope/vim-surround'                 "change a surrounding pair
 " --------------------------------------------------------------------------
   call vundle#end()
