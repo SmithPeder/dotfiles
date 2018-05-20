@@ -81,9 +81,9 @@
   inoremap << <><left>
 
 " DIY autoclosing for paragraph
-  inoremap (<cr> (<cr>)<esc>O<Tab>
-  inoremap {<cr> {<cr>}<esc>O<Tab>
-  inoremap [<cr> [<cr>]<esc>O<Tab>
+  inoremap (<cr> (<cr>)<esc>O
+  inoremap {<cr> {<cr>}<esc>O
+  inoremap [<cr> [<cr>]<esc>O
   
 " Vundel
   set nocompatible
@@ -96,7 +96,9 @@
   Plugin 'VundleVim/Vundle.vim'
 
   Plugin 'joshdick/onedark.vim'               "onedark style
-  Plugin 'itchyny/lightline.vim'              "bottom line
+  Plugin 'itchyny/lightline.vim'              "statusline
+  Plugin 'itchyny/vim-gitbranch'              "git for statusline
+  Plugin 'maximbaz/lightline-ale'             "ale errors in statusline
   Plugin 'ajh17/spacegray.vim'                "spacegray style
   Plugin 'chriskempson/base16-vim'            "base-16 style
   Plugin 'cocopon/iceberg.vim'                "iceberg style
@@ -113,6 +115,7 @@
   Plugin 'w0rp/ale'                           "support linting
   Plugin 'valloric/youcompleteme'             "completion
   Plugin 'tpope/vim-surround'                 "change a surrounding pair
+  Plugin 'junegunn/vim-easy-align'            "easy alignment
 " --------------------------------------------------------------------------
   call vundle#end()
   filetype plugin indent on
@@ -121,9 +124,39 @@
   set laststatus=2
   let g:lightline = {
     \ 'colorscheme': 'onedark',
+    \ 'active': {
+    \   'left': [ [ 'mode', 'paste' ] , [ 'readonly', 'filename', 'filetype', 'gitbranch'] ],
+    \   'right': [ [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ] ]
+    \ },
+    \ 'component_function': {
+    \    'gitbranch': 'gitbranch#name'
+    \ },
     \ }
+
+  let g:lightline.component_expand = {
+    \  'linter_checking': 'lightline#ale#checking',
+    \  'linter_warnings': 'lightline#ale#warnings',
+    \  'linter_errors': 'lightline#ale#errors',
+    \  'linter_ok': 'lightline#ale#ok',
+    \ }
+
+  let g:lightline.component_type = {
+    \  'linter_checking': 'left',
+    \  'linter_warnings': 'warning',
+    \  'linter_errors': 'error',
+    \  'linter_ok': 'left',
+    \ }
+
+  let g:lightline#ale#indicator_checking = "Checking..."
+  let g:lightline#ale#indicator_warnings = "Warnings:"
+  let g:lightline#ale#indicator_errors = "Errors:"
+  let g:lightline#ale#indicator_ok = "Good"
+
   let g:onedark_termcolors = 256
   colorscheme iceberg
+
+" EasyAlign
+  nmap ga <Plug>(EasyAlign)
 
 " NERDTREE tree setting
   map <C-n> :NERDTreeToggle<CR>
@@ -144,7 +177,7 @@
 " Git for nerdtree
   let g:NERDTreeShowIgnoredStatus = 1
 
-" Markdown preview settings
+" Markdown preview settings:
   let vim_markdown_preview_github=1
 
 " Ale settings
@@ -152,6 +185,7 @@
     \  'javascript': ['prettier'],
   \}
   let g:ale_fix_on_save = 1                   "lint on save
+  let g:ale_sign_column_always = 1
   let g:ale_lint_on_text_changed = 'never'    "dont lint on text changed
 
 " CTRLP .ignore files/folders
@@ -175,5 +209,7 @@
   :abbr autoc autocomplete
 " ------------------------------------------------ 
   :abbr auth authentication
+  :abbr pl System.out.println
+  :abbr iv Instance variables
 " ------------------------------------------------
 
