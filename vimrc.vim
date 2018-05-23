@@ -54,13 +54,10 @@
   set colorcolumn=100
   set cursorline
 
-" Navigate tabs
+" Navigate tabs, while in normal mode
   noremap <C-l> :tabnext<CR>
   noremap <C-h> :tabprevious<CR>
   noremap <C-t> :tabnew<CR>
-  inoremap <C-l> <esc>:tabnext<CR>
-  "inoremap <C-h> <esc>:tabprevious<CR>
-  inoremap <C-t> <esc>:tabnew<CR>
 
 " Ctrl s to save
   noremap <C-s> :w<CR>
@@ -193,7 +190,7 @@
   noremap <M-p> :CtrlPBuffer<CR>
   set wildignore+=*/venv/*,*/target/*,*/node_modules/*,*/*.class,*/*.pyc,*/*.o
 
-" Autocomplete english
+" Tab to complete words
   function! Tab_Or_Complete()
     if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
       return "\<C-N>"
