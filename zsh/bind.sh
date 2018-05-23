@@ -70,5 +70,45 @@
     ls -a -1
   }
 
+# Import .jar files for JUnit tests, should always be run from root
+  javat() {
+    # Remove all old .class files
+    rm *.class tests/*.class build/*.class
+    # Try to create a test folder to hold Test.java files
+    mkdir tests
+    mv *Test* tests
+    # Try to create a build folder to hold .class files
+    mkdir build
+    # Compile all java code in root and put them in tests
+    javac *.java -d tests
+    # Move into tests and import the junit jar
+    cd tests
+    # Get test directory
+    cp ~/JUnit/junit-4.12.jar $PWD
+    # Compile all test files using junit
+    for f in ./*.java
+    do
+    javac -cp .:junit-4.12.jar $f
+    done
+    # Move all .class files from test to build
+    mv *.class ../build
+    # Remove the junit.jar from this directory
+    rm -rf junit-4.12.jar
+    # Head over to the build folder
+    cd ../build
+    # Get junit and hamcrest
+    cp ~/JUnit/hamcrest-core-1.3.jar $PWD
+    cp ~/JUnit/junit-4.12.jar $PWD
+    # Run each test file
+    for f in *Test*.class
+    do
+    java -cp .:junit-4.12.jar:hamcrest-core-1.3.jar org.junit.runner.JUnitCore ${f%.*}
+    done
+    cd ..
+    #Remove the build folder
+    rm -rf build
+  }
+
+
 # Soruce local bindings that should not be on comitted
   source ~/dotfiles/zsh/bind_local.sh
