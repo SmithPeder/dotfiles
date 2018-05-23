@@ -86,38 +86,37 @@
     echo Creating build folder...
     mkdir build
 
-    echo Compileing soruce code...
-    javac *.java -d tests
-    if [ -z "$" ];
-    then
-      echo Compiled failed...
-    elif
-    then
-      echo Compiled success...
+    echo Compiling soruce code...
+    f=$(javac *.java -d tests)
+    if [[ $? != 0 ]]; then
+      echo "Compiling failed..."
+    else
+      echo "Compiling success..."
+      echo "Running tests..."
+      cd tests
+      # Get test directory
+      cp ~/JUnit/junit-4.12.jar $PWD/tests
+      # Compile all test files using junit
+      for f in ./*.java
+      do
+      javac -cp .:junit-4.12.jar $f
+      done
+      # Move all .class files from test to build
+      mv *.class ../build
+      # Remove the junit.jar from this directory
+      rm -rf junit-4.12.jar
+      # Head over to the build folder
+      cd ../build
+      # Get junit and hamcrest
+      cp ~/JUnit/hamcrest-core-1.3.jar $PWD
+      cp ~/JUnit/junit-4.12.jar $PWD
+      # Run each test file
+      for f in *Test*.class
+      do
+      java -cp .:junit-4.12.jar:hamcrest-core-1.3.jar org.junit.runner.JUnitCore ${f%.*}
+      done
+      cd ..
     fi
-    cd tests
-    # Get test directory
-    cp ~/JUnit/junit-4.12.jar $PWD
-    # Compile all test files using junit
-    for f in ./*.java
-    do
-    javac -cp .:junit-4.12.jar $f
-    done
-    # Move all .class files from test to build
-    mv *.class ../build
-    # Remove the junit.jar from this directory
-    rm -rf junit-4.12.jar
-    # Head over to the build folder
-    cd ../build
-    # Get junit and hamcrest
-    cp ~/JUnit/hamcrest-core-1.3.jar $PWD
-    cp ~/JUnit/junit-4.12.jar $PWD
-    # Run each test file
-    for f in *Test*.class
-    do
-    java -cp .:junit-4.12.jar:hamcrest-core-1.3.jar org.junit.runner.JUnitCore ${f%.*}
-    done
-    cd ..
     #Remove the build folder
     rm -rf build
   }
