@@ -72,16 +72,29 @@
 
 # Import .jar files for JUnit tests, should always be run from root
   javat() {
-    # Remove all old .class files
-    rm *.class tests/*.class build/*.class
-    # Try to create a test folder to hold Test.java files
-    mkdir tests
-    mv *Test* tests
-    # Try to create a build folder to hold .class files
+    echo Remove old files...
+    rm *.class || echo No class files to remove in root
+    rm tests/*.class || echo No class files to remove in tests
+    rm build/*.class || echo No class files to remove in build
+
+    echo Creating test folder...
+    mkdir tests || echo Test folder allready exist
+    
+    echo Moving all Test files to the testfolder...
+    mv *Test* rtests
+    
+    echo Creating build folder...
     mkdir build
-    # Compile all java code in root and put them in tests
+
+    echo Compileing soruce code...
     javac *.java -d tests
-    # Move into tests and import the junit jar
+    if [ -z "$" ];
+    then
+      echo Compiled failed...
+    elif
+    then
+      echo Compiled success...
+    fi
     cd tests
     # Get test directory
     cp ~/JUnit/junit-4.12.jar $PWD
