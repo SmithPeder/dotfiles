@@ -81,7 +81,7 @@
     mkdir tests || echo Test folder allready exist
     
     echo Moving all Test files to the testfolder...
-    mv *Test* rtests
+    mv *Test* /tests
     
     echo Creating build folder...
     mkdir build
@@ -89,28 +89,29 @@
     echo Compiling soruce code...
     f=$(javac *.java -d tests)
     if [[ $? != 0 ]]; then
-      echo "Compiling failed..."
+      echo Compiling of soruce code failed...
     else
-      echo "Compiling success..."
-      echo "Running tests..."
-      cd tests
+      echo Compiling of soruce code success...
+      echo Moving class files to test folder...
       # Get test directory
       cp ~/JUnit/junit-4.12.jar $PWD/tests
+      cp ~/JUnit/hamcrest-core-1.3.jar $PWD/build
       # Compile all test files using junit
-      for f in ./*.java
+      cd tests
+      echo Compiling test code...
+      for f in *.java
       do
       javac -cp .:junit-4.12.jar $f
       done
-      # Move all .class files from test to build
+      echo Moveing alle class files to build folder... 
       mv *.class ../build
-      # Remove the junit.jar from this directory
       rm -rf junit-4.12.jar
-      # Head over to the build folder
       cd ../build
       # Get junit and hamcrest
       cp ~/JUnit/hamcrest-core-1.3.jar $PWD
       cp ~/JUnit/junit-4.12.jar $PWD
       # Run each test file
+      echo Running all tests...
       for f in *Test*.class
       do
       java -cp .:junit-4.12.jar:hamcrest-core-1.3.jar org.junit.runner.JUnitCore ${f%.*}
@@ -118,6 +119,9 @@
       cd ..
     fi
     #Remove the build folder
+    echo Cleaning up...
+    rm -rf hamcrest-core-1.3.jar
+    rm -rf junit-4.12.jar
     rm -rf build
   }
 
