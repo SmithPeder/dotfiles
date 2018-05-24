@@ -103,7 +103,7 @@
       do
       javac -cp .:junit-4.12.jar $f
       done
-      echo Moveing alle class files to build folder... 
+      echo Moving alle class files to build folder... 
       mv *.class ../build
       rm -rf junit-4.12.jar
       cd ../build
