@@ -75,38 +75,24 @@
     echo Remove old files...
     rm *.class || echo No class files to remove in root
     rm tests/*.class || echo No class files to remove in tests
-
-    echo Creating test folder...
-    mkdir tests || echo Test folder allready exist
-    
-    echo Moving all test files to the testfolder...
-    mv *Test* /tests || echo No test files detected in root
-
-    echo Compiling soruce code...
-    f=$(javac *.java -d tests)
+    printf "\n"
+    echo Compiling source code...
+    f=$(javac $(find . -name '*.java') -d $PWD)
     if [[ $? != 0 ]]; then
-      echo Compiling of soruce code failed...
+      echo "Compiling of code failed..."
     else
-      echo Compiling of soruce code success...
-      cd tests
-      echo Compiling test code...
-      f=$(javac *.java)
-      if [[ $? != 0 ]]; then
-        echo Compiling of test code failed...
-      else
-        echo Compiling of test code success...
-        echo Running test code...
-        for f in *Test*.class
-        do
-        echo Running test: ${f%.*}
-        java org.junit.runner.JUnitCore ${f%.*}
-        done
-        rm *.class
-      fi
-      cd ..
+      echo Compiling of code success...
+      printf "\n"
+      for f in *Test*.class
+      do
+      printf "\n-------------------"
+      echo Test: ${f%.*}
+      java org.junit.runner.JUnitCore ${f%.*}
+      done
+      echo Cleaning up...
+      rm *.class
     fi
   }
-
 
 # Soruce local bindings that should not be on comitted
   source ~/dotfiles/zsh/bind_local.sh
