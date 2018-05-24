@@ -98,10 +98,12 @@
         echo Running test code...
         for f in *Test*.class
         do
+        echo Running test: ${f%.*}
         java org.junit.runner.JUnitCore ${f%.*}
         done
-        cd ..
+        rm *.class
       fi
+      cd ..
     fi
   }
 
