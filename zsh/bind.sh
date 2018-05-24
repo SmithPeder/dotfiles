@@ -75,16 +75,12 @@
     echo Remove old files...
     rm *.class || echo No class files to remove in root
     rm tests/*.class || echo No class files to remove in tests
-    rm build/*.class || echo No class files to remove in build
 
     echo Creating test folder...
     mkdir tests || echo Test folder allready exist
     
-    echo Moving all Test files to the testfolder...
-    mv *Test* /tests
-    
-    echo Creating build folder...
-    mkdir build
+    echo Moving all test files to the testfolder...
+    mv *Test* /tests || echo No test files detected in root
 
     echo Compiling soruce code...
     f=$(javac *.java -d tests)
@@ -92,37 +88,21 @@
       echo Compiling of soruce code failed...
     else
       echo Compiling of soruce code success...
-      echo Moving class files to test folder...
-      # Get test directory
-      cp ~/JUnit/junit-4.12.jar $PWD/tests
-      cp ~/JUnit/hamcrest-core-1.3.jar $PWD/build
-      # Compile all test files using junit
       cd tests
       echo Compiling test code...
-      for f in *.java
-      do
-      javac -cp .:junit-4.12.jar $f
-      done
-      echo Moving alle class files to build folder... 
-      mv *.class ../build
-      rm -rf junit-4.12.jar
-      cd ../build
-      # Get junit and hamcrest
-      cp ~/JUnit/hamcrest-core-1.3.jar $PWD
-      cp ~/JUnit/junit-4.12.jar $PWD
-      # Run each test file
-      echo Running all tests...
-      for f in *Test*.class
-      do
-      java -cp .:junit-4.12.jar:hamcrest-core-1.3.jar org.junit.runner.JUnitCore ${f%.*}
-      done
-      cd ..
+      f=$(javac *.java)
+      if [[ $? != 0 ]]; then
+        echo Compiling of test code failed...
+      else
+        echo Compiling of test code success...
+        echo Running test code...
+        for f in *Test*.class
+        do
+        java org.junit.runner.JUnitCore ${f%.*}
+        done
+        cd ..
+      fi
     fi
-    #Remove the build folder
-    echo Cleaning up...
-    rm -rf hamcrest-core-1.3.jar
-    rm -rf junit-4.12.jar
-    rm -rf build
   }
 
 

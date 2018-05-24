@@ -24,6 +24,9 @@
 # Pycharm path
   export PATH=$PATH:~/pycharm/bin
 
+# Export junit
+  export CLASSPATH=.:$CLASSPATH:~/JUnit/junit-4.12.jar:~/JUnit/hamcrest-core-1.3.jar
+
 # Fix for arrow-key searching
 # start typing + [Up-Arrow] - fuzzy find history forward
   if [[ "${terminfo[kcuu1]}" != "" ]]; then
