@@ -21,6 +21,12 @@ set_prompt() {
         PS1+="%{$fg[red]%} + $(git status --short | wc -l | awk '{$1=$1};1')%{$reset_color%}"
       fi
     fi
+    if [[ -z "${VIRTUAL_ENV}" ]]; then
+      PS1+=""
+    else
+      PS1+="%{$fg[green]%} (env) %{$reset_color%}% "
+
+    fi 
     # White ] at the end
     PS1+="%{$fg[white]%}] %{$reset_color%}% "
 }
