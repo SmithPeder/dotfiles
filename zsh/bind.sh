@@ -72,21 +72,18 @@
 
 # Import .jar files for JUnit tests, should always be run from root
   javat() {
-    echo Remove old files...
-    rm *.class || echo No class files to remove in root
-    rm tests/*.class || echo No class files to remove in tests
     printf "\n"
-    echo Compiling source code...
+    echo Compiling source/test code...
     f=$(javac $(find . -name '*.java') -d $PWD)
     if [[ $? != 0 ]]; then
       echo "Compiling of code failed..."
     else
       echo Compiling of code success...
-      printf "\n"
       for f in *Test*.class
       do
-      printf "\n-------------------"
-      echo Test: ${f%.*}
+      printf "\n------------------\n"
+      echo ${f%.*}
+      printf "------------------\n"
       java org.junit.runner.JUnitCore ${f%.*}
       done
       echo Cleaning up...

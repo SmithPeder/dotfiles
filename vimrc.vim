@@ -150,7 +150,7 @@
   let g:lightline#ale#indicator_ok = "Good"
 
   let g:onedark_termcolors = 256
-  colorscheme iceberg
+  colorscheme onedark
 
 " EasyAlign
   nmap ga <Plug>(EasyAlign)
@@ -199,6 +199,8 @@
     endif
    endfunction
   inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
+
+" Set dict, only when spelling is on
   set dictionary="/usr/dict/words"
 
 " Abbreviations
