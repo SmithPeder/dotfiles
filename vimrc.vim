@@ -1,121 +1,91 @@
-" General settings
-  syntax on
-  set encoding=utf8
-  set number
-  set ttimeoutlen=10         "used for key code delays
-  set scrolloff=10
-  set mouse=a
-  set nowrap
-  set noswapfile             "no stupid .swp file
-  set ignorecase
+" General settings---------------------------------------------------------------------------------
+  syntax on                   " turn on syntax
+  let mapleader = ","         " map leader to ','
+  set encoding=utf8           " UTF8 encoding of file
+  set number                  " normal line numbers
+  set ttimeoutlen=10          " used for key code delays
+  set scrolloff=10            " always keep lines at end
+  set mouse=a                 " enable mouse movements
+  set nowrap                  " lines don't wrap
+  set noswapfile              " no stupid .swp file
+  filetype indent on          " indent based on file type
+  set autoindent              " turns on auto indent
+  set smartindent             " does (mostly) right indenting
+  set tabstop=2               " tabs are at proper location
+  set shiftwidth=2            " one tab are 2 spaces
+  set expandtab               " tabs are actually spaces
+  set smarttab                " tabs fit with tabstops
+  set hlsearch                " highlight all matching text
+  set incsearch               " enable incremental search
+  set ignorecase              " /the -> the/The/THE/tHe
+  set smartcase               " goes together with ignorecase
+  set colorcolumn=100         " set a column at 100 chars 
+  set cursorline              " highlight the current line
 
-" Map <Leader>
-  let mapleader = ","
-  let g:mapleader = ","
+" General mappings---------------------------------------------------------------------------------
+  inoremap <C-e> <C-o>A                             " jump to end of line in insertmode
+  nmap <silent> <leader><space> :noh<CR>            " clear search highlight
+  map <F8> :setlocal spell! spelllang=en_us<CR>     " turn on spelling
+  noremap! <C-BS> <C-w>                             " enable ctrl backspace
+  noremap! <C-h> <C-w>                              " enable ctrl backspace
+  noremap <Up> <NOP>                                " learn to swim without a lifejacket
+  noremap <Down> <NOP>                              " learn to swim without a lifejacket
+  noremap <Left> <NOP>                              " learn to swim without a lifejacket
+  noremap <Right> <NOP>                             " learn to swim without a lifejacket
+  noremap <C-l> :tabnext<CR>                        " next tab in insertmode
+  noremap <C-h> :tabprevious<CR>                    " prev tab in insertmode
+  noremap <C-t> :tabnew<CR>                         " new tab in insertmode
+  noremap <C-s> :w<CR>                              " save using ctrl-s
+  inoremap <C-s> <esc>:w<CR>a                       " save without leaving insertmode
+  noremap <C-c> :q<CR>                              " quit using ctrl-c
 
-" Able to jump out to the end of the line with C-e in insertmode
-  inoremap <C-e> <C-o>A
+" DIY auto closing mappings !TODO THIS SHOULD NOT BE A THING---------------------------------------
+  inoremap (( ()<left>                              " double (( gives () -> puts you in the middel
+  inoremap [[ []<left>                              " double [[ gives [] -> puts you in the middel
+  inoremap {{ {}<left>                              " double {{ gives {} -> puts you in the middel
+  inoremap "" ""<left>                              " double "" gives "" -> puts you in the middel
+  inoremap '' ''<left>                              " double '' gives '' -> puts you in the middel
+  inoremap `` ``<left>                              " double `` gives `` -> puts you in the middel
+  inoremap << <><left>                              " double << gives <> -> puts you in the middel
+  inoremap (<cr> (<cr>)<esc>O                       " ( plus ENTER gives () -> with new line
+  inoremap {<cr> {<cr>}<esc>O                       " { plus ENTER gives {} -> with new line
+  inoremap [<cr> [<cr>]<esc>O                       " [ plus ENTER gives [] -> with new line
 
-" Clear hlsearch
-  nmap <silent> <leader>c :noh<CR>
+" AutoCommands  
 
-" Toggle spelling with F8
-  map <F8> :setlocal spell! spelllang=en_us<CR>
+" Vundel plugin manager config--------------------------------------------------------------------
+  set nocompatible                                  " required for vundle
+  filetype off                                      " required for vundle
+  set rtp+=~/.vim/bundle/Vundle.vim                 " runtime path
+  call vundle#begin('~/.vim/bundle')                " START ADDING PLUGINS
+  Plugin 'VundleVim/Vundle.vim'                     " main vundle plugin
 
-" Enable word delete with ctrl backspace
-  noremap! <C-BS> <C-w>
-  noremap! <C-h> <C-w>
+  Plugin 'joshdick/onedark.vim'                     " onedark style
+  Plugin 'itchyny/lightline.vim'                    " statusline
+  Plugin 'itchyny/vim-gitbranch'                    " git for statusline
+  Plugin 'maximbaz/lightline-ale'                   " ale errors in statusline
+  Plugin 'ajh17/spacegray.vim'                      " spacegray style
+  Plugin 'chriskempson/base16-vim'                  " base-16 style
+  Plugin 'cocopon/iceberg.vim'                      " iceberg style
+  Plugin 'scrooloose/nerdtree'                      " document tree
+  Plugin 'Xuyuanp/nerdtree-git-plugin'              " git flags
+  Plugin 'mbbill/undotree'                          " list all undos you can do
+  Plugin 'airblade/vim-gitgutter'                   " show vim diff in gutter
+  Plugin 'JamshedVesuna/vim-markdown-preview'       " support markdown editing
+  Plugin 'pangloss/vim-javascript'                  " better javascript support
+  Plugin 'mxw/vim-jsx'                              " allow jsx syntax
+  Plugin 'kien/ctrlp.vim'                           " beloved fuzzyfinder
+  Plugin 'lervag/vimtex'                            " large LaTeX repo
+  Plugin 'w0rp/ale'                                 " support linting
+  Plugin 'valloric/youcompleteme'                   " completion
+  Plugin 'tpope/vim-surround'                       " change a surrounding pair
 
-" Don't use arrow keys
-  noremap <Up> <NOP>
-  noremap <Down> <NOP>
-  noremap <Left> <NOP>
-  noremap <Right> <NOP>
+  call vundle#end()                                 " STOP ADDING PLUGINS
+  filetype plugin indent on                         " turn back on again
+" ------------------------------------------------------------------------------------------------
 
-" Git commit puts you in insert mode
+" Git commit puts you in insertmode
   autocmd FileType gitcommit exec 'au VimEnter * startinsert'
-
-" Indenting with 2 spaces per tab, and 2 spaces per indent
-  filetype indent on
-  set autoindent
-  set smartindent
-  set tabstop=2
-  set shiftwidth=2
-  set expandtab
-  set smarttab
-
-" Search
-  set hlsearch
-  set incsearch
-  set ignorecase
-  set smartcase
-
-" Show where column and row
-  set colorcolumn=100
-  set cursorline
-
-" Navigate tabs, while in normal mode
-  noremap <C-l> :tabnext<CR>
-  noremap <C-h> :tabprevious<CR>
-  noremap <C-t> :tabnew<CR>
-
-" Ctrl s to save
-  noremap <C-s> :w<CR>
-
-" Save while in insert mode, and stay in insert mode
-  inoremap <C-s> <esc>:w<CR>a
-
-" Ctrl c to quit
-  noremap <C-c> :q<CR>
-
-" DIY autoclosing
-  inoremap (( ()<left>
-  inoremap [[ []<left>
-  inoremap {{ {}<left>
-  inoremap "" ""<left>
-  inoremap '' ''<left>
-  inoremap `` ``<left>
-  inoremap << <><left>
-
-" DIY autoclosing for paragraph
-  inoremap (<cr> (<cr>)<esc>O
-  inoremap {<cr> {<cr>}<esc>O
-  inoremap [<cr> [<cr>]<esc>O
-  
-" Vundel
-  set nocompatible
-  filetype off
-  set rtp+=~/.vim/bundle/Vundle.vim
-
-  call vundle#begin('~/.vim/bundle')
-" --------------------------------------------------------------------------
-" PluginManager, add new with :soruce % -> :PluginInstall
-  Plugin 'VundleVim/Vundle.vim'
-
-  Plugin 'joshdick/onedark.vim'               "onedark style
-  Plugin 'itchyny/lightline.vim'              "statusline
-  Plugin 'itchyny/vim-gitbranch'              "git for statusline
-  Plugin 'maximbaz/lightline-ale'             "ale errors in statusline
-  Plugin 'ajh17/spacegray.vim'                "spacegray style
-  Plugin 'chriskempson/base16-vim'            "base-16 style
-  Plugin 'cocopon/iceberg.vim'                "iceberg style
-  Plugin 'scrooloose/nerdtree'                "document tree
-  Plugin 'Xuyuanp/nerdtree-git-plugin'        "git flags
-  Plugin 'jistr/vim-nerdtree-tabs'            "enhance tabs for nerdtree
-  Plugin 'mbbill/undotree'                    "list all undos you can do
-  Plugin 'airblade/vim-gitgutter'             "show vim diff in gutter
-  Plugin 'JamshedVesuna/vim-markdown-preview' "support markdown editing
-  Plugin 'pangloss/vim-javascript'            "better javascript support
-  Plugin 'mxw/vim-jsx'                        "allow jsx syntax
-  Plugin 'kien/ctrlp.vim'                     "beloved fuzzyfinder
-  Plugin 'lervag/vimtex'                      "large LaTeX repo
-  Plugin 'w0rp/ale'                           "support linting
-  Plugin 'valloric/youcompleteme'             "completion
-  Plugin 'tpope/vim-surround'                 "change a surrounding pair
-  Plugin 'junegunn/vim-easy-align'            "easy alignment
-" --------------------------------------------------------------------------
-  call vundle#end()
-  filetype plugin indent on
 
 " Style settings for syntax and lightline
   set laststatus=2
@@ -150,10 +120,7 @@
   let g:lightline#ale#indicator_ok = "Good"
 
   let g:onedark_termcolors = 256
-  colorscheme onedark
-
-" EasyAlign
-  nmap ga <Plug>(EasyAlign)
+  colorscheme iceberg
 
 " NERDTREE tree setting
   map <C-n> :NERDTreeToggle<CR>
@@ -167,10 +134,11 @@
   let g:nerdtree_tabs_focus_on_files=1
   let g:NERDTreeWinSize=25
   let NERDTreeShowHidden=1
+  let NERDTreeMapOpenInTab='\r'
 
 " Undo tree remap
   nnoremap <F7> :UndotreeToggle<cr>
-  
+
 " Git for nerdtree
   let g:NERDTreeShowIgnoredStatus = 1
 
@@ -202,13 +170,3 @@
 
 " Set dict, only when spelling is on
   set dictionary="/usr/dict/words"
-
-" Abbreviations
-  :abbr supe superuser
-  :abbr autoc autocomplete
-" ------------------------------------------------ 
-  :abbr auth authentication
-  :abbr pl System.out.println
-  :abbr iv Instance variables
-" ------------------------------------------------
-
