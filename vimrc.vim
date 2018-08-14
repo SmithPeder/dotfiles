@@ -1,6 +1,7 @@
 " General settings-------------------------------------------------------------
   syntax on                                         " turn on syntax
   let mapleader = ","                               " map leader to ','
+  filetype indent on                                " indent based on file type
   set encoding=utf8                                 " UTF8 encoding of file
   set number                                        " normal line numbers
   set ttimeoutlen=10                                " used for key code delays
@@ -8,7 +9,6 @@
   set mouse=a                                       " enable mouse movements
   set nowrap                                        " lines don't wrap
   set noswapfile                                    " no stupid .swp file
-  filetype indent on                                " indent based on file type
   set autoindent                                    " turns on auto indent
   set smartindent                                   " does (mostly) right indenting
   set tabstop=2                                     " tabs are at proper location
@@ -23,30 +23,33 @@
   set cursorline                                    " highlight the current line
 
 " General mappings-------------------------------------------------------------
-  inoremap <C-e> <C-o>A                             " jump to end of line in insert mode
-  nmap <silent> <leader><space> :noh<CR>            " clear search highlight
-  map <F8> :setlocal spell! spelllang=en_us<CR>     " turn on spelling
-  noremap! <C-BS> <C-w>                             " enable ctrl backspace
-  noremap! <C-h> <C-w>                              " enable ctrl backspace
-  noremap <Up> <NOP>                                " learn to swim without a life-jacket
-  noremap <Down> <NOP>                              " learn to swim without a life-jacket
-  noremap <Left> <NOP>                              " learn to swim without a life-jacket
-  noremap <Right> <NOP>                             " learn to swim without a life-jacket
-  noremap <C-l> :tabnext<CR>                        " next tab in insert mode
-  noremap <C-h> :tabprevious<CR>                    " prev tab in insert mode
-  noremap <C-t> :tabnew<CR>                         " new tab in insert mode
+  inoremap <C-e> <C-o>A|                            " jump to end of line in insert mode
+  nmap <silent> <leader><space> :noh<CR>|           " clear search highlight
+  map <F8> :setlocal spell! spelllang=en_us<CR>|    " turn on spelling
+  noremap! <C-BS> <C-w>|                            " enable ctrl backspace
+  noremap! <C-h> <C-w>|                             " enable ctrl backspace
+  noremap <Up> <NOP>|                               " learn to swim without a life-jacket
+  noremap <Down> <NOP>|                             " learn to swim without a life-jacket
+  noremap <Left> <NOP>|                             " learn to swim without a life-jacket
+  noremap <Right> <NOP>|                            " learn to swim without a life-jacket
+  noremap <C-l> :tabnext<CR>|                       " next tab in insert mode
+  noremap <C-h> :tabprevious<CR>|                   " prev tab in insert mode
+  noremap <C-t> :tabnew<CR>|                        " new tab in insert mode
+  noremap <C-s> :w<CR>|                             " ctrl s to save
+  inoremap <C-s> <esc>:w<CR>a|                      " ctrl s to save in instet mode
+
 
 " DIY auto closing mappings !TODO THIS SHOULD NOT BE A THING-------------------
-  inoremap (( ()<left>                              " double (( gives () -> puts you in the middle
-  inoremap [[ []<left>                              " --------------------------------------------
-  inoremap {{ {}<left>                              " --------------------------------------------
-  inoremap "" ""<left>                              " --------------------------------------------
-  inoremap '' ''<left>                              " --------------------------------------------
-  inoremap `` ``<left>                              " --------------------------------------------
-  inoremap << <><left>                              " --------------------------------------------
-  inoremap (<cr> (<cr>)<esc>O                       " single ( and ENTER gives () -> with new line
-  inoremap {<cr> {<cr>}<esc>O                       " --------------------------------------------
-  inoremap [<cr> [<cr>]<esc>O                       " --------------------------------------------
+  inoremap (( ()<left>|                             " double (( gives () -> puts you in the middle
+  inoremap [[ []<left>|                             " --------------------------------------------
+  inoremap {{ {}<left>|                             " --------------------------------------------
+  inoremap "" ""<left>|                             " --------------------------------------------
+  inoremap '' ''<left>|                             " --------------------------------------------
+  inoremap `` ``<left>|                             " --------------------------------------------
+  inoremap << <><left>|                             " --------------------------------------------
+  inoremap (<cr> (<cr>)<esc>O|                      " single ( and ENTER gives () -> with new line
+  inoremap {<cr> {<cr>}<esc>O|                      " --------------------------------------------
+  inoremap [<cr> [<cr>]<esc>O|                      " --------------------------------------------
 
 " Vundel plugin manager config-------------------------------------------------
   set nocompatible                                  " required for vundle
@@ -70,6 +73,7 @@
   Plugin 'lervag/vimtex'                            " large LaTeX repo
   Plugin 'w0rp/ale'                                 " support linting
   Plugin 'valloric/youcompleteme'                   " completion
+  Plugin 'jistr/vim-nerdtree-tabs'                  " nerdtree better tabs
 
   call vundle#end()                                 " STOP ADDING PLUGINS
   filetype plugin indent on                         " turn back on again
@@ -113,14 +117,16 @@
   let g:onedark_termcolors = 256
   colorscheme onedark
 
-" NERDTREE tree setting
+" NERDTree setting
   map <C-n> :NERDTreeToggle<CR>
   let NERDTreeMinimalUI = 1
   let NERDTreeDirArrows = 1
   autocmd vimenter * NERDTree
+  let NERDTreeAutoDeleteBuffer = 1
   autocmd StdinReadPre * let s:std_in=1
   autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
   autocmd VimEnter * wincmd p
+" NERDTree tab settings
   let g:nerdtree_tabs_open_on_console_startup=1
   let g:nerdtree_tabs_focus_on_files=1
   let g:NERDTreeWinSize=25
