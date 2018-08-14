@@ -19,34 +19,34 @@
   set incsearch                                     " enable incremental search
   set ignorecase                                    " /the -> the/The/THE/tHe
   set smartcase                                     " goes together with ignorecase
-  set colorcolumn=80                                " set a column at 100 chars 
+  set colorcolumn=80                                " set a column at 100 chars
   set cursorline                                    " highlight the current line
 
 " General mappings-------------------------------------------------------------
-  inoremap <C-e> <C-o>A                             " jump to end of line in insertmode
+  inoremap <C-e> <C-o>A                             " jump to end of line in insert mode
   nmap <silent> <leader><space> :noh<CR>            " clear search highlight
   map <F8> :setlocal spell! spelllang=en_us<CR>     " turn on spelling
   noremap! <C-BS> <C-w>                             " enable ctrl backspace
   noremap! <C-h> <C-w>                              " enable ctrl backspace
-  noremap <Up> <NOP>                                " learn to swim without a lifejacket
-  noremap <Down> <NOP>                              " learn to swim without a lifejacket
-  noremap <Left> <NOP>                              " learn to swim without a lifejacket
-  noremap <Right> <NOP>                             " learn to swim without a lifejacket
-  noremap <C-l> :tabnext<CR>                        " next tab in insertmode
-  noremap <C-h> :tabprevious<CR>                    " prev tab in insertmode
-  noremap <C-t> :tabnew<CR>                         " new tab in insertmode
+  noremap <Up> <NOP>                                " learn to swim without a life-jacket
+  noremap <Down> <NOP>                              " learn to swim without a life-jacket
+  noremap <Left> <NOP>                              " learn to swim without a life-jacket
+  noremap <Right> <NOP>                             " learn to swim without a life-jacket
+  noremap <C-l> :tabnext<CR>                        " next tab in insert mode
+  noremap <C-h> :tabprevious<CR>                    " prev tab in insert mode
+  noremap <C-t> :tabnew<CR>                         " new tab in insert mode
 
 " DIY auto closing mappings !TODO THIS SHOULD NOT BE A THING-------------------
-  inoremap (( ()<left>                              " double (( gives () -> puts you in the middel
-  inoremap [[ []<left>                              " double [[ gives [] -> puts you in the middel
-  inoremap {{ {}<left>                              " double {{ gives {} -> puts you in the middel
-  inoremap "" ""<left>                              " double "" gives "" -> puts you in the middel
-  inoremap '' ''<left>                              " double '' gives '' -> puts you in the middel
-  inoremap `` ``<left>                              " double `` gives `` -> puts you in the middel
-  inoremap << <><left>                              " double << gives <> -> puts you in the middel
-  inoremap (<cr> (<cr>)<esc>O                       " ( plus ENTER gives () -> with new line
-  inoremap {<cr> {<cr>}<esc>O                       " { plus ENTER gives {} -> with new line
-  inoremap [<cr> [<cr>]<esc>O                       " [ plus ENTER gives [] -> with new line
+  inoremap (( ()<left>                              " double (( gives () -> puts you in the middle
+  inoremap [[ []<left>                              " --------------------------------------------
+  inoremap {{ {}<left>                              " --------------------------------------------
+  inoremap "" ""<left>                              " --------------------------------------------
+  inoremap '' ''<left>                              " --------------------------------------------
+  inoremap `` ``<left>                              " --------------------------------------------
+  inoremap << <><left>                              " --------------------------------------------
+  inoremap (<cr> (<cr>)<esc>O                       " single ( and ENTER gives () -> with new line
+  inoremap {<cr> {<cr>}<esc>O                       " --------------------------------------------
+  inoremap [<cr> [<cr>]<esc>O                       " --------------------------------------------
 
 " Vundel plugin manager config-------------------------------------------------
   set nocompatible                                  " required for vundle
