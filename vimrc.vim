@@ -1,28 +1,28 @@
-" General settings---------------------------------------------------------------------------------
-  syntax on                   " turn on syntax
-  let mapleader = ","         " map leader to ','
-  set encoding=utf8           " UTF8 encoding of file
-  set number                  " normal line numbers
-  set ttimeoutlen=10          " used for key code delays
-  set scrolloff=10            " always keep lines at end
-  set mouse=a                 " enable mouse movements
-  set nowrap                  " lines don't wrap
-  set noswapfile              " no stupid .swp file
-  filetype indent on          " indent based on file type
-  set autoindent              " turns on auto indent
-  set smartindent             " does (mostly) right indenting
-  set tabstop=2               " tabs are at proper location
-  set shiftwidth=2            " one tab are 2 spaces
-  set expandtab               " tabs are actually spaces
-  set smarttab                " tabs fit with tabstops
-  set hlsearch                " highlight all matching text
-  set incsearch               " enable incremental search
-  set ignorecase              " /the -> the/The/THE/tHe
-  set smartcase               " goes together with ignorecase
-  set colorcolumn=100         " set a column at 100 chars 
-  set cursorline              " highlight the current line
+" General settings-------------------------------------------------------------
+  syntax on                                         " turn on syntax
+  let mapleader = ","                               " map leader to ','
+  set encoding=utf8                                 " UTF8 encoding of file
+  set number                                        " normal line numbers
+  set ttimeoutlen=10                                " used for key code delays
+  set scrolloff=10                                  " always keep lines at end
+  set mouse=a                                       " enable mouse movements
+  set nowrap                                        " lines don't wrap
+  set noswapfile                                    " no stupid .swp file
+  filetype indent on                                " indent based on file type
+  set autoindent                                    " turns on auto indent
+  set smartindent                                   " does (mostly) right indenting
+  set tabstop=2                                     " tabs are at proper location
+  set shiftwidth=2                                  " one tab are 2 spaces
+  set expandtab                                     " tabs are actually spaces
+  set smarttab                                      " tabs fit with tabstops
+  set hlsearch                                      " highlight all matching text
+  set incsearch                                     " enable incremental search
+  set ignorecase                                    " /the -> the/The/THE/tHe
+  set smartcase                                     " goes together with ignorecase
+  set colorcolumn=80                                " set a column at 100 chars 
+  set cursorline                                    " highlight the current line
 
-" General mappings---------------------------------------------------------------------------------
+" General mappings-------------------------------------------------------------
   inoremap <C-e> <C-o>A                             " jump to end of line in insertmode
   nmap <silent> <leader><space> :noh<CR>            " clear search highlight
   map <F8> :setlocal spell! spelllang=en_us<CR>     " turn on spelling
@@ -35,11 +35,8 @@
   noremap <C-l> :tabnext<CR>                        " next tab in insertmode
   noremap <C-h> :tabprevious<CR>                    " prev tab in insertmode
   noremap <C-t> :tabnew<CR>                         " new tab in insertmode
-  noremap <C-s> :w<CR>                              " save using ctrl-s
-  inoremap <C-s> <esc>:w<CR>a                       " save without leaving insertmode
-  noremap <C-c> :q<CR>                              " quit using ctrl-c
 
-" DIY auto closing mappings !TODO THIS SHOULD NOT BE A THING---------------------------------------
+" DIY auto closing mappings !TODO THIS SHOULD NOT BE A THING-------------------
   inoremap (( ()<left>                              " double (( gives () -> puts you in the middel
   inoremap [[ []<left>                              " double [[ gives [] -> puts you in the middel
   inoremap {{ {}<left>                              " double {{ gives {} -> puts you in the middel
@@ -51,9 +48,7 @@
   inoremap {<cr> {<cr>}<esc>O                       " { plus ENTER gives {} -> with new line
   inoremap [<cr> [<cr>]<esc>O                       " [ plus ENTER gives [] -> with new line
 
-" AutoCommands  
-
-" Vundel plugin manager config--------------------------------------------------------------------
+" Vundel plugin manager config-------------------------------------------------
   set nocompatible                                  " required for vundle
   filetype off                                      " required for vundle
   set rtp+=~/.vim/bundle/Vundle.vim                 " runtime path
@@ -64,9 +59,6 @@
   Plugin 'itchyny/lightline.vim'                    " statusline
   Plugin 'itchyny/vim-gitbranch'                    " git for statusline
   Plugin 'maximbaz/lightline-ale'                   " ale errors in statusline
-  Plugin 'ajh17/spacegray.vim'                      " spacegray style
-  Plugin 'chriskempson/base16-vim'                  " base-16 style
-  Plugin 'cocopon/iceberg.vim'                      " iceberg style
   Plugin 'scrooloose/nerdtree'                      " document tree
   Plugin 'Xuyuanp/nerdtree-git-plugin'              " git flags
   Plugin 'mbbill/undotree'                          " list all undos you can do
@@ -78,11 +70,10 @@
   Plugin 'lervag/vimtex'                            " large LaTeX repo
   Plugin 'w0rp/ale'                                 " support linting
   Plugin 'valloric/youcompleteme'                   " completion
-  Plugin 'tpope/vim-surround'                       " change a surrounding pair
 
   call vundle#end()                                 " STOP ADDING PLUGINS
   filetype plugin indent on                         " turn back on again
-" ------------------------------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 
 " Git commit puts you in insertmode
   autocmd FileType gitcommit exec 'au VimEnter * startinsert'
@@ -120,7 +111,7 @@
   let g:lightline#ale#indicator_ok = "Good"
 
   let g:onedark_termcolors = 256
-  colorscheme iceberg
+  colorscheme onedark
 
 " NERDTREE tree setting
   map <C-n> :NERDTreeToggle<CR>
@@ -128,13 +119,15 @@
   let NERDTreeDirArrows = 1
   autocmd vimenter * NERDTree
   autocmd StdinReadPre * let s:std_in=1
-  autocmd VimEnter * wincmd p
   autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+  autocmd VimEnter * wincmd p
   let g:nerdtree_tabs_open_on_console_startup=1
   let g:nerdtree_tabs_focus_on_files=1
   let g:NERDTreeWinSize=25
   let NERDTreeShowHidden=1
   let NERDTreeMapOpenInTab='\r'
+  autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
 
 " Undo tree remap
   nnoremap <F7> :UndotreeToggle<cr>
