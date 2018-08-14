@@ -112,6 +112,7 @@
   let g:lightline#ale#indicator_errors = "Errors:"
   let g:lightline#ale#indicator_ok = "Good"
 
+" Theme settings
   let g:onedark_termcolors = 256
   colorscheme onedark
 
@@ -137,11 +138,18 @@
 " Puts you in insermode when file is gitcommit
   autocmd FileType gitcommit  exec 'au VimEnter * startinsert'
 
+" Git gutter settings
+  let g:gitgutter_sign_added = '|'
+  let g:gitgutter_sign_modified = '|'
+  let g:gitgutter_sign_removed = '|'
+  let g:gitgutter_sign_removed_first_line = '__'
+  let g:gitgutter_sign_modified_removed = '__'
+
 " Ale settings---------------------------------------------------------------
   let g:ale_fixers = {
     \  'javascript': ['prettier'],
   \}
-  let g:ale_fix_on_save = 1                         " lint on save
+  let g:ale_fix_on_save = 1                         " prettier on save
   let g:ale_sign_column_always = 1                  " always leave room for ale
   let g:ale_lint_on_text_changed = 'never'          " dont lint on text changed
 
