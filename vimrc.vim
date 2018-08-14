@@ -37,6 +37,7 @@
   noremap <C-t> :tabnew<CR>|                        " new tab in insert mode
   noremap <C-s> :w<CR>|                             " ctrl s to save
   inoremap <C-s> <esc>:w<CR>a|                      " ctrl s to save in instet mode
+  noremap <C-c> :q<CR>|                             " ctrl c to quit
 
 
 " DIY auto closing mappings !TODO THIS SHOULD NOT BE A THING-------------------

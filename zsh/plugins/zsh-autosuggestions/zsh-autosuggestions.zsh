@@ -85,7 +85,7 @@ ZSH_AUTOSUGGEST_IGNORE_WIDGETS=(
 )
 
 # Max size of buffer to trigger autosuggestion. Leave undefined for no upper bound.
-ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=
+ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=30
 
 #--------------------------------------------------------------------#
 # Handle Deprecated Variables/Widgets                                #
@@ -471,3 +471,5 @@ _zsh_autosuggest_start() {
 
 autoload -Uz add-zsh-hook
 add-zsh-hook precmd _zsh_autosuggest_start
+
+bindkey '^ ' autosuggest-accept
