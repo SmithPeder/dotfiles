@@ -64,16 +64,20 @@
   Plugin 'itchyny/vim-gitbranch'                    " git for statusline
   Plugin 'maximbaz/lightline-ale'                   " ale errors in statusline
   Plugin 'scrooloose/nerdtree'                      " document tree
+  Plugin 'jistr/vim-nerdtree-tabs'                  " document tree tabs
   Plugin 'Xuyuanp/nerdtree-git-plugin'              " git flags
   Plugin 'mbbill/undotree'                          " list all undos you can do
   Plugin 'airblade/vim-gitgutter'                   " show vim diff in gutter
   Plugin 'JamshedVesuna/vim-markdown-preview'       " support markdown editing
   Plugin 'pangloss/vim-javascript'                  " better javascript support
   Plugin 'mxw/vim-jsx'                              " allow jsx syntax
-  Plugin 'kien/ctrlp.vim'                           " beloved fuzzyfinder
+  Plugin 'ctrlpvim/ctrlp.vim'                       " beloved fuzzyfinder
   Plugin 'lervag/vimtex'                            " large LaTeX repo
   Plugin 'w0rp/ale'                                 " support linting
   Plugin 'valloric/youcompleteme'                   " completion
+  Plugin 'JuliaEditorSupport/julia-vim'             " julia support
+  Plugin 'ryanoasis/vim-devicons'                   " nerdtree icons
+  Plugin 'airblade/vim-rooter'                      " always get root folder
 
   call vundle#end()                                 " STOP ADDING PLUGINS
   filetype plugin indent on                         " turn back on again
@@ -117,16 +121,12 @@
   colorscheme onedark
 
 " Using vim tree to make vim more user friendly-------------------------------
-  map <LEADER>, :NERDTreeToggle<CR>|                " toggle the tree
-  autocmd vimenter * NERDTree                       " open file -> open tree
-  autocmd VimEnter * wincmd p                       " go back to file
-  autocmd StdinReadPre * let s:std_in=1             " open tree with no file
-  autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-  let NERDTreeMinimalUI = 1                         " cleaner tree look
-  let NERDTreeDirArrows = 1                         " set direction arrows
-  let g:NERDTreeShowIgnoredStatus = 1               " git for nedtree
-  let g:NERDTreeWinSize=25                          " size nerdtree
-  let NERDTreeShowHidden=1                          " show hidden files
+  map <LEADER>, :NERDTreeTabsToggle<CR>|                " toggle the tree
+  let NERDTreeMinimalUI = 1                             " cleaner tree look
+  let NERDTreeDirArrows = 1                             " set direction arrows
+  let g:NERDTreeShowIgnoredStatus = 1                   " git for nedtree
+  let g:NERDTreeWinSize=30                              " size nerdtree
+  let NERDTreeShowHidden=1                              " show hidden files
   autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Toggel UNDOTree
@@ -155,8 +155,11 @@
 
 " CTRLP .ignore files/folders
   let g:ctrlp_max_files = 0
-  noremap <M-p> :CtrlPBuffer<CR>
   set wildignore+=*/venv/*,*/target/*,*/node_modules/*,*/*.class,*/*.pyc,*/*.o
+  let g:ctrlp_prompt_mappings = {
+    \ 'AcceptSelection("e")': ['<c-t>'],
+    \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
+    \ }
 
 " Tab to complete words
   function! Tab_Or_Complete()
@@ -170,3 +173,8 @@
 
 " Set dict, only when spelling is on
   set dictionary="/usr/dict/words"
+
+" Use matchit when writing Julia
+  runtime macros/matchit.vim
+" Leader fb formats the current block using toggle.
+  noremap <Leader>fb :call julia#toggle_function_blockassign()<CR>

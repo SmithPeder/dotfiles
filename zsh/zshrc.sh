@@ -24,6 +24,12 @@
 # Pycharm path
   export PATH=$PATH:~/pycharm/bin
 
+# Julia
+  export PATH=$PATH:~/julia-1.0.0/bin
+
+# VPN
+  export PATH=$PATH:~/anyconnect-linux64-4.6.00362/vpn
+
 # Export junit
   export CLASSPATH=.:$CLASSPATH:~/JUnit/junit-4.12.jar:~/JUnit/hamcrest-core-1.3.jar
 

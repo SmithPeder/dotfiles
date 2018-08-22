@@ -40,9 +40,21 @@
 
 # Git diff
   git_diff() {
-      git diff;
+    git diff;
   }
   alias gd="git_diff"
+
+# Git checkout master
+  git_checkoutMaster() {
+    git checkout master;
+  }
+  alias gcm="git_checkoutMaster"
+
+# Git branch
+  git_branch() {
+    git branch;
+  }
+  alias gb="git_branch"
 
 # Go to home
   function goto_home() { 
