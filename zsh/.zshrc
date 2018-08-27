@@ -1,3 +1,10 @@
+# Run tmux if exists
+    if command -v tmux>/dev/null; then
+        [ -z $TMUX ] && exec tmux
+    else
+        echo "tmux not installed on this system"
+    fi
+
 # History
   HISTFILE=~/.zsh_history
   SAVEHIST=10000 
@@ -19,20 +26,10 @@
   source ~/dotfiles/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Keybindings
-  source ~/dotfiles/zsh/bind.sh
+  source ~/bind.sh
 
-# Pycharm path
-  export PATH=$PATH:~/pycharm/bin
-
-# Julia
-  export PATH=$PATH:~/julia-1.0.0/bin
-
-# VPN
-  export PATH=$PATH:~/anyconnect-linux64-4.6.00362/vpn
-
-# Export junit
-  export CLASSPATH=.:$CLASSPATH:~/JUnit/junit-4.12.jar:~/JUnit/hamcrest-core-1.3.jar
-
+# Get prompt design
+  source ~/prompt.sh
 # Fix for arrow-key searching
 # start typing + [Up-Arrow] - fuzzy find history forward
   if [[ "${terminfo[kcuu1]}" != "" ]]; then
@@ -47,8 +44,9 @@
     bindkey "${terminfo[kcud1]}" down-line-or-beginning-search
   fi
 
-# Get prompt design
-  source ~/dotfiles/zsh/prompt.sh
-
 # Get standard profile settings
   source /etc/profile
+
+# Get local path stuff
+  source ~/dotfiles/zsh/local.sh
+

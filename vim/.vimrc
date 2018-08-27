@@ -20,7 +20,6 @@
   set ignorecase                                    " /the -> the/The/THE/tHe
   set smartcase                                     " goes together with ignorecase
   set colorcolumn=80                                " set a column at 80 chars
-  set cursorline                                    " highlight the current line
 
 " General mappings------------------------------------------------------------
   inoremap <C-e> <C-o>A|                            " jump to end of line in insert mode
@@ -72,11 +71,9 @@
   Plugin 'pangloss/vim-javascript'                  " better javascript support
   Plugin 'mxw/vim-jsx'                              " allow jsx syntax
   Plugin 'ctrlpvim/ctrlp.vim'                       " beloved fuzzyfinder
-  Plugin 'lervag/vimtex'                            " large LaTeX repo
   Plugin 'w0rp/ale'                                 " support linting
   Plugin 'valloric/youcompleteme'                   " completion
   Plugin 'JuliaEditorSupport/julia-vim'             " julia support
-  Plugin 'ryanoasis/vim-devicons'                   " nerdtree icons
   Plugin 'airblade/vim-rooter'                      " always get root folder
 
   call vundle#end()                                 " STOP ADDING PLUGINS
@@ -132,7 +129,7 @@
 " Toggel UNDOTree
   nnoremap <LEADER>u :UndotreeToggle<cr>
 
-" Enable vim markdown preview 
+" Enable vim markdown preview, used using grip `file.md` 
   let vim_markdown_preview_github=1
 
 " Puts you in insermode when file is gitcommit

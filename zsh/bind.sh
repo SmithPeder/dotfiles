@@ -73,7 +73,7 @@
 
 # Custom list
   list() {
-    ls -a -1;
+    ls -a;
   }
   alias l="list"
 
@@ -102,6 +102,3 @@
       rm *.class
     fi
   }
-
-# Soruce local bindings that should not be on comitted
-  source ~/dotfiles/zsh/bind_local.sh
