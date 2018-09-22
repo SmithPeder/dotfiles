@@ -72,9 +72,11 @@
   Plugin 'mxw/vim-jsx'                              " allow jsx syntax
   Plugin 'ctrlpvim/ctrlp.vim'                       " beloved fuzzyfinder
   Plugin 'w0rp/ale'                                 " support linting
-  Plugin 'valloric/youcompleteme'                   " completion
+  Plugin 'ervandew/supertab'                        " completion
   Plugin 'JuliaEditorSupport/julia-vim'             " julia support
   Plugin 'airblade/vim-rooter'                      " always get root folder
+  Plugin 'fatih/vim-go'                             " go support
+  Plugin 'bitfield/vim-gitgo'                       " go color support
 
   call vundle#end()                                 " STOP ADDING PLUGINS
   filetype plugin indent on                         " turn back on again
@@ -116,6 +118,15 @@
 " Theme settings
   let g:onedark_termcolors = 256
   colorscheme onedark
+
+" Go settings
+  let g:go_highlight_types = 1
+  let g:go_highlight_fields = 1
+  let g:go_highlight_functions = 1
+  let g:go_highlight_function_calls = 1
+  let g:go_highlight_operators = 1
+
+  autocmd BufNewFile,BufRead *.go colorscheme gitgo
 
 " Using vim tree to make vim more user friendly-------------------------------
   map <LEADER>, :NERDTreeTabsToggle<CR>|                " toggle the tree

@@ -50,3 +50,5 @@
 # Get local path stuff
   source ~/dotfiles/zsh/local.sh
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

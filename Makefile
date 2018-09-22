@@ -22,12 +22,24 @@ zsh:
 	@stow zsh
 	@chsh -s $(which zsh)
 
+fzf:
+	@stow fzf
+
+sourcefont:
+	@wget https://github.com/adobe-fonts/source-code-pro/archive/2.030R-ro/1.050R-it.zip
+	@unzip 1.050R-it.zip
+	@mkdir -p ~/.fonts
+	@cp source-code-pro-*-it/OTF/*.otf ~/.fonts/
+	@fc-cache -f -v
+	@rm -rf 1.05R-it.zip
+	@rm -rf source-code-pro-2.030R-ro-105R-it
+
+
+
 dev:
 	@sudo apt-get install nodejs
 	@sudo apt-get install python3.6
 	@sudo apt install python-pip
 	@sudo apt install python3-pip
 	@sudo apt-get install git
-	@sudo curl -L https://github.com/docker/compose/releases/download/1.22.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
-	@sudo chmod +x /usr/local/bin/docker-compose
 	@sudo apt install docker.io
