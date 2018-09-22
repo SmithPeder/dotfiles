@@ -19,37 +19,37 @@
   set incsearch                                     " enable incremental search
   set ignorecase                                    " /the -> the/The/THE/tHe
   set smartcase                                     " goes together with ignorecase
-  set colorcolumn=80                                " set a column at 80 chars
 
 " General mappings------------------------------------------------------------
-  inoremap <C-e> <C-o>A|                            " jump to end of line in insert mode
-  nmap <silent> <leader><space> :noh<CR>|           " clear search highlight
-  map <F8> :setlocal spell! spelllang=en_us<CR>|    " turn on spelling
-  noremap! <C-BS> <C-w>|                            " enable ctrl backspace
-  noremap! <C-h> <C-w>|                             " enable ctrl backspace
-  noremap <Up> <NOP>|                               " learn to swim without a life-jacket
-  noremap <Down> <NOP>|                             " learn to swim without a life-jacket
-  noremap <Left> <NOP>|                             " learn to swim without a life-jacket
-  noremap <Right> <NOP>|                            " learn to swim without a life-jacket
-  noremap <C-l> :tabnext<CR>|                       " next tab in normal mode
-  noremap <C-h> :tabprevious<CR>|                   " prev tab in normal mode
-  noremap <C-t> :tabnew<CR>|                        " new tab in normal mode
-  noremap <C-s> :w<CR>|                             " ctrl s to save
-  inoremap <C-s> <esc>:w<CR>a|                      " ctrl s to save in insert mode
-  noremap <C-c> :q<CR>|                             " ctrl c to quit
+  inoremap <C-e> <C-o>A
+  nmap <silent> <leader><space> :noh<CR>
+  map <leader>s :setlocal spell! spelllang=en_us<CR>
+  nnoremap <LEADER>u :UndotreeToggle<cr>
+  noremap! <C-BS> <C-w>
+  noremap! <C-h> <C-w>
+  noremap <Up> <NOP>
+  noremap <Down> <NOP>
+  noremap <Left> <NOP>
+  noremap <Right> <NOP>
+  noremap <C-l> :tabnext<CR>
+  noremap <C-h> :tabprevious<CR>
+  noremap <C-t> :tabnew<CR>
+  noremap <C-s> :w<CR>
+  inoremap <C-s> <esc>:w<CR>
+  noremap <C-c> :q<CR>
 
 
-" DIY auto closing mappings !TODO THIS SHOULD NOT BE A THING------------------
-  inoremap (( ()<left>|                             " double (( gives () -> puts you in the middle
-  inoremap [[ []<left>|                             " --------------------------------------------
-  inoremap {{ {}<left>|                             " --------------------------------------------
-  inoremap "" ""<left>|                             " --------------------------------------------
-  inoremap '' ''<left>|                             " --------------------------------------------
-  inoremap `` ``<left>|                             " --------------------------------------------
-  inoremap << <><left>|                             " --------------------------------------------
-  inoremap (<cr> (<cr>)<esc>O|                      " single ( and ENTER gives () -> with new line
-  inoremap {<cr> {<cr>}<esc>O|                      " --------------------------------------------
-  inoremap [<cr> [<cr>]<esc>O|                      " --------------------------------------------
+" DIY auto closing mappings---------------------------------------------------
+  inoremap (( ()<left>
+  inoremap [[ []<left>
+  inoremap {{ {}<left>
+  inoremap "" ""<left>
+  inoremap '' ''<left>
+  inoremap `` ``<left>
+  inoremap << <><left>
+  inoremap (<cr> (<cr>)<esc>O
+  inoremap {<cr> {<cr>}<esc>O
+  inoremap [<cr> [<cr>]<esc>O
 
 " Vundel plugin manager config------------------------------------------------
   set nocompatible                                  " required for vundle
@@ -59,6 +59,8 @@
   Plugin 'VundleVim/Vundle.vim'                     " main vundle plugin
 
   Plugin 'joshdick/onedark.vim'                     " onedark style
+  Plugin 'sheerun/vim-polyglot'                     " syntax
+  Plugin 'dikiaap/minimalist'
   Plugin 'itchyny/lightline.vim'                    " statusline
   Plugin 'itchyny/vim-gitbranch'                    " git for statusline
   Plugin 'maximbaz/lightline-ale'                   " ale errors in statusline
@@ -67,7 +69,6 @@
   Plugin 'Xuyuanp/nerdtree-git-plugin'              " git flags
   Plugin 'mbbill/undotree'                          " list all undos you can do
   Plugin 'airblade/vim-gitgutter'                   " show vim diff in gutter
-  Plugin 'JamshedVesuna/vim-markdown-preview'       " support markdown editing
   Plugin 'pangloss/vim-javascript'                  " better javascript support
   Plugin 'mxw/vim-jsx'                              " allow jsx syntax
   Plugin 'ctrlpvim/ctrlp.vim'                       " beloved fuzzyfinder
@@ -76,12 +77,10 @@
   Plugin 'JuliaEditorSupport/julia-vim'             " julia support
   Plugin 'airblade/vim-rooter'                      " always get root folder
   Plugin 'fatih/vim-go'                             " go support
-  Plugin 'bitfield/vim-gitgo'                       " go color support
 
   call vundle#end()                                 " STOP ADDING PLUGINS
   filetype plugin indent on                         " turn back on again
 " ----------------------------------------------------------------------------
-
 
 " Style settings for syntax and lightline
   set laststatus=2
@@ -116,34 +115,21 @@
   let g:lightline#ale#indicator_ok = "Good"
 
 " Theme settings
-  let g:onedark_termcolors = 256
-  colorscheme onedark
-
-" Go settings
-  let g:go_highlight_types = 1
-  let g:go_highlight_fields = 1
-  let g:go_highlight_functions = 1
-  let g:go_highlight_function_calls = 1
-  let g:go_highlight_operators = 1
-
-  autocmd BufNewFile,BufRead *.go colorscheme gitgo
-
+  let g:spacegray_termcolors = 256
+  set t_Co=256
+  colorscheme minimalist
+  let g:spacegray_underline_search = 1
+  
 " Using vim tree to make vim more user friendly-------------------------------
-  map <LEADER>, :NERDTreeTabsToggle<CR>|                " toggle the tree
-  let NERDTreeMinimalUI = 1                             " cleaner tree look
-  let NERDTreeDirArrows = 1                             " set direction arrows
-  let g:NERDTreeShowIgnoredStatus = 1                   " git for nedtree
-  let g:NERDTreeWinSize=30                              " size nerdtree
-  let NERDTreeShowHidden=1                              " show hidden files
+  map <LEADER>, :NERDTreeTabsToggle<CR>
+  let NERDTreeMinimalUI = 1
+  let NERDTreeDirArrows = 1
+  let g:NERDTreeShowIgnoredStatus = 1
+  let g:NERDTreeWinSize = 30
+  let NERDTreeShowHidden = 1
   autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-" Toggel UNDOTree
-  nnoremap <LEADER>u :UndotreeToggle<cr>
-
-" Enable vim markdown preview, used using grip `file.md` 
-  let vim_markdown_preview_github=1
-
-" Puts you in insermode when file is gitcommit
+" Puts you in insertmode when file is gitcommit
   autocmd FileType gitcommit  exec 'au VimEnter * startinsert'
 
 " Git gutter settings
@@ -157,9 +143,9 @@
   let g:ale_fixers = {
     \  'javascript': ['prettier'],
   \}
-  let g:ale_fix_on_save = 1                         " prettier on save
-  let g:ale_sign_column_always = 1                  " always leave room for ale
-  let g:ale_lint_on_text_changed = 'never'          " dont lint on text changed
+  let g:ale_fix_on_save = 1
+  let g:ale_sign_column_always = 1
+  let g:ale_lint_on_text_changed = 'never'
 
 " CTRLP .ignore files/folders
   let g:ctrlp_max_files = 0
@@ -169,16 +155,6 @@
     \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
     \ }
 
-" Tab to complete words
-  function! Tab_Or_Complete()
-    if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
-      return "\<C-N>"
-    else
-      return "\<Tab>"
-    endif
-   endfunction
-  inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
-
 " Set dict, only when spelling is on
   set dictionary="/usr/dict/words"
 
@@ -186,3 +162,5 @@
   runtime macros/matchit.vim
 " Leader fb formats the current block using toggle.
   noremap <Leader>fb :call julia#toggle_function_blockassign()<CR>
+
+
