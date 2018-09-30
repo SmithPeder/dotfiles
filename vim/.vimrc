@@ -1,3 +1,4 @@
+
 " General settings------------------------------------------------------------
   syntax on                                         " turn on syntax
   let mapleader = ","                               " map leader to ','
