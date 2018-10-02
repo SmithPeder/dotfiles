@@ -1,4 +1,3 @@
-
 " General settings------------------------------------------------------------
   syntax on                                         " turn on syntax
   let mapleader = ","                               " map leader to ','
@@ -38,7 +37,6 @@
   noremap <C-s> :w<CR>
   inoremap <C-s> <esc>:w<CR>
   noremap <C-c> :q<CR>
-
 
 " DIY auto closing mappings---------------------------------------------------
   inoremap (( ()<left>
@@ -83,7 +81,7 @@
   filetype plugin indent on                         " turn back on again
 " ----------------------------------------------------------------------------
 
-" Style settings for syntax and lightline
+" Lightline
   set laststatus=2
   let g:lightline = {
     \ 'colorscheme': 'onedark',
@@ -161,7 +159,6 @@
 
 " Use matchit when writing Julia
   runtime macros/matchit.vim
-" Leader fb formats the current block using toggle.
-  noremap <Leader>fb :call julia#toggle_function_blockassign()<CR>
 
-
+" Other stuff
+  hi VertSplit ctermbg=234 ctermfg=234

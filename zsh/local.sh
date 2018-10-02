@@ -13,7 +13,7 @@
 # Export gradle
   export PATH=$PATH:/opt/gradle/gradle-4.10/bin
 
-# Export Intellj
+# Export Intell
   export PATH=$PATH:~/idea-IU-182.4129.33/bin
 
 # Export maven
@@ -23,4 +23,7 @@
   export PATH=/usr/local/gcc-arm-none-eabi-5_4-2016q3/bin:$PATH
 
 # Export go
-  export PATH=$PATH:/usr/local/go/bin
+  export PATH=$PATH:/usr/local/go/bin 
+
+# Export local go
+  export PATH=$PATH:~/go/bin

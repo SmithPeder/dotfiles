@@ -31,7 +31,7 @@ make -B fzf
 ```
 - Lastly open `vim` and run `:Plugininstall`. 
 
-This will download and add every plugin in `.vimrc`.  
+This will download and add every plugin in `.vimrc`.
 To add new plugins add them between the two `call vundle#` tags. 
 Check the [Vundle](https://github.com/VundleVim/Vundle.vim) github page for more info.
 ```vim
@@ -43,7 +43,13 @@ call vundle#end()
 ```
 
 ## Current style
-Example running three pages with tmux. 
+`Vim:` Always display `NERDTree`, and depend on multiple tabs. Using `CTRL+(H/J)` to jump 
+between makes it a very natural movement. Using `ctrlP` with OpenNewTab as default also
+makes working with tabs and files more enjoyable.
+
+`tmux:` Prefer to split the terminal over splitting vim. Using `<leader>` and `h,j,k,l` 
+again makes it very natural to move between multiplexes.
+
 <p align="center"> 
-<img src="http://i.imgur.com/vcmqqXg.jpg">
+<img src="http://i.imgur.com/sxTN5hF.jpg">
 </p>
