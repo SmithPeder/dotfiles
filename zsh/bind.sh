@@ -15,46 +15,34 @@
   bindkey "^g" git_prepare
 
 # Git add
-  git_add() {
-    git add -A;
-  }
-  alias ga="git_add"
+  alias ga="git add -A"
 
 # Git commit
-  git_commit() {
-    git commit;
-  }
-  alias gc="git_commit"
+  alias gc="git commit"
 
 # Git status
-  git_status(){
-    git status;
-  }
-  alias gs="git_status"
+  alias gs="git status"
 
 # Git push
-  git_push(){
-    git push;
-  }
-  alias gp="git_push"
+  alias gp="git push"
 
 # Git diff
-  git_diff() {
-    git diff;
-  }
-  alias gd="git_diff"
+  alias gd="git diff"
 
 # Git checkout master
-  git_checkoutMaster() {
-    git checkout master;
-  }
-  alias gcm="git_checkoutMaster"
+  alias gcm="git checkout master"
 
 # Git branch
-  git_branch() {
-    git branch;
-  }
-  alias gb="git_branch"
+  alias gb="git branch"
+
+# Django runserver
+  alias mr="./manage.py runserver"
+
+# Django make migrations
+  alias mmm="./manage.py makemigrations"
+
+# Django migrate
+  alias mm="./manage.py migrate"
 
 # Go to home
   function goto_home() { 
@@ -81,22 +69,6 @@
   function chpwd() {
     ls -a -1
   }
-
-# Django stuff ------------------------------------
-  runserver() {
-    python manage.py runserver;
-  }
-  alias prs="runserver"
-
-  makemigrations() {
-    python manage.py makemigrations;
-  }
-  alias pmm="makemigrations"
-
-  migrate() {
-    python manage.py migrate;
-  }
-  alias pm="migrate"
 
 # Import .jar files for JUnit tests, should always be run from root
   javat() {
