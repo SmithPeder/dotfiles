@@ -4,6 +4,7 @@ help:
 	@echo " - vim"
 	@echo " - tmux"
 	@echo " - zsh"
+	@echo " - fzf"
 
 vim:
 	@sudo apt-get install vim

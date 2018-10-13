@@ -82,6 +82,22 @@
     ls -a -1
   }
 
+# Django stuff ------------------------------------
+  runserver() {
+    python manage.py runserver;
+  }
+  alias prs="runserver"
+
+  makemigrations() {
+    python manage.py makemigrations;
+  }
+  alias pmm="makemigrations"
+
+  migrate() {
+    python manage.py migrate;
+  }
+  alias pm="migrate"
+
 # Import .jar files for JUnit tests, should always be run from root
   javat() {
     printf "\n"
