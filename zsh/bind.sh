@@ -32,6 +32,9 @@
 # Git checkout master
   alias gcm="git checkout master"
 
+# Git checkout new branch
+  alias gcn"git checkout -b" 
+
 # Git branch
   alias gb="git branch"
 
@@ -43,6 +46,9 @@
 
 # Django migrate
   alias mm="./manage.py migrate"
+
+# Django init dev
+  alias mi"./manage.py initialize_development"
 
 # Go to home
   function goto_home() { 

@@ -76,6 +76,7 @@
   Plugin 'JuliaEditorSupport/julia-vim'             " julia support
   Plugin 'airblade/vim-rooter'                      " always get root folder
   Plugin 'fatih/vim-go'                             " go support
+  Plugin 'alvan/vim-closetag'                       " html close
 
   call vundle#end()                                 " STOP ADDING PLUGINS
   filetype plugin indent on                         " turn back on again
@@ -162,3 +163,12 @@
 
 " Other stuff
   hi VertSplit ctermbg=234 ctermfg=234
+
+" HTML closing
+	let g:closetag_filenames = '*.html,*.xhtml,*.phtml'
+  let g:closetag_xhtml_filenames = '*.xhtml,*.jsx,*.js'
+  let g:closetag_filetypes = 'html,xhtml,phtml'
+  let g:closetag_xhtml_filetypes = 'xhtml,jsx,js'
+  let g:closetag_emptyTags_caseSensitive = 1
+  let g:closetag_shortcut = '>'
+  let g:closetag_close_shortcut = '<leader>>'
