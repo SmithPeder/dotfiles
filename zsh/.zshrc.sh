@@ -23,3 +23,6 @@ source ~/dotfiles/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Prompt
 source ~/dotfiles/zsh/prompt.sh
+
+# Binding
+source ~/dotfiles/zsh/bind.sh
