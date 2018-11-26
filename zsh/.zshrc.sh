@@ -12,6 +12,9 @@ plugins=(
   git
 )
 
+# Add ssh-agend
+ssh-add 2> /dev/null
+
 # How is this different
 source $ZSH/oh-my-zsh.sh
 
