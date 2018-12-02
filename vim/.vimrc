@@ -19,6 +19,7 @@
   set incsearch                                     " enable incremental search
   set ignorecase                                    " /the -> the/The/THE/tHe
   set smartcase                                     " goes together with ignorecase
+  set backspace=indent,eol,start                    " fix backspace bug
 
 " General mappings
   inoremap <C-e> <C-o>A
