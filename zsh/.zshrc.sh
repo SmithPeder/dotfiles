@@ -29,3 +29,6 @@ source ~/dotfiles/zsh/prompt.sh
 
 # Binding
 source ~/dotfiles/zsh/bind.sh
+
+# SyntaxHighlighting
+source ~/dotfiles/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
