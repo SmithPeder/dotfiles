@@ -1,10 +1,11 @@
-# Run list when directory changes
+# Custom list with colorls gem
+  alias ls="colorls --sd -a -1"
+  alias l="ls"
+  
+  # Run list when directory changes
   function chpwd() {
-    ls -a -1
+    ls
   }
-
-# Custom list
-  alias l="ls -a"
 
 # Git add
   alias ga="git add -A"

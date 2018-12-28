@@ -19,3 +19,8 @@ $ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools
 // Then make and move .oh-my-zsh to the plugins folder
 $
 ```
+
+## Notes
+Get the `Hack` patched font [https://github.com/ryanoasis/nerd-fonts]. Look at the cheetsheet [http://nerdfonts.com/?set=nf-dev-#cheat-sheet].
+
+Get the `colorls` gem at [https://github.com/athityakumar/colorls]. One must create a symlink from folder `colorls` to `~/.config/colorls`
