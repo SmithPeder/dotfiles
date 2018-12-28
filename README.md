@@ -1,23 +1,35 @@
-# iOS dotfiles
+#  Current OSX dotfiles 
 
-### Currently setting up
-First get `brew`
+> These dotfiles are under development and are not stable
+
+### Homebrew
+Homebrew install script is located in the `homebrew` folder. This will install `homebrew` and some other common dependencies like `grc`, `coreutils`, `htop`, `unrar`, `hub`, `node`, `python`, `python3`, `vim`, `postgresql`, `redis`, `yarn`, `go`, `cmake`, `elasticsearch`, `telnet`, `tmux`.
+
+```sh
+$ ~/dotfiles/homebrew/install.sh
+```
 
 ### iTerm2
+Currently using the iTerm2 terminal
+```sh
+$ brew install iTerm2
+```
+Current settings can be found in the `iterm2` folder. This file should be put in the iterm2 setting location. This can be done with the following command
+```sh
+$ cp com.googlecode.iterm2.plist ~/Library/Preferences
+```
 
-- brew install iTerm2
-- NORD iTerm2 profile
-
-### ZSH
-
+### Shell (ZSH)
+Currently using the `zsh` shell with a selection of plugins.
+- [History completions](https://github.com/zsh-users/zsh-autosuggestions)
+- [Syntax hightlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
 ```zsh
-// Get zsh
+# Get zsh
 $ brew install zsh
-$ brew install zsh-completions
-// Get oh-my-zsh
-$ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-// Then make and move .oh-my-zsh to the plugins folder
-$
+
+# Get plugins
+$ brew install zsh-autosuggestions
+$ brew install zsh-syntax-highlighting
 ```
 
 ## Notes
