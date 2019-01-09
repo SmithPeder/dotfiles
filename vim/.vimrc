@@ -9,32 +9,50 @@
   set mouse=a                                       " enable mouse movements
   set nowrap                                        " lines don't wrap
   set noswapfile                                    " no stupid .swp file
+  set backspace=indent,eol,start                    " fix backspace bug
+  set hidden                                        " change buffers without saving
+
+" Tab
   set autoindent                                    " turns on auto indent
   set smartindent                                   " does (mostly) right indenting
   set tabstop=2                                     " tabs are at proper location
   set shiftwidth=2                                  " one tab are 2 spaces
   set expandtab                                     " tabs are actually spaces
   set smarttab                                      " tabs fit with tabstops
+
+" Search
   set hlsearch                                      " highlight all matching text
   set incsearch                                     " enable incremental search
   set ignorecase                                    " /the -> the/The/THE/tHe
   set smartcase                                     " goes together with ignorecase
-  set backspace=indent,eol,start                    " fix backspace bug
 
 " General mappings
+
+  " Jump to end of line while in INSERT 
   inoremap <C-e> <C-o>A
+  " Clear search
   nmap <silent> <leader><space> :noh<CR>
+  " Toggle spelling
   map <leader>s :setlocal spell! spelllang=en_us<CR>
-  nnoremap <LEADER>u :UndotreeToggle<cr>
+  " Toggle undotree
+  nnoremap <leader>u :UndotreeToggle<cr>
+  " Toggle nerdtree
+  map <LEADER>, :NERDTreeTabsToggle<CR>
+  
+  " Remove these mappings
   noremap! <C-BS> <C-w>
   noremap! <C-h> <C-w>
   noremap <Up> <NOP>
   noremap <Down> <NOP>
   noremap <Left> <NOP>
   noremap <Right> <NOP>
+  
+  " Tab movment settings
   noremap <C-l> :tabnext<CR>
   noremap <C-h> :tabprevious<CR>
   noremap <C-t> :tabnew<CR>
+  
+  " Save and quit mappings
   noremap <C-s> :w<CR>
   inoremap <C-s> <esc>:w<CR>
   noremap <C-c> :q<CR>
@@ -63,6 +81,8 @@
   Plugin 'ervandew/supertab'                        " completion
   Plugin 'airblade/vim-rooter'                      " always get root folder
   Plugin 'fatih/vim-go'                             " go support
+  Plugin 'ryanoasis/vim-devicons'                   " icons
+
 
   call vundle#end()                                 " STOP ADDING PLUGINS
   filetype plugin indent on                         " turn back on again
@@ -107,13 +127,31 @@
   hi VertSplit ctermbg=234 ctermfg=234
 
 " Using vim tree to make vim more user friendly
-  map <LEADER>, :NERDTreeTabsToggle<CR>
+  autocmd StdinReadPre * let s:std_in=1
+  autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+  autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
   let NERDTreeMinimalUI = 1
   let NERDTreeDirArrows = 1
   let g:NERDTreeShowIgnoredStatus = 1
   let g:NERDTreeWinSize = 30
   let NERDTreeShowHidden = 1
   autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+  let g:NERDTreeDirArrowExpandable = ''
+  let g:NERDTreeDirArrowCollapsible = ''
+
+  let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "",
+    \ "Staged"    : "ﴻ",
+    \ "Untracked" : "",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "A",
+    \ "Dirty"     : " ",
+    \ "Clean"     : "✔︎",
+    \ 'Ignored'   : '',
+    \ "Unknown"   : ""
+    \ }
 
 " Puts you in insertmode when file is gitcommit
   autocmd FileType gitcommit  exec 'au VimEnter * startinsert'
@@ -142,7 +180,7 @@
     \ }
 
 " iTerm2 cursorshape settings
-if $TERM_PROGRAM =~ "iTerm"
+  if $TERM_PROGRAM =~ "iTerm"
     let &t_SI = "\<Esc>]50;CursorShape=1\x7" " Vertical bar in insert mode
     let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
-endif
+  endif
