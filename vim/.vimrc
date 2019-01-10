@@ -11,6 +11,7 @@
   set noswapfile                                    " no stupid .swp file
   set backspace=indent,eol,start                    " fix backspace bug
   set hidden                                        " change buffers without saving
+  set nojoinspaces                                  " no spaces when joining lines
 
 " Tab
   set autoindent                                    " turns on auto indent
@@ -28,7 +29,7 @@
 
 " General mappings
 
-  " Jump to end of line while in INSERT 
+  " Jump to end of line while in INSERT
   inoremap <C-e> <C-o>A
   " Clear search
   nmap <silent> <leader><space> :noh<CR>
@@ -38,7 +39,7 @@
   nnoremap <leader>u :UndotreeToggle<cr>
   " Toggle nerdtree
   map <LEADER>, :NERDTreeTabsToggle<CR>
-  
+
   " Remove these mappings
   noremap! <C-BS> <C-w>
   noremap! <C-h> <C-w>
@@ -46,12 +47,12 @@
   noremap <Down> <NOP>
   noremap <Left> <NOP>
   noremap <Right> <NOP>
-  
+
   " Tab movment settings
   noremap <C-l> :tabnext<CR>
   noremap <C-h> :tabprevious<CR>
   noremap <C-t> :tabnew<CR>
-  
+
   " Save and quit mappings
   noremap <C-s> :w<CR>
   inoremap <C-s> <esc>:w<CR>
@@ -62,33 +63,42 @@
   filetype off                                      " required for vundle
   set rtp+=~/.vim/bundle/Vundle.vim                 " runtime path
   call vundle#begin('~/.vim/bundle')                " START ADDING PLUGINS
+
   Plugin 'VundleVim/Vundle.vim'                     " main vundle plugin
+
+  " Themes
   Plugin 'joshdick/onedark.vim'                     " onedark style
-  Plugin 'sheerun/vim-polyglot'                     " syntax
   Plugin 'dikiaap/minimalist'                       " style
+  " Syntax
+  Plugin 'sheerun/vim-polyglot'                     " syntax
+  Plugin 'mxw/vim-jsx'                              " allow jsx syntax
+  " Statusbar
   Plugin 'itchyny/lightline.vim'                    " statusline
-  Plugin 'itchyny/vim-gitbranch'                    " git for statusline
   Plugin 'maximbaz/lightline-ale'                   " ale errors in statusline
+  Plugin 'pangloss/vim-javascript'                  " better javascript support
+  " Tree plugins and addons
   Plugin 'scrooloose/nerdtree'                      " document tree
   Plugin 'jistr/vim-nerdtree-tabs'                  " document tree tabs
+  Plugin 'itchyny/vim-gitbranch'                    " git for statusline
   Plugin 'Xuyuanp/nerdtree-git-plugin'              " git flags
-  Plugin 'mbbill/undotree'                          " list all undos you can do
   Plugin 'airblade/vim-gitgutter'                   " show vim diff in gutter
-  Plugin 'pangloss/vim-javascript'                  " better javascript support
-  Plugin 'mxw/vim-jsx'                              " allow jsx syntax
-  Plugin 'ctrlpvim/ctrlp.vim'                       " beloved fuzzyfinder
-  Plugin 'w0rp/ale'                                 " support linting
+  Plugin 'mbbill/undotree'                          " list all undos you can do
+  Plugin 'ryanoasis/vim-devicons'                   " patch-font icon support
+  " Autocomplete
   Plugin 'ervandew/supertab'                        " completion
+  Plugin 'Raimondi/delimitMate'                     " automatic closing
+  " Others
+  Plugin 'ctrlpvim/ctrlp.vim'                       " beloved fuzzyfinder
   Plugin 'airblade/vim-rooter'                      " always get root folder
-  Plugin 'fatih/vim-go'                             " go support
-  Plugin 'ryanoasis/vim-devicons'                   " icons
+  Plugin 'w0rp/ale'                                 " support linting
 
 
   call vundle#end()                                 " STOP ADDING PLUGINS
   filetype plugin indent on                         " turn back on again
 
 " Lightline
-  set laststatus=2
+  set laststatus=2                                  " required fix
+  set noshowmode                                    " dont show mode the normal way
   let g:lightline = {
     \ 'colorscheme': 'onedark',
     \ 'active': {
@@ -114,10 +124,10 @@
     \  'linter_ok': 'left',
     \ }
 
-  let g:lightline#ale#indicator_checking = "Checking..."
-  let g:lightline#ale#indicator_warnings = "Warnings:"
-  let g:lightline#ale#indicator_errors = "Errors:"
-  let g:lightline#ale#indicator_ok = "Good"
+  let g:lightline#ale#indicator_checking = "勒Checking"
+  let g:lightline#ale#indicator_warnings = " Warnings: "
+  let g:lightline#ale#indicator_errors = " Errors: "
+  let g:lightline#ale#indicator_ok = " Good"
 
 " Theme settings
   let g:spacegray_termcolors = 256
@@ -133,12 +143,12 @@
   let NERDTreeMinimalUI = 1
   let NERDTreeDirArrows = 1
   let g:NERDTreeShowIgnoredStatus = 1
-  let g:NERDTreeWinSize = 30
+  let g:NERDTreeWinSize = 25
   let NERDTreeShowHidden = 1
   autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-  let g:NERDTreeDirArrowExpandable = ''
-  let g:NERDTreeDirArrowCollapsible = ''
+  let g:NERDTreeDirArrowExpandable = ''
+  let g:NERDTreeDirArrowCollapsible = ''
 
   let g:NERDTreeIndicatorMapCustom = {
     \ "Modified"  : "",
@@ -146,7 +156,7 @@
     \ "Untracked" : "",
     \ "Renamed"   : "➜",
     \ "Unmerged"  : "═",
-    \ "Deleted"   : "A",
+    \ "Deleted"   : "",
     \ "Dirty"     : " ",
     \ "Clean"     : "✔︎",
     \ 'Ignored'   : '',
@@ -157,9 +167,9 @@
   autocmd FileType gitcommit  exec 'au VimEnter * startinsert'
 
 " Git gutter settings
-  let g:gitgutter_sign_added = '|'
-  let g:gitgutter_sign_modified = '|'
-  let g:gitgutter_sign_removed = '|'
+  let g:gitgutter_sign_added = '⏽'
+  let g:gitgutter_sign_modified = '⏽'
+  let g:gitgutter_sign_removed = '⏽'
   let g:gitgutter_sign_removed_first_line = '__'
   let g:gitgutter_sign_modified_removed = '__'
 
@@ -184,3 +194,10 @@
     let &t_SI = "\<Esc>]50;CursorShape=1\x7" " Vertical bar in insert mode
     let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
   endif
+
+" Trim White space funciton
+  function! TrimWhiteSpace()
+    %s/\s\+$//e
+  endfunction
+  autocmd FileType rust,ruby,tex,c,java,javascript,python,go,elixir autocmd BufWritePre * call TrimWhiteSpace()
+  nnoremap <silent> <leader>ts :call TrimWhiteSpace()<CR>

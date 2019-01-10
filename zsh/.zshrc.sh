@@ -1,6 +1,9 @@
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/smith/dotfiles/zsh/plugins/oh-my-zsh"
 
+# Export colors
+export TERM=xterm-256color
+
 # Set name of the theme
 ZSH_THEME="robbyrussell"
 
