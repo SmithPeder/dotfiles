@@ -1,6 +1,3 @@
-autoload -U colors && colors
-setopt PROMPT_SUBST
-
 # Full lineup of the promt
 set_prompt() {
     # Path 

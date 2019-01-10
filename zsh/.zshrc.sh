@@ -1,5 +1,5 @@
-# Path to your oh-my-zsh installation.
-export ZSH="/Users/smith/dotfiles/zsh/plugins/oh-my-zsh"
+# Set no update
+export HOMEBREW_NO_AUTO_UPDATE=1
 
 # Export colors
 export TERM=xterm-256color
@@ -12,9 +12,6 @@ CASE_SENSITIVE="false"
 
 # Add ssh-agend
 ssh-add 2> /dev/null
-
-# How is this different
-source $ZSH/oh-my-zsh.sh
 
 # ssh
 export SSH_KEY_PATH="~/.ssh/rsa_id"

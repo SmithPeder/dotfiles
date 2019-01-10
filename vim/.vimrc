@@ -2,7 +2,7 @@
   syntax on                                         " turn on syntax
   let mapleader = ","                               " map leader to ','
   filetype indent on                                " indent based on file type
-  set encoding=utf8                                 " UTF8 encoding of file
+  set encoding=utf8                                 " UTF8 encoding of filen
   set number                                        " normal line numbers
   set ttimeoutlen=10                                " used for key code delays
   set scrolloff=10                                  " always keep lines at end
@@ -40,6 +40,8 @@
   " Toggle nerdtree
   map <LEADER>, :NERDTreeTabsToggle<CR>
 
+  nnoremap <LEADER>. :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
+
   " Remove these mappings
   noremap! <C-BS> <C-w>
   noremap! <C-h> <C-w>
@@ -48,7 +50,7 @@
   noremap <Left> <NOP>
   noremap <Right> <NOP>
 
-  " Tab movment settings
+  " Tab movement settings
   noremap <C-l> :tabnext<CR>
   noremap <C-h> :tabprevious<CR>
   noremap <C-t> :tabnew<CR>
@@ -58,9 +60,11 @@
   inoremap <C-s> <esc>:w<CR>
   noremap <C-c> :q<CR>
 
+  noremap :W :w
+
 " Vundel plugin manager config
-  set nocompatible                                  " required for vundle
-  filetype off                                      " required for vundle
+  set nocompatible                                  " requirment for vundle
+  filetype off                                      " requirment for vundle
   set rtp+=~/.vim/bundle/Vundle.vim                 " runtime path
   call vundle#begin('~/.vim/bundle')                " START ADDING PLUGINS
 
@@ -91,14 +95,15 @@
   Plugin 'ctrlpvim/ctrlp.vim'                       " beloved fuzzyfinder
   Plugin 'airblade/vim-rooter'                      " always get root folder
   Plugin 'w0rp/ale'                                 " support linting
+  Plugin 'terryma/vim-multiple-cursors'             " multiple cursors
 
 
   call vundle#end()                                 " STOP ADDING PLUGINS
   filetype plugin indent on                         " turn back on again
 
 " Lightline
-  set laststatus=2                                  " required fix
-  set noshowmode                                    " dont show mode the normal way
+  set laststatus=2                                  " requirment fix
+  set noshowmode                                    " don't show mode the normal way
   let g:lightline = {
     \ 'colorscheme': 'onedark',
     \ 'active': {
@@ -191,13 +196,34 @@
 
 " iTerm2 cursorshape settings
   if $TERM_PROGRAM =~ "iTerm"
-    let &t_SI = "\<Esc>]50;CursorShape=1\x7" " Vertical bar in insert mode
-    let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
+    let &t_SI = "\<Esc>]50;CursorShape=1\x7"        " Vertical bar in insert mode
+    let &t_EI = "\<Esc>]50;CursorShape=0\x7"        " Block in normal mode
   endif
 
-" Trim White space funciton
+" Trim White space function
   function! TrimWhiteSpace()
     %s/\s\+$//e
   endfunction
   autocmd FileType rust,ruby,tex,c,java,javascript,python,go,elixir autocmd BufWritePre * call TrimWhiteSpace()
-  nnoremap <silent> <leader>ts :call TrimWhiteSpace()<CR>
+  nnoremap <leader>ts :call TrimWhiteSpace()<CR>
+
+" Highlight all instances of word under cursor, when idle. (z/)
+  nnoremap z/ :if AutoHighlightToggle()<Bar>set hls<Bar>endif<CR>
+  function! AutoHighlightToggle()
+    let @/ = ''
+    if exists('#auto_highlight')
+      au! auto_highlight
+      augroup! auto_highlight
+      setl updatetime=4000
+      echo 'Highlight current word: OFF'
+      return 0
+    else
+      augroup auto_highlight
+        au!
+        au CursorHold * let @/ = '\V\<'.escape(expand('<cword>'), '\').'\>'
+      augroup end
+      setl updatetime=500
+      echo 'Highlight current word: NO'
+      return 1
+    endif
+  endfunction

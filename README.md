@@ -36,3 +36,18 @@ $ brew install zsh-syntax-highlighting
 Get the `Hack` patched font [https://github.com/ryanoasis/nerd-fonts]. Look at the cheetsheet [http://nerdfonts.com/?set=nf-dev-#cheat-sheet].
 
 Get the `colorls` gem at [https://github.com/athityakumar/colorls]. One must create a symlink from folder `colorls` to `~/.config/colorls`
+
+
+### Images
+
+> Prompt
+
+<p align="center"> 
+<img src="https://i.imgur.com/0RlJygX.png">
+</p>
+
+> VIM
+
+<p align="center"> 
+<img src="https://i.imgur.com/vhtlTno.jpg">
+</p>

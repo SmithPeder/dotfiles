@@ -32,14 +32,10 @@
   alias gb="git branch"
 
 # Django runserver
-  alias mr="./manage.py runserver"
+  alias runserver="./manage.py runserver"
 
 # Django make migrations
-  alias mmm="./manage.py makemigrations"
+  alias makemigrations="./manage.py makemigrations"
 
 # Django migrate
-  alias mm="./manage.py migrate"
-
-# Django init dev
-  alias minit"./manage.py initialize_development"
-
+  alias migrate="./manage.py migrate"
