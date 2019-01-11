@@ -1,3 +1,6 @@
+autoload -U colors
+colors
+
 # Full lineup of the promt
 set_prompt() {
     # Path 

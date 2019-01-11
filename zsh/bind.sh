@@ -7,6 +7,9 @@
     ls
   }
 
+# 
+  alias ..="cd .."
+
 # Git add
   alias ga="git add -A"
 

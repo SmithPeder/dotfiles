@@ -37,6 +37,7 @@ Currently using the `zsh` shell with a selection of plugins.
 
 - [History completions](https://github.com/zsh-users/zsh-autosuggestions)
 - [Syntax highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
+- [Zsh Nofifications](https://github.com/marzocchi/zsh-notify)
 
 1. Install the following plugins
 
@@ -44,6 +45,8 @@ Currently using the `zsh` shell with a selection of plugins.
 $ brew install zsh
 $ brew install zsh-autosuggestions
 $ brew install zsh-syntax-highlighting
+
+# The nofification plugin needs no install, and is allready sourced
 ```
 
 2. Source the main path of configuration
@@ -82,7 +85,7 @@ $ brew cask install font-hack-nerd-font
 
 > Note: Look at the [cheetsheet](http://nerdfonts.com/?set=nf-dev-#cheat-sheet]) for icons.
 
-### VIM
+### Vim
 The `vim` configuration is a simple `.vimrc` file with all the configurations. The setup here is very simple
 and only requires three steps.
 1. Create a source from the `~/.vimrc` file in your home directory to the configuration.
