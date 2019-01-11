@@ -44,8 +44,6 @@ ssh-add 2> /dev/null
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 
-# Prompt
-source ~/dotfiles/zsh/prompt.sh
 
 # Binding
 source ~/dotfiles/zsh/bind.sh
@@ -68,3 +66,6 @@ if [ $(date +'%j') != $updated_at ]; then
 else
   compinit -C -i
 fi
+
+# Prompt ( NEEDS TO BE LAST )
+source ~/dotfiles/zsh/prompt.sh

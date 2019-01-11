@@ -5,7 +5,7 @@ colors
 set_prompt() {
     # Path 
     PS1="%{$fg[white]%}%{$reset_color%}% "
-    PS1+="%{$fg[blue]%}${PWD/#$HOME/~}%{$reset_color%}"
+      PS1+="%{$fg[blue]%}${PWD/#$HOME/~}%{$reset_color%}"
     # Git
     if git rev-parse --is-inside-work-tree 2> /dev/null | grep -q 'true' ; 
     then
@@ -22,7 +22,7 @@ set_prompt() {
       PS1+=""
     else
       PS1+="%{$fg[white]%} in%{$reset_color%}"
-      PS1+="%{$fg[green]%}  %{$reset_color%}% "
+        PS1+="%{$fg[green]%}  %{$reset_color%}% "
 
     fi 
     # White ] at the end

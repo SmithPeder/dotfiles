@@ -1,6 +1,6 @@
 # Custom list with colorls gem
-  alias ls="colorls --sd -a -1"
-  alias l="ls"
+  #alias ls="colorls --sd -a -1"
+  #alias l="ls"
   
   # Run list when directory changes
   function chpwd() {
