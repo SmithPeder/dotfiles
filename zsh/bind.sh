@@ -1,13 +1,16 @@
+# My own compiled vim
+alias vim="VIMRUNTIME=/Users/smith/dotfiles/vim/vimcompiled/vim/runtime /Users/smith/dotfiles/vim/vimcompiled/vim/src/vim"
+
 # Custom list with colorls gem
-  #alias ls="colorls --sd -a -1"
-  #alias l="ls"
+  alias ls="colorls --sd -a -1"
+  alias l="ls"
   
   # Run list when directory changes
   function chpwd() {
     ls
   }
 
-# 
+# Go back
   alias ..="cd .."
 
 # Git add
