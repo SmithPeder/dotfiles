@@ -1,5 +1,5 @@
 # My own compiled vim
-alias vim="VIMRUNTIME=/Users/smith/dotfiles/vim/vimcompiled/vim/runtime /Users/smith/dotfiles/vim/vimcompiled/vim/src/vim"
+  alias vim="VIMRUNTIME=~/dotfiles/vim/vimcompiled/vim/runtime ~/dotfiles/vim/vimcompiled/vim/src/vim"
 
 # Custom list with colorls gem
   alias ls="colorls --sd -a -1"

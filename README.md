@@ -56,7 +56,8 @@ $ echo "source ~/dotfiles/zsh/.zshrc.sh" > ~/.zshrc
 
 ### Colorls
 
-Additionally for i make us of the `colorls` gem
+Additionally for i make us of the `colorls` gem. OSX is a bitch when it comes to `ruby`, so installing 
+`rbenv` is a must for this. This allows you to download your own `ruby` version and install gems for this.
 
 1. Link to the `colorls` gem [Colorls](https://github.com/athityakumar/colorls). Navigate to the installation
    section and install the gem with `gem`
@@ -96,6 +97,27 @@ $ echo "source ~/dotfiles/vim/.vimrc" > ~/.vimrc
 3. Open vim and run `:PluginInstall`
 
 > Note: There will be a lot of errors when opening `vim` before the plugins are installed
+
+#### Compiled Vim
+The vim that ships with OSX does not contain the `-conceal` flag. This is a minor visual thing, but to
+enable the `conceal` flag one has to compile vim with more settings installed. This is quite simple
+```zsh
+$ mkdir ~/dotfiles/vim/vimcompiled
+$ cd ~/dotfiles/vim/vimcompiled
+$ git clone https://github.com/vim/vim.git
+$ cd vim/src
+$ make
+```
+This will compile your own vim. Then you can check if the version works, and that it contains the `conceal` flag.
+```zsh
+$ VIMRUNTIME=../runtime ./vim --version | grep conceal
+```
+To enable this simply put create an alias that sets the $VIMRUNTIME.
+```zsh
+alias vim="VIMRUNTIME=~/dotfiles/vim/vimcompiled/vim/runtime ~/dotfiles/vim/vimcompiled/vim/src/vim"
+```
+
+> Note: There is probably a better way to do this, but i could not bother
 
 ### Fuzzyfinder (fzf)
 Currently using the `fzf` for searching in files, command history, etc.
