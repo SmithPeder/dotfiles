@@ -39,8 +39,10 @@
   nnoremap <leader>u :UndotreeToggle<cr>
   " Toggle nerdtree
   map <LEADER>, :NERDTreeTabsToggle<CR>
-
+  " Search for the word you are located at
   nnoremap <LEADER>. :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
+
+  nnoremap <leader>c :Consolate<cr>
 
   " Remove these mappings
   noremap! <C-BS> <C-w>
@@ -60,8 +62,6 @@
   inoremap <C-s> <esc>:w<CR>
   noremap <C-c> :q<CR>
 
-  noremap :W :w
-
 " Vundel plugin manager config
   set nocompatible                                  " requirment for vundle
   filetype off                                      " requirment for vundle
@@ -73,6 +73,8 @@
   " Themes
   Plugin 'joshdick/onedark.vim'                     " onedark style
   Plugin 'dikiaap/minimalist'                       " style
+  Plugin 'NLKNguyen/papercolor-theme'               " light style
+
   " Syntax
   Plugin 'sheerun/vim-polyglot'                     " syntax
   Plugin 'mxw/vim-jsx'                              " allow jsx syntax
@@ -96,7 +98,7 @@
   Plugin 'airblade/vim-rooter'                      " always get root folder
   Plugin 'w0rp/ale'                                 " support linting
   Plugin 'terryma/vim-multiple-cursors'             " multiple cursors
-
+  Plugin 'agarrharr/consolation-vim'                " console log
 
   call vundle#end()                                 " STOP ADDING PLUGINS
   filetype plugin indent on                         " turn back on again
@@ -177,6 +179,12 @@
   let g:gitgutter_sign_removed = '⏽'
   let g:gitgutter_sign_removed_first_line = '__'
   let g:gitgutter_sign_modified_removed = '__'
+
+  if exists('&signcolumn')  " Vim 7.4.2201
+    set signcolumn=yes
+  else
+    let g:gitgutter_sign_column_always = 1
+  endif
 
 " Ale settings
   let g:ale_fixers = {

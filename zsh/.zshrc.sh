@@ -23,6 +23,9 @@ ssh-add 2> /dev/null
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 export PATH=$PATH:/usr/local/bin
 
+# go
+export PATH=$HOME/go/bin:$PATH
+
 export NVM_DIR="$HOME/.nvm"
   [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
