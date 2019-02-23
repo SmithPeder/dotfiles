@@ -27,5 +27,6 @@ brew install grc \
   elasticsearch \
   telnet \
   tmux \
+  fzf \
 
 exit 0

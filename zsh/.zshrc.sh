@@ -39,5 +39,12 @@ source ~/dotfiles/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # SyntaxHighlighting
 source ~/dotfiles/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# Source fzf
+[ -f ~/dotfiles/fzf/.fzf.zsh ] && source ~/dotfiles/fzf/.fzf.zsh
+
+# Set ruby env path, to enable colorls gem
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
 # Prompt ( NEEDS TO BE LAST )
 source ~/dotfiles/zsh/prompt.sh
