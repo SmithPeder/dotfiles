@@ -127,9 +127,9 @@ $ brew install fzf
 $ (brew --prefix)/opt/fzf/install
 ```
 
-2. Source the main part of the configuration
+2. Remove the content of `.fzf.zsh` in root, and source this repo config.
 ```zsh
-$ echo "source ~/dotfiles/zsh/.zshrc.sh" > ~/.zshrc
+$ echo "source ~/dotfiles/fzf/.fzf.zsh" > ~/.fzf.zsh
 ```
 
 ### Images
