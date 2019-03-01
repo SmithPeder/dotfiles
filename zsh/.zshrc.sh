@@ -33,6 +33,10 @@ export NVM_DIR="$HOME/.nvm"
 # Binding
 source ~/dotfiles/zsh/bind.sh
 
+# Java classpaths
+source ~/dotfiles/java/JUnit/path.sh # JUNIT
+source ~/dotfiles/java/MySQL/path.sh # JDBC
+
 # AutoSuggestions
 source ~/dotfiles/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 

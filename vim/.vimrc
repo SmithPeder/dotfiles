@@ -12,6 +12,7 @@
   set backspace=indent,eol,start                    " fix backspace bug
   set hidden                                        " change buffers without saving
   set nojoinspaces                                  " no spaces when joining lines
+  set updatetime=100
 
 " Tab
   set autoindent                                    " turns on auto indent
@@ -192,6 +193,7 @@
   \}
   let g:ale_fix_on_save = 1
   let g:ale_sign_column_always = 1
+  let g:ale_lint_on_insert_leave = '1'
   let g:ale_lint_on_text_changed = 'never'
 
 " CTRLP .ignore files/folders
