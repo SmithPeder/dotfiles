@@ -45,3 +45,6 @@
 
 # Django migrate
   alias migrate="./manage.py migrate"
+
+# Go back
+  alias cat="ccat"
