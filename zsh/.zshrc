@@ -65,3 +65,6 @@ export PATH=$PATH:/usr/local/bin
 
 # go
 export PATH=$HOME/go/bin:$PATH
+
+# Source fzf
+[ -f ~/dotfiles/fzf/.fzf.zsh ] && source ~/dotfiles/fzf/.fzf.zsh

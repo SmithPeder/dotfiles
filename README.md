@@ -33,30 +33,23 @@ profile menu of iTerm2.
 
 ### Shell (zsh)
 
-Currently using the `zsh` shell with a selection of plugins.
+Currently using the `zsh` shell with a selection of plugins. All plugins are listed in the `.zshrc` file, and loaded using `oh-my-zsh`.
 
-- [History completions](https://github.com/zsh-users/zsh-autosuggestions)
-- [Syntax highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
-- [Zsh Nofifications](https://github.com/marzocchi/zsh-notify)
-
-1. Install the following plugins
+1. Install zsh
 
 ```zsh
 $ brew install zsh
-$ brew install zsh-autosuggestions
-$ brew install zsh-syntax-highlighting
-
-# The nofification plugin needs no install, and is allready sourced
 ```
 
 2. Source the main path of configuration
+
 ```zsh
 $ echo "source ~/dotfiles/zsh/.zshrc.sh" > ~/.zshrc
 ```
 
 ### Colorls
 
-Additionally for i make us of the `colorls` gem. OSX is a bitch when it comes to `ruby`, so installing 
+Additionally for i make us of the `colorls` gem. OSX is a bitch when it comes to `ruby`, so installing
 `rbenv` is a must for this. This allows you to download your own `ruby` version and install gems for this.
 
 1. Link to the `colorls` gem [Colorls](https://github.com/athityakumar/colorls). Navigate to the installation
@@ -87,20 +80,26 @@ $ brew cask install font-hack-nerd-font
 > Note: Look at the [cheetsheet](http://nerdfonts.com/?set=nf-dev-#cheat-sheet]) for icons.
 
 ### Vim
+
 The `vim` configuration is a simple `.vimrc` file with all the configurations. The setup here is very simple
 and only requires three steps.
+
 1. Create a source from the `~/.vimrc` file in your home directory to the configuration.
+
 ```zsh
 $ echo "source ~/dotfiles/vim/.vimrc" > ~/.vimrc
 ```
+
 2. Run the `install.sh` script. This will add the `Vundle` package manager to your `~/.vim` folder.
 3. Open vim and run `:PluginInstall`
 
 > Note: There will be a lot of errors when opening `vim` before the plugins are installed
 
 #### Compiled Vim
+
 The vim that ships with OSX does not contain the `-conceal` flag. This is a minor visual thing, but to
 enable the `conceal` flag one has to compile vim with more settings installed. This is quite simple
+
 ```zsh
 $ mkdir ~/dotfiles/vim/vimcompiled
 $ cd ~/dotfiles/vim/vimcompiled
@@ -108,11 +107,15 @@ $ git clone https://github.com/vim/vim.git
 $ cd vim/src
 $ make
 ```
+
 This will compile your own vim. Then you can check if the version works, and that it contains the `conceal` flag.
+
 ```zsh
 $ VIMRUNTIME=../runtime ./vim --version | grep conceal
 ```
-To enable this simply put create an alias that sets the $VIMRUNTIME.
+
+To enable this simply put create an alias that sets the \$VIMRUNTIME.
+
 ```zsh
 alias vim="VIMRUNTIME=~/dotfiles/vim/vimcompiled/vim/runtime ~/dotfiles/vim/vimcompiled/vim/src/vim"
 ```
@@ -120,14 +123,18 @@ alias vim="VIMRUNTIME=~/dotfiles/vim/vimcompiled/vim/runtime ~/dotfiles/vim/vimc
 > Note: There is probably a better way to do this, but i could not bother
 
 ### Fuzzyfinder (fzf)
+
 Currently using the `fzf` for searching in files, command history, etc.
+
 1. Install `fzf` with brew
+
 ```zsh
 $ brew install fzf
 $ (brew --prefix)/opt/fzf/install
 ```
 
 2. Remove the content of `.fzf.zsh` in root, and source this repo config.
+
 ```zsh
 $ echo "source ~/dotfiles/fzf/.fzf.zsh" > ~/.fzf.zsh
 ```
@@ -159,4 +166,5 @@ $ echo "source ~/dotfiles/fzf/.fzf.zsh" > ~/.fzf.zsh
 </p>
 
 ### List of cool tools
+
 1. [Markdown folder structure generator](https://www.npmjs.com/package/mddir)
