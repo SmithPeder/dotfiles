@@ -1,4 +1,6 @@
-# My own compiled vim
+# ====ALIAS-CONFIGURATION====
+
+# Pre-compiled vim
   alias vim="VIMRUNTIME=~/dotfiles/vim/vimcompiled/vim/runtime ~/dotfiles/vim/vimcompiled/vim/src/vim"
 
 # Custom list with colorls gem
@@ -46,5 +48,8 @@
 # Django migrate
   alias migrate="./manage.py migrate"
 
-# Go back
+# Cat with color
   alias cat="ccat"
+
+# Stop spotify
+  alias ss="spotify pause"

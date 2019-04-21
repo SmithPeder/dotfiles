@@ -210,6 +210,10 @@
   let g:lightline#ale#indicator_errors = " Errors: "
   let g:lightline#ale#indicator_ok = " Good"
 
+  let g:ale_sign_warning = ''
+  let g:ale_sign_error = ''
+  hi ALEErrorSign ctermbg=100
+  hi ALEWarningSign ctermbg=100
 
   " Remove background color in the middle
   let s:palette = g:lightline#colorscheme#{g:lightline.colorscheme}#palette
