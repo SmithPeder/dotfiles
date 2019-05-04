@@ -28,13 +28,13 @@
   alias gp="git push"
 
 # Git diff
-  alias gd="git diff"
+  alias gd="git difftool"
 
 # Git checkout master
   alias gcm="git checkout master"
 
 # Git checkout new branch
-  alias gcn"git checkout -b" 
+  alias gcn="git checkout -b" 
 
 # Git branch
   alias gb="git branch"
