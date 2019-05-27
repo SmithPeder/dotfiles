@@ -23,17 +23,10 @@ autoload -U add-zsh-hook
 autoload -Uz vcs_info
 
 # Use True color (24-bit) if available.
-if [[ "${terminfo[colors]}" -ge 256 ]]; then
-    oxide_turquoise="%F{73}"
-    oxide_orange="%F{179}"
-    oxide_red="%F{167}"
-    oxide_limegreen="%F{107}"
-else
-    oxide_turquoise="%F{cyan}"
-    oxide_orange="%F{yellow}"
-    oxide_red="%F{red}"
-    oxide_limegreen="%F{green}"
-fi
+oxide_turquoise="%F{cyan}"
+oxide_orange="%F{yellow}"
+oxide_red="%F{red}"
+oxide_limegreen="%F{green}"
 
 # Reset color.
 oxide_reset_color="%f"
@@ -66,6 +59,3 @@ add-zsh-hook precmd vcs_info
 
 # Left Prompt
 PROMPT=$'\n%{$oxide_limegreen%}%~%{$oxide_reset_color%} ${vcs_info_msg_0_} %(?.%{%F{white}%}.%{$oxide_red%})%(!.#.❯)%{$oxide_reset_color%} '
-
-# Right Prompt
-RPROMPT='%{$fg[cyan]%}ﴱ %{$reset_color%}$ZSH_KUBECTL_PROMPT%{$reset_color%}'

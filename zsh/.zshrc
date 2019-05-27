@@ -1,10 +1,14 @@
 # ====ZSH-CONFIGURATION====
+#zmodload zsh/zprof
 
 # Path to oh-my-zsh installation
 export ZSH="/Users/smith/dotfiles/zsh/.oh-my-zsh"
 
 # Path to zsh folder
 export ROOT="/Users/smith/dotfiles/zsh"
+
+# Path to iterm2 folder
+export ITERM="/Users/smith/dotfiles/iterm2"
 
 # Path to bin
 export PATH=$PATH:/usr/local/bin
@@ -19,6 +23,8 @@ setopt hist_ignore_all_dups
 setopt share_history
 # Activating auto cd
 setopt auto_cd
+# Don't store wrong commands
+zshaddhistory() { whence ${${(z)1}[1]} >| /dev/null || return 1 }
 
 # Set custom theme
 #ZSH_THEME="spaceship"
@@ -36,19 +42,29 @@ plugins=(
   python
   redis-cli
   sudo
+  virtualenv
   zsh-autosuggestions
   zsh-syntax-highlighting
   zsh-kubectl-prompt
 )
 
 # Source other configuration files
-source $ZSH/oh-my-zsh.sh
-source $ROOT/.prompt.sh
-source $ROOT/.aliases.sh
+ source $ZSH/oh-my-zsh.sh
+ source $ROOT/.prompt.sh
+ source $ROOT/.aliases.sh
+
+# iterm2 statusbar 
+function iterm2_print_user_vars() {
+  iterm2_set_user_var kubecontext "ﴱ $(kubectl config current-context)"
+  iterm2_set_user_var docker " $(docker ps -q | gwc -l) containers"
+  iterm2_set_user_var venv "$(echo $VIRTUAL_ENV)"
+}
+
+source $ITERM/.itermrc.sh
 
 # Set ruby env path, to enable colorls gem
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+ export PATH="$HOME/.rbenv/bin:$PATH"
+ eval "$(rbenv init -)"
 
 # Export colors
 export TERM=xterm-256color
@@ -68,3 +84,6 @@ export PATH=$HOME/go/bin:$PATH
 
 # Source fzf
 [ -f ~/dotfiles/fzf/.fzf.zsh ] && source ~/dotfiles/fzf/.fzf.zsh
+
+
+#zprof
