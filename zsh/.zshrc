@@ -13,6 +13,9 @@ export ITERM="/Users/smith/dotfiles/iterm2"
 # Path to bin
 export PATH=$PATH:/usr/local/bin
 
+# Path to bin
+export PASSWORD_STORE_DIR="/Users/smith/.password-store"
+
 # Normal settings
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=100000
@@ -32,7 +35,6 @@ zshaddhistory() { whence ${${(z)1}[1]} >| /dev/null || return 1 }
 # List of plugins
 plugins=(
   git 
-  kubectl
   django
   docker
   npm
@@ -43,6 +45,7 @@ plugins=(
   redis-cli
   sudo
   virtualenv
+  kubectl
   zsh-autosuggestions
   zsh-syntax-highlighting
   zsh-kubectl-prompt

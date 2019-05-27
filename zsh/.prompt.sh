@@ -58,4 +58,4 @@ zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
 add-zsh-hook precmd vcs_info
 
 # Left Prompt
-PROMPT=$'\n%{$oxide_limegreen%}%~%{$oxide_reset_color%} ${vcs_info_msg_0_} %(?.%{%F{white}%}.%{$oxide_red%})%(!.#.❯)%{$oxide_reset_color%} '
+PROMPT=$'\n%{$oxide_limegreen%}%~%{$oxide_reset_color%} ${vcs_info_msg_0_} %(?.%{%F{white}%}.%{$oxide_red%})%(!.#.❯)%{$oxide_turquoise%}%(!.#.❯)%{$oxide_limegreen%}%(!.#.❯)%{$oxide_reset_color%} '
