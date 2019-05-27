@@ -47,20 +47,6 @@ $ brew install zsh
 $ echo "source ~/dotfiles/zsh/.zshrc.sh" > ~/.zshrc
 ```
 
-### Colorls
-
-Additionally for i make us of the `colorls` gem. OSX is a bitch when it comes to `ruby`, so installing
-`rbenv` is a must for this. This allows you to download your own `ruby` version and install gems for this.
-
-1. Link to the `colorls` gem [Colorls](https://github.com/athityakumar/colorls). Navigate to the installation
-   section and install the gem with `gem`
-
-```zsh
-$ gem install colorls
-```
-
-2. One must then create a symlink from the folder `~/dotfiles/colorls`, to `~/.config/colorls`
-
 ### Font (Hack)
 
 Some parts of this configuration requires the patched font `Hack`.
@@ -165,6 +151,3 @@ $ echo "source ~/dotfiles/fzf/.fzf.zsh" > ~/.fzf.zsh
 <img src="https://i.imgur.com/vhtlTno.jpg">
 </p>
 
-### List of cool tools
-
-1. [Markdown folder structure generator](https://www.npmjs.com/package/mddir)
