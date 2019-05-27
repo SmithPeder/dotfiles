@@ -1,24 +1,24 @@
 # ====ZSH-CONFIGURATION====
 #zmodload zsh/zprof
 
-# Path to oh-my-zsh installation
-export ZSH="/Users/smith/dotfiles/zsh/.oh-my-zsh"
-
 # Path to zsh folder
-export ROOT="/Users/smith/dotfiles/zsh"
-
+export ROOT=$HOME/dotfiles/zsh
+# Path to oh-my-zsh installation
+export ZSH=$HOME/dotfiles/zsh/.oh-my-zsh
 # Path to iterm2 folder
-export ITERM="/Users/smith/dotfiles/iterm2"
-
+export ITERM=$HOME/dotfiles/iterm2
 # Path to bin
 export PATH=$PATH:/usr/local/bin
-
 # Path to bin
-export PASSWORD_STORE_DIR="/Users/smith/.password-store"
+export PASSWORD_STORE_DIR=$HOME/.password-store
+# Path to ssh
+export SSH_KEY_PATH=$HOME/.ssh/rsa_id
+# Path to go
+export PATH=$HOME/go/bin:$PATH
 
-# Normal settings
+# History settings
 HISTFILE=$HOME/.zsh_history
-HISTSIZE=100000
+HISTSIZE=10000
 SAVEHIST=$HISTSIZE
 # Remove older duplicate entries from history
 setopt hist_ignore_all_dups
@@ -28,9 +28,6 @@ setopt share_history
 setopt auto_cd
 # Don't store wrong commands
 zshaddhistory() { whence ${${(z)1}[1]} >| /dev/null || return 1 }
-
-# Set custom theme
-#ZSH_THEME="spaceship"
 
 # List of plugins
 plugins=(
@@ -45,7 +42,8 @@ plugins=(
   redis-cli
   sudo
   virtualenv
-  kubectl
+  kubectl # modified due to slow _comp
+  pass
   zsh-autosuggestions
   zsh-syntax-highlighting
   zsh-kubectl-prompt
@@ -60,14 +58,9 @@ plugins=(
 function iterm2_print_user_vars() {
   iterm2_set_user_var kubecontext "ﴱ $(kubectl config current-context)"
   iterm2_set_user_var docker " $(docker ps -q | gwc -l) containers"
-  iterm2_set_user_var venv "$(echo $VIRTUAL_ENV)"
+  iterm2_set_user_var venv " $(echo $VIRTUAL_ENV)"
 }
-
 source $ITERM/.itermrc.sh
-
-# Set ruby env path, to enable colorls gem
- export PATH="$HOME/.rbenv/bin:$PATH"
- eval "$(rbenv init -)"
 
 # Export colors
 export TERM=xterm-256color
@@ -78,15 +71,8 @@ CASE_SENSITIVE="false"
 # Add ssh-agent
 ssh-add 2> /dev/null
 
-# ssh
-export SSH_KEY_PATH="~/.ssh/rsa_id"
-export PATH=$PATH:/usr/local/bin
-
-# go
-export PATH=$HOME/go/bin:$PATH
 
 # Source fzf
 [ -f ~/dotfiles/fzf/.fzf.zsh ] && source ~/dotfiles/fzf/.fzf.zsh
-
 
 #zprof

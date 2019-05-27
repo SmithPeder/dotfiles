@@ -26,7 +26,18 @@ brew install grc \
   cmake \
   elasticsearch \
   telnet \
-  tmux \
   fzf \
+  exa \
+  ccat \
+  fzf \
+  git \
+  kubernetes-cli \
+  neofetch \
+  nvm \
+  pass \
+  wget \
+  zsh \
+  zsh-completions \
+  zsh-syntax-highlighting \
 
 exit 0

@@ -3,14 +3,15 @@
 # Pre-compiled vim
   alias vim="VIMRUNTIME=~/dotfiles/vim/vimcompiled/vim/runtime ~/dotfiles/vim/vimcompiled/vim/src/vim"
 
-# Custom list with colorls gem
-  alias ls="colorls --sd -a -1"
-  alias l="ls"
-  
-  # Run list when directory changes
+# Run list when directory changes
   function chpwd() {
-    ls
+    exa --all
   }
+
+# Exa ls
+  alias ls="exa --all"
+  alias l="exa --long --all --header"
+  alias tree="exa --tree --level=3"
 
 # Go back
   alias ..="cd .."
@@ -26,9 +27,6 @@
 
 # Git push
   alias gp="git push"
-
-# Git diff
-  alias gd="git difftool"
 
 # Git checkout master
   alias gcm="git checkout master"
