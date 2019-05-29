@@ -44,7 +44,7 @@ $ brew install zsh
 2. Source the main path of configuration
 
 ```zsh
-$ echo "source ~/dotfiles/zsh/.zshrc.sh" > ~/.zshrc
+$ mv $HOME.zshrc $HOME.zshrc.backup && rm $HOME.zshrc && ln -s $HOME/dotfiles/zsh/.zshrc $HOME.zshrc
 ```
 
 ### Font (Hack)
