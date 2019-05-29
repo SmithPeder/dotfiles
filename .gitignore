@@ -1,7 +1,6 @@
-zsh/local.sh/
-backup/
-newbuild/
 .DS_Store
+
 vim/vimcompiled
-zsh/completions/*
-zsh/plugins/*
+
+zsh/completions
+zsh/plugins
