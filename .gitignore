@@ -3,3 +3,4 @@ backup/
 newbuild/
 .DS_Store
 vim/vimcompiled
+zsh/completions/*
