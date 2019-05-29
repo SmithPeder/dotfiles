@@ -1,6 +1,10 @@
 # Add the local comletions folder to the global completion folder
 export fpath=($COMPLETIONS $fpath)
 
+if [[ ! -d $COMPLETIONS ]]; then
+  mkdir $COMPLETIONS
+fi
+
 # Docker completion
 if [[ ! -f $COMPLETIONS/_docker ]]; then
   echo "Installing docker completion"

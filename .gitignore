@@ -4,3 +4,4 @@ newbuild/
 .DS_Store
 vim/vimcompiled
 zsh/completions/*
+zsh/plugins/*

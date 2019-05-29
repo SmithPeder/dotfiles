@@ -61,8 +61,7 @@ zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
 add-zsh-hook precmd vcs_info
 
 # Left Prompt
-PROMPT=$'\n'
-PROMPT+='%{$green%}%c%{$R%} ${vcs_info_msg_0_}'
+PROMPT='%{$green%}%c%{$R%} ${vcs_info_msg_0_}'
 PROMPT+='%(?.%{$blue%}.%{$red%})%(!.#. ❯)'
 PROMPT+='%{$R%} '
 
