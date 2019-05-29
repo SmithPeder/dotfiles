@@ -63,7 +63,7 @@ add-zsh-hook precmd vcs_info
 # Left Prompt
 PROMPT=$'\n'
 PROMPT+='%{$green%}%c%{$R%} ${vcs_info_msg_0_}'
-PROMPT+='%(?.%{$blue%}.%{$red%})%(!.#. ❯❯❯)'
+PROMPT+='%(?.%{$blue%}.%{$red%})%(!.#. ❯)'
 PROMPT+='%{$R%} '
 
 # Right prompt

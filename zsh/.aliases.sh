@@ -48,6 +48,3 @@
 
 # Cat with color
   alias cat="ccat"
-
-# Stop spotify
-  alias ss="spotify pause"
