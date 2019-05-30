@@ -10,7 +10,7 @@
 
 # Exa ls
   alias ls="exa --all"
-  alias l="exa --long --all --header"
+  alias l="exa --long --all --header --git"
   alias tree="exa --tree --level=3"
 
 # Go back

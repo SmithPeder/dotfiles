@@ -50,8 +50,11 @@ source $ROOT/.completions.zsh
 source $ROOT/.plugins.zsh
 
 # iterm2 statusbar 
+zstyle ':zsh-kubectl-prompt:' separator '  '
+zstyle ':zsh-kubectl-prompt:' preprompt ' ﴱ '
+zstyle ':zsh-kubectl-prompt:' namespace false
 function iterm2_print_user_vars() {
-  iterm2_set_user_var kubecontext "ﴱ $(echo $ZSH_KUBECTL_PROMPT)"          #TIME=(0.01)
+  iterm2_set_user_var kubecontext "$(echo $ZSH_KUBECTL_PROMPT)"            #TIME=(0.01)
   iterm2_set_user_var venv " $(echo $VIRTUAL_ENV)"                        #TIME=(0.01)
 } 
 source $ITERM/.itermrc.sh

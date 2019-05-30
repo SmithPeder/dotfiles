@@ -15,7 +15,7 @@
     "Color Space" : "sRGB",
     "Blue Component" : 0.35686274509803922,
     "Alpha Component" : 1,
-    "Green Component" : 0.66666666666666663
+    "Green Component" : 0.83137254901960789
   },
   "Use Italic Font" : true,
   "Foreground Color" : {
@@ -36,7 +36,7 @@
     "Alpha Component" : 1,
     "Green Component" : 0.33725488185882568
   },
-  "Blend" : 0.079212990785256482,
+  "Blend" : 0.050000000000000003,
   "Show Mark Indicators" : false,
   "Mouse Reporting" : true,
   "Ansi 4 Color" : {
@@ -95,7 +95,7 @@
               "Alpha Component" : 1,
               "Green Component" : 0.12549020349979401
             },
-            "font" : "HackNerdFontComplete-Regular 10",
+            "font" : "HackNerdFontComplete-Regular 12",
             "algorithm" : 1
           }
         }
@@ -124,7 +124,7 @@
               "Alpha Component" : 1,
               "Green Component" : 0.12549020349979401
             },
-            "font" : "HackNerdFontComplete-Regular 10",
+            "font" : "HackNerdFontComplete-Regular 12",
             "algorithm" : 1
           }
         }
@@ -161,7 +161,7 @@
               "Alpha Component" : 1,
               "Green Component" : 0.12549020349979401
             },
-            "font" : "HackNerdFontComplete-Regular 10",
+            "font" : "HackNerdFontComplete-Regular 12",
             "algorithm" : 1
           }
         }
@@ -190,7 +190,7 @@
               "Alpha Component" : 1,
               "Green Component" : 0.12549020349979401
             },
-            "font" : "HackNerdFontComplete-Regular 10",
+            "font" : "HackNerdFontComplete-Regular 12",
             "algorithm" : 1
           }
         }
@@ -218,7 +218,7 @@
               "Alpha Component" : 1,
               "Green Component" : 0.12549020349979401
             },
-            "font" : "HackNerdFontComplete-Regular 10",
+            "font" : "HackNerdFontComplete-Regular 12",
             "algorithm" : 1
           }
         }
@@ -247,7 +247,7 @@
               "Alpha Component" : 1,
               "Green Component" : 0.12549020349979401
             },
-            "font" : "HackNerdFontComplete-Regular 10",
+            "font" : "HackNerdFontComplete-Regular 12",
             "algorithm" : 1
           }
         }
@@ -282,7 +282,7 @@
               "Alpha Component" : 1,
               "Green Component" : 0.12549020349979401
             },
-            "font" : "HackNerdFontComplete-Regular 10",
+            "font" : "HackNerdFontComplete-Regular 12",
             "algorithm" : 1
           }
         }
@@ -303,7 +303,7 @@
         "Alpha Component" : 1,
         "Green Component" : 0.12549020349979401
       },
-      "font" : "HackNerdFontComplete-Regular 10",
+      "font" : "HackNerdFontComplete-Regular 12",
       "algorithm" : 1
     }
   },
@@ -332,7 +332,7 @@
     "Color Space" : "sRGB",
     "Blue Component" : 0.3582000732421875,
     "Alpha Component" : 1,
-    "Green Component" : 0.66938529163599014
+    "Green Component" : 0.83514312794432044
   },
   "Shortcut" : "",
   "Use Non-ASCII Font" : false,
@@ -548,7 +548,7 @@
     "Alpha Component" : 1,
     "Green Component" : 0.63137254901960782
   },
-  "Window Type" : 0,
+  "Window Type" : 7,
   "Use Bright Bold" : true,
   "Has Hotkey" : false,
   "Cursor Text Color" : {
@@ -664,6 +664,7 @@
   "Badge Top Margin" : 39,
   "Screen" : -1,
   "AWDS Window Option" : "No",
+  "Initial Use Transparency" : false,
   "Bound Hosts" : [
 
   ],

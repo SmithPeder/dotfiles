@@ -25,7 +25,6 @@ black="%F{black}"
 red="%F{red}"
 green="%F{green}"
 yellow="%F{yellow}"
-orange="%F{yellow}"
 blue="%F{blue}"
 magenta="%F{magenta}"
 cyan="%F{cyan}"
@@ -35,10 +34,10 @@ white="%F{white}"
 R="%f"
 
 # VCS style formats.
-FMT_VCS_STATUS="on %{$blue%}%u%c%{$R%}"
+FMT_VCS_STATUS="on %{$yellow%} %b%u%c%{$R%}"
 FMT_STAGED="%{$R%} %{$green%}S"
-FMT_UNSTAGED="%{$R%} %{$orange%}M"
-FMT_ACTION="(%{$green%}%a%{$R%})"
+FMT_UNSTAGED="%{$R%} %{$blue%}M"
+FMT_ACTION="(%{$magenta%}%a%{$R%})"
 
 zstyle ':vcs_info:*' enable git svn
 zstyle ':vcs_info:*' check-for-changes true
@@ -51,10 +50,10 @@ zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
 
 # Check for untracked files.
 +vi-git-untracked() {
-    if [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) == 'true' ]] && \
-            git status --porcelain | grep --max-count=1 '^??' &> /dev/null; then
-        hook_com[staged]+="%{$R%} %{$red%}N"
-    fi
+  if [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) == 'true' ]] && \
+    git status --porcelain | grep --max-count=1 '^??' &> /dev/null; then
+    hook_com[staged]+="%{$R%} %{$red%}N"
+  fi
 }
 
 # Executed before each prompt.
