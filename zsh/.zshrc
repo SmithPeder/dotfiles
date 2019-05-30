@@ -58,3 +58,5 @@ function iterm2_print_user_vars() {
   iterm2_set_user_var venv " $(echo $VIRTUAL_ENV)"                        #TIME=(0.01)
 } 
 source $ITERM/.itermrc.sh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
