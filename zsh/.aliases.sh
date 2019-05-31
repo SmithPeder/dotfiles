@@ -1,8 +1,5 @@
 # ====ALIAS-CONFIGURATION====
 
-# Pre-compiled vim
-  alias vim="VIMRUNTIME=~/dotfiles/vim/vimcompiled/vim/runtime ~/dotfiles/vim/vimcompiled/vim/src/vim"
-
 # Run list when directory changes
   function chpwd() {
     exa --all
@@ -27,6 +24,12 @@
 
 # Git push
   alias gp="git push"
+
+# Git log
+  alias gl="git log"
+
+# Git log
+  alias gd="git diff"
 
 # Git checkout master
   alias gcm="git checkout master"
