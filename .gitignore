@@ -4,3 +4,6 @@ vim/vimcompiled
 
 zsh/completions
 zsh/plugins
+
+node_modules/
+coc-java-data/

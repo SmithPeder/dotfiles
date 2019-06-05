@@ -10,6 +10,9 @@
   alias l="exa --long --all --header --git"
   alias tree="exa --tree --level=3"
 
+# Vim
+  alias vim="nvim"
+
 # Go back
   alias ..="cd .."
 
