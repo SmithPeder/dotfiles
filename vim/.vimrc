@@ -7,18 +7,29 @@
 
 " Plugins
   call plug#begin('~/.vim/plugged')
+
+    " Git
     Plug 'airblade/vim-rooter'
+    Plug 'airblade/vim-gitgutter'
+    Plug 'itchyny/vim-gitbranch'
+
+    " Fuzzy search
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
     Plug 'junegunn/fzf.vim'
     Plug 'haya14busa/incsearch.vim'
+
+    " Completion
     Plug 'Raimondi/delimitMate'
-    Plug 'airblade/vim-gitgutter'
+    Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
+
+    " Visual
     Plug 'smithpeder/vim-hybrid'
     Plug 'joshdick/onedark.vim'
     Plug 'itchyny/lightline.vim'
-    Plug 'itchyny/vim-gitbranch'
+    Plug 'sheerun/vim-polyglot'
+
+    " Linting
     Plug 'w0rp/ale'
-    Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
   call plug#end()
 
 " General settings
@@ -226,11 +237,12 @@
 
   " Ale
   let g:ale_fix_on_save = 1
-  let g:ale_javascript_prettier_use_local_config=1
+  let g:ale_javascript_prettier_use_local_config = 1
   let g:ale_javascript_eslint_use_local_config = 1
   let g:ale_fixers = {
         \   '*': ['remove_trailing_lines', 'trim_whitespace'],
         \   'javascript': ['prettier'],
+        \   'typescript': ['prettier'],
         \   'css': ['prettier'],
         \   'c': ['clang-format'],
         \   'python': ['yapf', 'isort'],
@@ -244,7 +256,8 @@
         \ 'go': ['gometalinter', 'gofmt'],
         \ 'cpp': [ 'clang', 'clangtidy', 'cppcheck', 'cpplint', 'gcc' ],
         \ 'rust': ['cargo', 'rls', 'rustc'],
-        \ 'javascript': ['eslint', 'flow','prettier'],
+        \ 'javascript': ['eslint', 'flow', 'prettier'],
+        \ 'typescript': ['eslint'],
         \ 'css': ['stylelint', 'prettier'],
         \ 'python': ['pycodestyle', 'flake8'],
         \ 'graphql': ['prettier', 'eslint'],
