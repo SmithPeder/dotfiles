@@ -17,6 +17,7 @@
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
     Plug 'junegunn/fzf.vim'
     Plug 'haya14busa/incsearch.vim'
+    Plug 'jremmen/vim-ripgrep'
 
     " Completion
     Plug 'Raimondi/delimitMate'
@@ -52,6 +53,17 @@
   set smartindent                                   " does (mostly) right indenting
   set smarttab                                      " tabs fit with tabstops
   set tabstop=2                                     " tabs are at proper location
+
+" Tab navigation
+  nnoremap <C-l> :tabnext<CR>
+  nnoremap <C-h> :tabprevious<CR>
+  nnoremap <C-t> :tabnew<CR>
+
+" Move cursor in Insert Mode
+  inoremap <C-h> <C-o>h
+  inoremap <C-j> <C-o>j
+  inoremap <C-k> <C-o>k
+  inoremap <C-l> <C-o>l
 
 " File detection
   filetype on                                       " vim will recignize the type of file
@@ -94,6 +106,13 @@
   map /  <Plug>(incsearch-forward)
   map ?  <Plug>(incsearch-backward)
   map g/ <Plug>(incsearch-stay)
+
+" With smart case turned on, if you do a search using all lowercase letters,
+" ripgrep will do a case insensitive search. If you use any capital letters,
+" it assumes that you want that specific query and will keep it case sensitive.
+  let g:rg_command = 'rg --vimgrep'
+  nnoremap <LEADER>s :GFiles<CR>
+  nnoremap <LEADER>r :Rg<SPACE>
 
 " Git gutter settings
   let g:gitgutter_sign_added = '⏽'                  " set new icon for added
@@ -196,13 +215,17 @@
 	" Use `:Fold` to fold current buffer
 	command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 
-" iTerm2 cursorshape settings
+" ===================================================
+" iTerm2
+" ===================================================
   if $TERM_PROGRAM =~ "iTerm"
     let &t_SI = "\<Esc>]50;CursorShape=1\x7"        " Vertical bar in insert mode
     let &t_EI = "\<Esc>]50;CursorShape=0\x7"        " Block in normal mode
   endif
 
+" ===================================================
 " Lightline
+" ===================================================
   source ~/dotfiles/vim/.component_functions.vim
   set laststatus=2
   let g:lightline = {
@@ -235,7 +258,9 @@
   let s:palette.inactive.middle = s:palette.normal.middle
   let s:palette.tabline.middle = s:palette.normal.middle
 
-  " Ale
+" ===================================================
+" Ale
+" ===================================================
   let g:ale_fix_on_save = 1
   let g:ale_javascript_prettier_use_local_config = 1
   let g:ale_javascript_eslint_use_local_config = 1

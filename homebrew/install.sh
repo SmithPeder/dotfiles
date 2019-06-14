@@ -37,7 +37,6 @@ brew install grc \
   pass \
   wget \
   zsh \
-  zsh-completions \
-  zsh-syntax-highlighting \
+  ripgrep \
 
 exit 0
