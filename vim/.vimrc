@@ -1,11 +1,15 @@
+" ===================================================
 " Install Plug if it's not installed
+" ===================================================
   if empty(glob('~/.vim/autoload/plug.vim'))
     silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
       \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
   endif
 
-" Plugins
+" ===================================================
+" Plug install list
+" ===================================================
   call plug#begin('~/.vim/plugged')
 
     " Git
@@ -13,14 +17,16 @@
     Plug 'airblade/vim-gitgutter'
     Plug 'itchyny/vim-gitbranch'
 
-    " Fuzzy search
+    " Search
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
     Plug 'junegunn/fzf.vim'
     Plug 'haya14busa/incsearch.vim'
     Plug 'jremmen/vim-ripgrep'
+    Plug 'google/vim-searchindex'
 
     " Completion
     Plug 'Raimondi/delimitMate'
+    Plug 'tpope/vim-surround'
     Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
 
     " Visual
@@ -28,12 +34,15 @@
     Plug 'joshdick/onedark.vim'
     Plug 'itchyny/lightline.vim'
     Plug 'sheerun/vim-polyglot'
+    Plug 'RRethy/vim-illuminate'
 
     " Linting
     Plug 'w0rp/ale'
   call plug#end()
 
+" ===================================================
 " General settings
+" ===================================================
   set backspace=indent,eol,start                    " MUST HAVE OSX DON'T REMOVE
   syntax on                                         " turn on syntax
   let mapleader = ","                               " map leader to ','
@@ -45,6 +54,7 @@
   set backspace=indent,eol,start                    " fix backspace bug
   set hidden                                        " change buffers without saving
   set updatetime=100                                " run vim update more
+  set noswapfile                                    " no swp files
 
 " Tab
   set autoindent                                    " turns on auto indent
@@ -59,7 +69,7 @@
   nnoremap <C-h> :tabprevious<CR>
   nnoremap <C-t> :tabnew<CR>
 
-" Move cursor in Insert Mode
+" Move cursor in insert Mode
   inoremap <C-h> <C-o>h
   inoremap <C-j> <C-o>j
   inoremap <C-k> <C-o>k
@@ -102,19 +112,16 @@
 " Puts you in insertmode when file is gitcommit
   autocmd FileType gitcommit  exec 'au VimEnter * startinsert'
 
-" Mappings for incsearch
-  map /  <Plug>(incsearch-forward)
-  map ?  <Plug>(incsearch-backward)
-  map g/ <Plug>(incsearch-stay)
-
-" With smart case turned on, if you do a search using all lowercase letters,
-" ripgrep will do a case insensitive search. If you use any capital letters,
-" it assumes that you want that specific query and will keep it case sensitive.
+" ===================================================
+" RipGrep settings
+" ===================================================
   let g:rg_command = 'rg --vimgrep'
   nnoremap <LEADER>s :GFiles<CR>
   nnoremap <LEADER>r :Rg<SPACE>
 
+" ===================================================
 " Git gutter settings
+" ===================================================
   let g:gitgutter_sign_added = '⏽'                  " set new icon for added
   let g:gitgutter_sign_modified = '⏽'               " set new icon for modified
   let g:gitgutter_sign_removed = '⏽'                " set new icon for removed
@@ -122,17 +129,23 @@
   let g:gitgutter_sign_modified_removed = '_'       " set new icon for inbetween
   let g:gitgutter_max_signs = 200                   " dont show if more then 200
   let g:gitgutter_map_keys = 0                      " unmap all gitgutter mappings
-
   if exists('&signcolumn')                          " always show the gitgutter
     set signcolumn=yes
   else
     let g:gitgutter_sign_column_always = 1
   endif
 
+" ===================================================
 " Theme settings
-  set t_co=256
-  set termguicolors
-  colorscheme hybrid
+" ===================================================
+  set t_co=256                                      " enable 256 colors in vim
+  set termguicolors                                 " use full 24-bit colors as defined
+  colorscheme hybrid                                " use personal colorscheme
+
+" ===================================================
+" Illuminate settings
+" ===================================================
+  let g:Illuminate_highlightUnderCursor = 1         " illuminate the word under cursor
 
 " ===================================================
 " COC
@@ -143,7 +156,6 @@
   set shortmess+=c                                  " dont give ins-completion-menu messages.
 
   " Use tab for trigger completion with characters ahead and navigate.
-  " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
   inoremap <silent><expr> <TAB>
         \ pumvisible() ? "\<C-n>" :
         \ <SID>check_back_space() ? "\<TAB>" :
@@ -158,8 +170,7 @@
   " Use <c-space> to trigger completion.
   inoremap <silent><expr> <c-space> coc#refresh()
 
-  " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
-  " Coc only does snippet and additional edit on confirm.
+  " Use <cr> to confirm completion
   inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
   " Use `[c` and `]c` to navigate diagnostics
@@ -226,7 +237,6 @@
 " ===================================================
 " Lightline
 " ===================================================
-  source ~/dotfiles/vim/.component_functions.vim
   set laststatus=2
   let g:lightline = {
       \ 'colorscheme': 'onedark',
@@ -253,10 +263,63 @@
       \   'left': '',
       \ }
       \ }
+
+  " No color in the middle on the statusline
   let s:palette = g:lightline#colorscheme#{g:lightline.colorscheme}#palette
   let s:palette.normal.middle = [ [ 'NONE', 'NONE', 'NONE', 'NONE' ] ]
   let s:palette.inactive.middle = s:palette.normal.middle
   let s:palette.tabline.middle = s:palette.normal.middle
+
+  " Lightline functions
+  function! WrappedPercent()
+    if &ft !=? 'nerdtree'
+      return line('.') * 100 / line('$') . '%'
+    else
+      return ''
+    endif
+  endfunction
+  function! WrappedLineInfo()
+    if &ft !=? 'nerdtree'
+      return line('.').':'. col('.')
+    else
+      return ''
+    endif
+  endfunction
+  function! WrappedGitBranch()
+    if &ft !=? 'nerdtree'
+      return gitbranch#name()
+    else
+      return ''
+    endif
+  endfunction
+  function! WrappedModified()
+    if &mod
+      return '+'
+    else
+      return ''
+    endif
+  endfunction
+  function! WrappedFilename()
+    if &ft !=? 'nerdtree'
+      return @%
+    else
+      return ''
+    endif
+  endfunction
+  function! WrappedMode()
+    if &ft !=? 'nerdtree'
+      return lightline#mode()
+    else
+      return ''
+    endif
+  endfunction
+  function! WrappedPaste()
+    if &ft !=? 'nerdtree'
+      return &paste?"PASTE":""
+    else
+      return ''
+    endif
+  endfunction
 
 " ===================================================
 " Ale
@@ -289,6 +352,7 @@
         \ 'c': ['clang-format'],
         \}
 
+" ===================================================
 " Don't show the --INSERT-- tag as it's shown by lightline
-" Has to be on the bottom for some dumb reason
+" ===================================================
   set noshowmode
