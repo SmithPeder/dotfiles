@@ -54,3 +54,9 @@
 
 # Cat with color
   alias cat="ccat"
+
+# Docker ps
+  alias ds="docker ps --format 'table {{.ID}}\\t{{.Names}}\t{{.Status}}'"
+
+# Docker-compose
+  alias d-c="docker-compose"
