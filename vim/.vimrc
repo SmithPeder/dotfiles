@@ -21,7 +21,6 @@
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
     Plug 'junegunn/fzf.vim'
     Plug 'haya14busa/incsearch.vim'
-    Plug 'jremmen/vim-ripgrep'
     Plug 'google/vim-searchindex'
 
     " Completion
@@ -113,11 +112,16 @@
   autocmd FileType gitcommit  exec 'au VimEnter * startinsert'
 
 " ===================================================
-" RipGrep settings
+" FZF/RIPGREP settings
 " ===================================================
-  let g:rg_command = 'rg --vimgrep'
   nnoremap <LEADER>s :GFiles<CR>
-  nnoremap <LEADER>r :Rg<SPACE>
+  nnoremap <LEADER>r :Rg<CR>
+   command! -bang -nargs=* Rg
+   \ call fzf#vim#grep(
+   \   'rg --color always --line-number --column --line-number --hidden --glob !flow-typed/* --glob !*.lock --glob !.git/* --ignore-case '.shellescape(<q-args>), 1,
+   \   <bang>0 ? fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'up:60%')
+   \           : fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'right:50%:hidden', '?'),
+   \   <bang>0)
 
 " ===================================================
 " Git gutter settings

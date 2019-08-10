@@ -43,6 +43,7 @@ ssh-add 2> /dev/null
 # Source fzf
 [ -f ~/dotfiles/fzf/.fzf.zsh ] && source ~/dotfiles/fzf/.fzf.zsh           #TIME=(0.01)
 
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!node_modules/*"'
 # Source files
 source $ROOT/.prompt.sh                                                    #TIME=(0.01)
 source $ROOT/.aliases.sh                                                   #TIME=(0.00)
@@ -55,6 +56,7 @@ zstyle ':zsh-kubectl-prompt:' preprompt ' ﴱ '
 zstyle ':zsh-kubectl-prompt:' namespace false
 function iterm2_print_user_vars() {
   iterm2_set_user_var kubecontext "$(echo $ZSH_KUBECTL_PROMPT)"            #TIME=(0.01)
+  iterm2_set_user_var dockerps "$(docker ps -q | wc -l) containers"
   iterm2_set_user_var venv " $(echo $VIRTUAL_ENV)"                        #TIME=(0.01)
 }
 source $ITERM/.itermrc.sh
