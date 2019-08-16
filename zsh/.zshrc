@@ -62,3 +62,4 @@ function iterm2_print_user_vars() {
 source $ITERM/.itermrc.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+#zprof
