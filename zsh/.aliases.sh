@@ -29,7 +29,7 @@
   alias gp="git push"
 
 # Git log
-  alias gl="git log"
+  alias gl="git log --oneline"
 
 # Git log
   alias gd="git diff"
@@ -60,3 +60,6 @@
 
 # Docker-compose
   alias d-c="docker-compose"
+
+# Unmap oz to ozengine
+  alias oz=ozengine

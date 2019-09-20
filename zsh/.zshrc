@@ -15,8 +15,12 @@ export PASSWORD_STORE_DIR=$HOME/.password-store
 export SSH_KEY_PATH=$HOME/.ssh/rsa_id
 # Path to go
 export PATH=$HOME/go/bin:$PATH
+# Path to mozart
+export PATH=$PATH:/Applications/Mozart2.app/Contents/Resources/bin
 # Export colors
 export TERM=xterm-256color
+# Node ENV
+export NODE_ENV='development'
 
 # History settings
 HISTFILE=$HOME/.zsh_history

@@ -26,7 +26,8 @@
     " Completion
     Plug 'Raimondi/delimitMate'
     Plug 'tpope/vim-surround'
-    Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
+    Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+    Plug 'Procrat/oz.vim'
 
     " Visual
     Plug 'smithpeder/vim-hybrid'
@@ -102,6 +103,11 @@
   vnoremap <C-j> :m '>+1<CR>gv=gv
   vnoremap <C-k> :m '<-2<CR>gv=gv
 
+" Open params with new-line
+  inoremap (<cr> (<cr>)<esc>O
+  inoremap {<cr> {<cr>}<esc>O
+  inoremap [<cr> [<cr>]<esc>O
+
 " Clear highlight search
   nmap <silent> <leader><space> :noh<CR>
 
@@ -114,7 +120,7 @@
 " ===================================================
 " FZF/RIPGREP settings
 " ===================================================
-  nnoremap <LEADER>s :GFiles<CR>
+  nnoremap <LEADER>s :Files<CR>
   nnoremap <LEADER>r :Rg<CR>
    command! -bang -nargs=* Rg
    \ call fzf#vim#grep(
@@ -159,7 +165,9 @@
   set nowritebackup                                 " some servers have issues with backup
   set shortmess+=c                                  " dont give ins-completion-menu messages.
 
+
   " Use tab for trigger completion with characters ahead and navigate.
+  " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
   inoremap <silent><expr> <TAB>
         \ pumvisible() ? "\<C-n>" :
         \ <SID>check_back_space() ? "\<TAB>" :
@@ -186,19 +194,6 @@
   nmap <silent> gy <Plug>(coc-type-definition)
   nmap <silent> gi <Plug>(coc-implementation)
   nmap <silent> gr <Plug>(coc-references)
-
-  " Use K to show documentation in preview window
-  nnoremap <silent> K :call <SID>show_documentation()<CR>
-  function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
-	endfunction<Paste>
-
-	" Highlight symbol under cursor on CursorHold
-	autocmd CursorHold * silent call CocActionAsync('highlight')
 
 	" Remap for rename current word
  	nmap <leader>rn <Plug>(coc-rename)
@@ -337,7 +332,7 @@
         \   'typescript': ['prettier'],
         \   'css': ['prettier'],
         \   'c': ['clang-format'],
-        \   'python': ['yapf', 'isort'],
+        \   'python': ['yapf', 'isort', 'black'],
         \   'java': ['google_java_format'],
         \   'rust': ['rustfmt'],
         \   'c++': ['clang-format'],
