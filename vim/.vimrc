@@ -32,9 +32,11 @@
     " Visual
     Plug 'smithpeder/vim-hybrid'
     Plug 'joshdick/onedark.vim'
+    Plug 'kristijanhusak/vim-hybrid-material'
     Plug 'itchyny/lightline.vim'
     Plug 'sheerun/vim-polyglot'
     Plug 'RRethy/vim-illuminate'
+    Plug 'chrisbra/Colorizer'
 
     " Linting
     Plug 'w0rp/ale'
@@ -150,7 +152,7 @@
 " ===================================================
   set t_co=256                                      " enable 256 colors in vim
   set termguicolors                                 " use full 24-bit colors as defined
-  colorscheme hybrid                                " use personal colorscheme
+  colorscheme hybrid_reverse                                " use personal colorscheme
 
 " ===================================================
 " Illuminate settings
@@ -194,9 +196,6 @@
   nmap <silent> gy <Plug>(coc-type-definition)
   nmap <silent> gi <Plug>(coc-implementation)
   nmap <silent> gr <Plug>(coc-references)
-
-	" Remap for rename current word
- 	nmap <leader>rn <Plug>(coc-rename)
 
 	" Remap for format selected region
 	xmap <leader>f  <Plug>(coc-format-selected)

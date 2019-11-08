@@ -11,7 +11,10 @@
   alias tree="exa --tree --level=3"
 
 # Vim
-  alias vim="~/Downloads/nvim-osx64/bin/nvim"
+  alias vim="nvim"
+
+# Plz
+  alias plz="sudo"
 
 # Go back
   alias ..="cd .."

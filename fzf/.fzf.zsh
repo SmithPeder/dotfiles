@@ -12,12 +12,3 @@ fi
 # ------------
 source "/usr/local/opt/fzf/shell/key-bindings.zsh"
 
-
-# Set ESCAPE(caps) to open fzf
-fzf-history-widget-accept() {
-  fzf-history-widget
-  zle accept-line
-}
-zle     -N     fzf-history-widget-accept
-bindkey '\e' fzf-history-widget-accept
-

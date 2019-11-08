@@ -5,8 +5,6 @@ zmodload zsh/zprof
 export ROOT=$HOME/dotfiles/zsh
 export COMPLETIONS=$HOME/dotfiles/zsh/completions
 export PLUGINS=$HOME/dotfiles/zsh/plugins
-# Path to iterm2 folder
-export ITERM=$HOME/dotfiles/iterm2
 # Path to bin
 export PATH=$PATH:/usr/local/bin
 # Path to password store
@@ -21,6 +19,12 @@ export PATH=$PATH:/Applications/Mozart2.app/Contents/Resources/bin
 export TERM=xterm-256color
 # Node ENV
 export NODE_ENV='development'
+# Password store
+export PASSWORD_STORE_DIR=$HOME/code/password-store
+# Fix brew
+export LC_ALL=en_US.UTF-8
+# Export GPG
+export GPG_TTY=$(tty)
 
 # History settings
 HISTFILE=$HOME/.zsh_history
@@ -54,16 +58,12 @@ source $ROOT/.aliases.sh                                                   #TIME
 source $ROOT/.completions.zsh
 source $ROOT/.plugins.zsh
 
-# iterm2 statusbar
-zstyle ':zsh-kubectl-prompt:' separator '  '
-zstyle ':zsh-kubectl-prompt:' preprompt ' ﴱ '
-zstyle ':zsh-kubectl-prompt:' namespace false
-function iterm2_print_user_vars() {
-  iterm2_set_user_var kubecontext "$(echo $ZSH_KUBECTL_PROMPT)"            #TIME=(0.01)
-  iterm2_set_user_var dockerps "$(docker ps -q | wc -l) containers"
-  iterm2_set_user_var venv " $(echo $VIRTUAL_ENV)"                        #TIME=(0.01)
-}
-source $ITERM/.itermrc.sh
+# Pyenv
+#if command -v pyenv 1>/dev/null 2>&1; then
+#  eval "$(pyenv init -)"
+#fi
+#eval "$(pyenv init -)"
+#eval "$(pyenv virtualenv-init -)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 #zprof
