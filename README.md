@@ -1,7 +1,10 @@
 #  Current OSX dotfiles 
 
+> Catalina 10.15.2
+
 ### Homebrew
 
+Install all preset `brew` packages
 ```sh
 $ brew bundle
 ```
@@ -11,6 +14,19 @@ $ brew bundle
 `Preferences -> General`, load settings found in the `iterm2` folder.
 
 `Preferences -> Profiles`, load profile found in the `iterm2` folder.
+
+### NeoVim
+
+Get Plug For NeoVim
+```zsh
+$ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
+
+SymLink `HOME` config to `dotfiles` config
+```zsh
+$ ln -s ~/dotfiles/neovim ~/.config/nvim
+```
 
 ### ZSH
 
@@ -36,33 +52,6 @@ $ brew cask install font-hack-nerd-font
 2. Navigate to the iTerm2 settings, _Preferences_ -> _Profiles_ -> _Text_, then select
    the `Hack Regular Nerd Font Complete`
 
-### NeoVim
-
-Get Plug For NeoVim
-```zsh
-$ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-```
-
-```zsh
-$ ln -s ~/dotfiles/neovim ~/.config/nvim
-```
-
-2. Open vim and run `:PlugInstall`
-
 ### Fuzzyfinder (fzf)
 
-Currently using the `fzf` for searching in files, command history, etc.
-
-1. Install `fzf` with brew
-
-```zsh
-$ brew install fzf
-$ (brew --prefix)/opt/fzf/install
-```
-
-2. Remove the content of `.fzf.zsh` in root, and source this repo config.
-
-```zsh
-$ echo "source ~/dotfiles/fzf/.fzf.zsh" > ~/.fzf.zsh
-```
+`fzf` for searching in `CTRL-R` search. Comes with brew and vim install.

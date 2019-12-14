@@ -20,7 +20,9 @@
     Plug 'haya14busa/incsearch.vim'
     Plug 'google/vim-searchindex'
     Plug 'liuchengxu/vim-clap'
-    
+    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+    Plug 'junegunn/fzf.vim'
+
     " coc
     Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 

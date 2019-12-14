@@ -8,13 +8,15 @@
       \   'left': [
       \     [ 'mode', 'paste' ], [ 'status', 'filename' ]
       \   ],
-      \   'right': [ [ 'percent' ], ['cocstatus'] ]
+      \   'right': [ [ 'cocstatus' ] ]
       \ },
       \ 'component_function': {
 			\		'cocstatus': 'coc#status',
-      \   'status': 'LightlineGitStatus'
+      \   'currentfunction': 'CocCurrentFunction',
+      \   'status': 'LightlineGitStatus',
+      \   'diagnostic': 'StatusDiagnostic'
       \ },
-        \ 'separator': {
+      \ 'separator': {
       \   'left': '',
       \ },
       \ 'subseparator': {
@@ -22,9 +24,9 @@
       \ }
       \ }
 
+  " Git status
   function! LightlineGitStatus() abort
-    let status = get(g:, 'coc_git_status', '')
-    return winwidth(0) > 50 ? status : ''
+    return get(g:, 'coc_git_status', '')
   endfunction
 
   autocmd User CocGitStatusChange {command}
