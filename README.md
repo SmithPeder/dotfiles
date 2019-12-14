@@ -1,37 +1,18 @@
 #  Current OSX dotfiles 
 
-> Disclaimer: My current OSX dotfiles are not tuned to work on a Linux system. If you cant see the two Apple icons above, then you should not try this configuration!!
-
 ### Homebrew
 
 ```sh
-$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-```
-
-Homebrew install script is located in the `homebrew` folder, and will install common dependencies.
-
-```sh
-$ ~/dotfiles/homebrew/install.sh
+$ brew bundle
 ```
 
 ### iTerm2
 
-Currently using the iTerm2 terminal
+`Preferences -> General`, load settings found in the `iterm2` folder.
 
-```sh
-$ brew install iTerm2
-```
+`Preferences -> Profiles`, load profile found in the `iterm2` folder.
 
-Current settings can be found in the `iterm2` folder.
-
-
-### Shell (zsh)
-
-Currently using the `zsh` shell with a selection of plugins. All plugins are listed in the `.zshrc` file, and loaded using `oh-my-zsh`.
-
-```zsh
-$ brew install zsh
-```
+### ZSH
 
 Symlink the main path of configuration
 
@@ -55,15 +36,16 @@ $ brew cask install font-hack-nerd-font
 2. Navigate to the iTerm2 settings, _Preferences_ -> _Profiles_ -> _Text_, then select
    the `Hack Regular Nerd Font Complete`
 
-### Vim
+### NeoVim
 
-The `vim` configuration is a simple `.vimrc` file with all the configurations. The setup here is very simple
-and only requires three steps.
-
-1. Create a source from the `~/.vimrc` file in your home directory to the configuration.
+Get Plug For NeoVim
+```zsh
+$ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
 
 ```zsh
-$ ln -s $HOME/dotfiles/vim/.vimrc $HOME.vimrc
+$ ln -s ~/dotfiles/neovim ~/.config/nvim
 ```
 
 2. Open vim and run `:PlugInstall`
