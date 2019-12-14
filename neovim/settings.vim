@@ -28,11 +28,6 @@
   set shiftwidth=2                                  " edit as if the tabs are 2 spaces
   set shiftround                                    " round to a multiple of shiftwidth
 
-" Tab navigation
-  nnoremap <C-l> :tabnext<CR>
-  nnoremap <C-h> :tabprevious<CR>
-  nnoremap <C-t> :tabnew<CR>
-
 " Move cursor in insert Mode
   inoremap <C-h> <C-o>h
   inoremap <C-j> <C-o>j
@@ -81,8 +76,6 @@
 " Correct comment highlighting
   autocmd FileType json syntax match Comment +\/\/.\+$+
 
-" Don't show the --INSERT-- tag as it's shown by lightline
-  set noshowmode
 
 " iTerm2 cursor settings
   if $TERM_PROGRAM =~ "iTerm"

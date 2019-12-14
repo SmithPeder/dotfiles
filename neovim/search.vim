@@ -11,3 +11,5 @@
   nnoremap <LEADER>y :Clap yanks<CR>
   " RipGrep search for commands
   nnoremap <LEADER>c :Clap command<CR>
+  " RipGrep search for buffers
+  nnoremap <LEADER>b :Clap buffers<CR>
