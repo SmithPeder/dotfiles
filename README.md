@@ -1,18 +1,18 @@
 <p align="center">
-  <h1 align="center"> Current OSX dotfiles </h1>
+  <h1 align="center"> OSX dotfiles </h1>
+  <p align="center">
+    <img src="https://badgen.net/github/last-commit/smithpeder/dotfiles" />
+    <img src="https://badgen.net/github/license/smithpeder/dotfiles" />
+    <img src="https://img.shields.io/github/repo-size/smithpeder/dotfiles?color=gree&label=size" />
+  </p>
     <p align="center">
-      <img src="http://simpleicon.com/wp-content/uploads/apple.png" width="50px" />
-      <img src="https://i.imgur.com/G7VqzcM.png" width="55px" />
-      <img src="https://i.imgur.com/dEqXUCc.png" width="50px" />
-      <img src="https://brew.sh/assets/img/homebrew-256x256.png" width="50px" />
-      <img src="https://symbols.getvecta.com/stencil_89/30_neovim-icon.ed94bd2e58.svg" width="40px" />
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/1024px-Visual_Studio_Code_1.35_icon.svg.png" width="50px" />
+      <img src="https://i.imgur.com/tWN6X6W.png" width="600px" />
     </p>
 </p>
 
 ### Homebrew
 
-Install all preset `brew` packages
+Install `brew` packages from Brewfile
 
 ```sh
 $ make brew
