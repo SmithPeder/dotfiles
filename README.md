@@ -9,8 +9,6 @@
 | Terminal Editor   | NeoVim       |   0.4.3 |
 | GUI Editor        | VsCode       |  1.40.2 |
 
-Catalina **10.15.2**
-
 ### Homebrew
 
 Install all preset `brew` packages
@@ -27,12 +25,35 @@ Enable profile: `Preferences -> Profiles`, load profile found in the `iterm2` fo
 
 ### NeoVim
 
-Get Plug For NeoVim
+> Installed by brew
 
-```zsh
-$ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-```
+Plugin manager `Plug` and all listed plugins are installed on launch
+
+<details><summary><code>Vim Plugins</code></summary>
+<p>
+<ul>
+<li>['Colorizer'].commit = '5fbdf24'</li>
+<li>['ale'].commit = '5f84325'</li>
+<li>['coc.nvim'].commit = 'd005447'</li>
+<li>['delimitMate'].commit = '728b57a'</li>
+<li>['fzf'].commit = '9fefe08'</li>
+<li>['fzf.vim'].commit = '65edb6a'</li>
+<li>['incsearch.vim'].commit = '25e2547'</li>
+<li>['lightline-bufferline'].commit = '8743156'</li>
+<li>['lightline.vim'].commit = 'ef6df46'</li>
+<li>['vim-clap'].commit = '9c12bf2'</li>
+<li>['vim-devicons'].commit = 'e3e6aa1'</li>
+<li>['vim-gitgutter'].commit = '1c53af9'</li>
+<li>['vim-hybrid'].commit = '13c04af'</li>
+<li>['vim-hybrid-material'].commit = 'f2e92ac'</li>
+<li>['vim-illuminate'].commit = '4929d19'</li>
+<li>['vim-polyglot'].commit = 'cea0d08'</li>
+<li>['vim-rooter'].commit = 'eef9813'</li>
+<li>['vim-searchindex'].commit = 'b0788c8'</li>
+</ul>
+
+</p>
+</details>
 
 SymLink `HOME` config to `dotfiles` config
 
