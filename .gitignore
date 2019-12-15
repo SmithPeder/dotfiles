@@ -8,3 +8,4 @@ zsh/plugins
 node_modules/
 coc-java-data/
 yarn.lock
+Brewfile.lock.json

@@ -1,86 +1,102 @@
-#  Current OSX dotfiles 
-
-> Disclaimer: My current OSX dotfiles are not tuned to work on a Linux system. If you cant see the two Apple icons above, then you should not try this configuration!!
+<p align="center">
+  <h1 align="center"> OSX dotfiles </h1>
+  <p align="center">
+    <img src="https://badgen.net/github/last-commit/smithpeder/dotfiles" />
+    <img src="https://badgen.net/github/license/smithpeder/dotfiles" />
+    <img src="https://img.shields.io/github/repo-size/smithpeder/dotfiles?color=gree&label=size" />
+  </p>
+    <p align="center">
+      <img src="https://i.imgur.com/tWN6X6W.png" width="600px" />
+    </p>
+</p>
 
 ### Homebrew
 
-```sh
-$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-```
-
-Homebrew install script is located in the `homebrew` folder, and will install common dependencies.
+Install `brew` packages from Brewfile
 
 ```sh
-$ ~/dotfiles/homebrew/install.sh
+$ make brew
 ```
 
 ### iTerm2
 
-Currently using the iTerm2 terminal
+> Installed by brew
+
+Enable settings: `Preferences -> General`, load settings found in the `iterm2` folder.
+
+Enable profile: `Preferences -> Profiles`, load profile found in the `iterm2` folder.
+
+<img src="https://i.imgur.com/GzJp8GW.png" />
+
+### NeoVim
+
+> Installed by brew
 
 ```sh
-$ brew install iTerm2
+$ make neovim -B
 ```
 
-Current settings can be found in the `iterm2` folder.
+<details><summary><code>Images</code></summary>
+<p>
+<img src="https://i.imgur.com/vtXiHQ0.png" />
+</p>
+</details>
 
+### ZSH Shell
 
-### Shell (zsh)
+> Installed by brew
 
-Currently using the `zsh` shell with a selection of plugins. All plugins are listed in the `.zshrc` file, and loaded using `oh-my-zsh`.
-
-```zsh
-$ brew install zsh
+```sh
+$ make zsh -B
 ```
 
-Symlink the main path of configuration
+<details><summary><code>Images</code></summary>
+<p>
+<img src="https://i.imgur.com/Qnz3IZG.png" />
+</p>
+</details>
 
-```zsh
-$ mv $HOME.zshrc $HOME.zshrc.backup && rm $HOME.zshrc && ln -s $HOME/dotfiles/zsh/.zshrc $HOME.zshrc
-```
+### Hack patched Font
 
-### Font (Hack)
+> Installed by brew
 
-Some parts of this configuration requires the patched font `Hack`.
-The font supplies custom icons that can be used in the terminal.
+Enable font: `Preferences -> Profiles -> Text` select `Hack Regular Nerd Font Complete`
 
-1. Link to the `Hack` font [HackFont](https://github.com/ryanoasis/nerd-fonts). Navigate to Option 4
-   and install the font with `brew`
-
-```zsh
-$ brew tap caskroom/fonts
-$ brew cask install font-hack-nerd-font
-```
-
-2. Navigate to the iTerm2 settings, _Preferences_ -> _Profiles_ -> _Text_, then select
-   the `Hack Regular Nerd Font Complete`
-
-### Vim
-
-The `vim` configuration is a simple `.vimrc` file with all the configurations. The setup here is very simple
-and only requires three steps.
-
-1. Create a source from the `~/.vimrc` file in your home directory to the configuration.
-
-```zsh
-$ ln -s $HOME/dotfiles/vim/.vimrc $HOME.vimrc
-```
-
-2. Open vim and run `:PlugInstall`
+<details><summary><code>Images</code></summary>
+<p>
+<img src="https://www.nerdfonts.com/assets/img/sankey-glyphs-combined-diagram.png" />
+</p>
+</details>
 
 ### Fuzzyfinder (fzf)
 
-Currently using the `fzf` for searching in files, command history, etc.
+> Installed by brew
 
-1. Install `fzf` with brew
+`fzf` for searching in `CTRL-R` search. Comes with brew and vim install.
 
-```zsh
-$ brew install fzf
-$ (brew --prefix)/opt/fzf/install
-```
+<details><summary><code>Images</code></summary>
+<p>
+<img src="https://i.imgur.com/L35rILr.png" />
+</p>
+</details>
 
-2. Remove the content of `.fzf.zsh` in root, and source this repo config.
+### RipGrep (rg)
 
-```zsh
-$ echo "source ~/dotfiles/fzf/.fzf.zsh" > ~/.fzf.zsh
-```
+> Installed by brew
+
+`ripgrep` for a multiple of fuzzysearch options, used by a multitude of the neovim plugins.
+
+<details><summary><code>Images</code></summary>
+<p>
+Search for files
+<img src="https://i.imgur.com/tK6x229.png" />
+Regex search for text inside files
+<img src="https://i.imgur.com/u9TME6X.png" />
+Search after buffers
+<img src="https://i.imgur.com/kHaAbi1.png" />
+Search for yanks
+<img src="https://i.imgur.com/m9KFtzA.png" />
+Search for commands
+<img src="https://i.imgur.com/05I8ER3.png" />
+</p>
+</details>
