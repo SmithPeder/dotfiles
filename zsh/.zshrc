@@ -23,10 +23,6 @@ export LC_ALL=en_US.UTF-8
 # Export GPG
 export GPG_TTY=$(tty)
 
-# Use NeoVim
-export VISUAL=nvim
-export EDITOR="$VISUAL"
-
 # History settings
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=1000
