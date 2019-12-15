@@ -49,4 +49,6 @@ brew "yarn"
 brew "nvm"
 brew "node"
 
+# Cask
 cask "font-hack-nerd-font"
+cask "iterm2"

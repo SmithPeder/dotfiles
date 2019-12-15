@@ -27,13 +27,11 @@
     Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 
     " UI
-    Plug 'smithpeder/vim-hybrid'
     Plug 'kristijanhusak/vim-hybrid-material'
     Plug 'itchyny/lightline.vim'
     Plug 'mengelbrecht/lightline-bufferline'
     Plug 'sheerun/vim-polyglot'
     Plug 'RRethy/vim-illuminate'
-    Plug 'chrisbra/Colorizer'
     Plug 'ryanoasis/vim-devicons'
 
     " Parentheses
