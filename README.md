@@ -2,6 +2,7 @@
   <h1 align="center"> OSX dotfiles </h1>
   <p align="center">
     <img src="https://badgen.net/github/last-commit/smithpeder/dotfiles" />
+    <img src="https://pedersmith.visualstudio.com/dotfiles/_apis/build/status/SmithPeder.dotfiles?branchName=azure" />
     <img src="https://badgen.net//badge/license/MIT/blue" />
     <img src="https://img.shields.io/github/repo-size/smithpeder/dotfiles?color=gree&label=size" />
   </p>

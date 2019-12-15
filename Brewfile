@@ -45,9 +45,9 @@ brew "postgresql", restart_service: true
 brew "redis", restart_service: true
 brew "sqlite"
 
-brew "yarn"
-brew "nvm"
-brew "node"
+# brew "node"
+# brew "yarn"
+# brew "nvm"
 
 # Cask
 cask "font-hack-nerd-font"
