@@ -43,9 +43,9 @@ CASE_SENSITIVE="false"
 ssh-add 2> /dev/null
 
 # Source files
-source $ROOT/.prompt.zsh
-source $ROOT/.aliases.zsh
-source $ROOT/.completions.zsh
-source $ROOT/.plugins.zsh
-source $ROOT/.fzf.zsh
-source $ROOT/.nvm.zsh
+source $ROOT/prompt.zsh
+source $ROOT/aliases.zsh
+source $ROOT/completions.zsh
+source $ROOT/plugins.zsh
+source $ROOT/fzf.zsh
+source $ROOT/nvm.zsh
