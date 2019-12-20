@@ -14,12 +14,3 @@ steps:
 
 - bash: which zsh
   displayName: 'Check zsh install'
-
-- bash: ls -la zsh
-  displayName: 'Check zsh folder'
-
-- bash: zsh &
-  displayName: 'Run zsh install'
-
-- bash: ls -la zsh
-  displayName: 'Check zsh folder'
