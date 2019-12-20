@@ -5,6 +5,7 @@ tap "homebrew/core"
 tap "homebrew/services"
 tap "homebrew/cask-fonts"
 tap "mongodb/brew"
+tap "sambadevi/powerlevel9k"
 
 # Brew
 brew "coreutils"
@@ -27,6 +28,7 @@ brew "gawk"
 brew "imagemagick"
 brew "tree"
 brew "unrar"
+brew "powerlevel9k"
 
 brew "vim"
 brew "nvim"
@@ -34,8 +36,10 @@ brew "fzf"
 brew "ripgrep"
 brew "zsh"
 
-brew "python"
-brew "python3"
+brew "python@2"
+brew "python@3"
+brew "pyenv"
+brew "pyenv-virtualenv"
 
 brew "go"
 brew "kubernetes-cli"

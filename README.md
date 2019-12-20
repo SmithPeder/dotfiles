@@ -53,7 +53,7 @@ $ make zsh -B
 
 <details><summary><code>Images</code></summary>
 <p>
-<img src="https://i.imgur.com/Qnz3IZG.png" />
+<img src="https://i.imgur.com/5WNzyaX.png" />
 </p>
 </details>
 
@@ -99,5 +99,30 @@ Search for yanks
 <img src="https://i.imgur.com/m9KFtzA.png" />
 Search for commands
 <img src="https://i.imgur.com/05I8ER3.png" />
+</p>
+</details>
+
+### Node Version Management (nvm)
+
+> Installed by brew
+
+Lazyloaded by `zsh/nvm.zsh` to limit `SHELL` boot time.
+
+<details><summary><code>Images</code></summary>
+<p>
+<img src="https://i.imgur.com/eUnXwdM.png" />
+</p>
+</details>
+
+### Python Version Management (pyenv / pyenv-virtualenv)
+
+> Installed by brew
+
+- `pyenv` lets you easily switch between multiple versions of Python
+- `pyenv-virtualenv` provides features to manage virtual environments
+
+<details><summary><code>Images</code></summary>
+<p>
+<img src="https://i.imgur.com/v6eTrK6.png" />
 </p>
 </details>

@@ -49,3 +49,4 @@ source $ROOT/completions.zsh
 source $ROOT/plugins.zsh
 source $ROOT/fzf.zsh
 source $ROOT/nvm.zsh
+source $ROOT/pyenv.zsh
