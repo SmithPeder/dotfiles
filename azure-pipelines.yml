@@ -1,0 +1,25 @@
+trigger:
+- master
+- azure
+
+pool:
+  vmImage: 'macos-latest'
+
+steps:
+- script: /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  displayName: 'Install Homebrew'
+
+- script: make brew
+  displayName: 'Install brew packages'
+
+- bash: which zsh
+  displayName: 'Check zsh install'
+
+- bash: ls -la zsh
+  displayName: 'Check zsh folder'
+
+- bash: zsh &
+  displayName: 'Run zsh install'
+
+- bash: ls -la zsh
+  displayName: 'Check zsh folder'

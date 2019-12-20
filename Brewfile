@@ -4,6 +4,7 @@ tap "homebrew/cask"
 tap "homebrew/core"
 tap "homebrew/services"
 tap "homebrew/cask-fonts"
+tap "mongodb/brew"
 
 # Brew
 brew "coreutils"
@@ -32,8 +33,6 @@ brew "nvim"
 brew "fzf"
 brew "ripgrep"
 brew "zsh"
-brew "zsh-completions"
-brew "zsh-syntax-highlighting"
 
 brew "python"
 brew "python3"
@@ -43,12 +42,15 @@ brew "kubernetes-cli"
 
 brew "postgresql", restart_service: true
 brew "redis", restart_service: true
+brew "mongodb-community", restart_service: true
 brew "sqlite"
 
+brew "node"
 brew "yarn"
 brew "nvm"
-brew "node"
 
 # Cask
 cask "font-hack-nerd-font"
 cask "iterm2"
+cask "postman"
+cask "mongodb-compass"
