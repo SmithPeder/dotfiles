@@ -48,5 +48,4 @@ source $ROOT/.aliases.zsh
 source $ROOT/.completions.zsh
 source $ROOT/.plugins.zsh
 source $ROOT/.fzf.zsh
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source $ROOT/.nvm.zsh
