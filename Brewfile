@@ -55,6 +55,6 @@ brew "nvm"
 
 # Cask
 cask "font-hack-nerd-font"
-cask "iterm2"
+cask "kitty"
 cask "postman"
 cask "mongodb-compass"

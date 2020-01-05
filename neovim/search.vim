@@ -2,7 +2,7 @@
 " Fuzzy Search settings
 " ===================================================
   " Search for files
-  nnoremap <LEADER>s :Clap git_files<CR>
+  nnoremap <LEADER>s :Clap files<CR>
   " RipGrep search inside files
   nnoremap <LEADER>r :Clap grep<CR>
   " RipGrep search word under cursor

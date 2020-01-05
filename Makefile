@@ -9,3 +9,6 @@ neovim:
 
 zsh:
 	ln -v -F -s ~/dotfiles/zsh/.zshrc ~/.zshrc
+
+kitty:
+	ln -F -s ~/dotfiles/kitty ~/.config/kitty

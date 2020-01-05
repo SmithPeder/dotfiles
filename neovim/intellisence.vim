@@ -82,6 +82,7 @@
   highlight clear ALEErrorSign
   highlight clear ALEWarningSign
 
+  autocmd FileType typescript setlocal formatprg=prettier\ --parser\ typescript
 
   let g:ale_fixers = {
         \   '*': ['remove_trailing_lines', 'trim_whitespace'],

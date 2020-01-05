@@ -2,7 +2,7 @@
 
 # Run list when directory changes
   function chpwd() {
-    exa --all
+    exa --long --all --header --git
   }
 
 # Exa ls
@@ -41,7 +41,7 @@
   alias gcm="git checkout master"
 
 # Git checkout new branch
-  alias gcn="git checkout -b" 
+  alias gcn="git checkout -b"
 
 # Git branch
   alias gb="git branch"

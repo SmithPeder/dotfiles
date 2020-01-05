@@ -24,7 +24,7 @@
     Plug 'junegunn/fzf.vim'
 
     " coc
-    Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+    Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 
     " UI
     Plug 'kristijanhusak/vim-hybrid-material'
@@ -33,9 +33,18 @@
     Plug 'sheerun/vim-polyglot'
     Plug 'RRethy/vim-illuminate'
     Plug 'ryanoasis/vim-devicons'
+    Plug 'mhinz/vim-startify'
+
+    " Markdown preview
+    Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 
     " Parentheses
     Plug 'Raimondi/delimitMate'
+
+    " Syntax
+    Plug 'leafgarland/typescript-vim'
+    Plug 'peitalin/vim-jsx-typescript'
+    Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
     " Linting
     Plug 'w0rp/ale'
