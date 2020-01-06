@@ -76,6 +76,8 @@
 " Correct comment highlighting
   autocmd FileType json syntax match Comment +\/\/.\+$+
 
+" Coc Highlight
+  autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " iTerm2 cursor settings
   if $TERM_PROGRAM =~ "iTerm"
