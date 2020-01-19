@@ -16,5 +16,9 @@
   "git.removedSign.text":"⏽",
   "git.topRemovedSign.text": "▔",
   "git.changeRemovedSign.text": "⏽",
-  "git.addGBlameToBufferVar": true
+  "git.addGBlameToBufferVar": true,
+
+  "python.jediEnabled": true,
+  "javascript.validate.enable": false,
+  "typescript.validate.enable": false
 }

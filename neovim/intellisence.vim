@@ -1,7 +1,6 @@
 " ===================================================
 " COC
 " ===================================================
-  set cmdheight=2                                   " Better display for messages
   set nobackup                                      " some servers have issues with backup
   set nowritebackup                                 " some servers have issues with backup
   set shortmess+=c                                  " dont give ins-completion-menu messages.
