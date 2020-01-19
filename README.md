@@ -7,7 +7,7 @@
     <img src="https://img.shields.io/github/repo-size/smithpeder/dotfiles?color=gree&label=size" />
   </p>
     <p align="center">
-      <img src="https://i.imgur.com/tWN6X6W.png" width="600px" />
+      <img src="https://i.imgur.com/kUoWMn9.png" width="600px" />
     </p>
 </p>
 
@@ -19,15 +19,11 @@ Install `brew` packages from Brewfile
 $ make brew
 ```
 
-### iTerm2
+### kitty
 
 > Installed by brew
 
-Enable settings: `Preferences -> General`, load settings found in the `iterm2` folder.
-
-Enable profile: `Preferences -> Profiles`, load profile found in the `iterm2` folder.
-
-<img src="https://i.imgur.com/GzJp8GW.png" />
+All config located and loaded by `kitty/kitty.conf`
 
 ### NeoVim
 
