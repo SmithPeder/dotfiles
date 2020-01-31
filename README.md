@@ -53,11 +53,11 @@ $ make zsh -B
 </p>
 </details>
 
-### Hack patched Font
+### Hasklig-nerd-font
 
 > Installed by brew
 
-Enable font: `Preferences -> Profiles -> Text` select `Hack Regular Nerd Font Complete`
+This font is enabled by default in the `kitty.conf`.
 
 <details><summary><code>Images</code></summary>
 <p>
@@ -98,27 +98,14 @@ Search for commands
 </p>
 </details>
 
-### Node Version Management (nvm)
+### Fast Node Manager (fnm)
 
 > Installed by brew
 
-Lazyloaded by `zsh/nvm.zsh` to limit `SHELL` boot time.
+Used instead of the popular `nvm` which is very slow.
 
 <details><summary><code>Images</code></summary>
 <p>
 <img src="https://i.imgur.com/eUnXwdM.png" />
-</p>
-</details>
-
-### Python Version Management (pyenv / pyenv-virtualenv)
-
-> Installed by brew
-
-- `pyenv` lets you easily switch between multiple versions of Python
-- `pyenv-virtualenv` provides features to manage virtual environments
-
-<details><summary><code>Images</code></summary>
-<p>
-<img src="https://i.imgur.com/v6eTrK6.png" />
 </p>
 </details>

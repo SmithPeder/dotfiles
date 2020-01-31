@@ -29,7 +29,7 @@ brew "unrar"
 brew "powerlevel9k"
 
 brew "vim"
-brew "nvim"
+brew "Schniz/tap/fnm"
 brew "fzf"
 brew "ripgrep"
 brew "zsh"
@@ -50,7 +50,6 @@ brew "sqlite"
 
 brew "node"
 brew "yarn"
-brew "nvm"
 
 # Cask
 cask "font-hack-nerd-font"

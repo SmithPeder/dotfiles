@@ -1,4 +1,5 @@
 # ====ZSH-CONFIGURATION====
+#zmodload zsh/zprof
 
 # Path to zsh folder
 export ROOT=$HOME/dotfiles/zsh
@@ -48,4 +49,6 @@ source $ROOT/aliases.zsh
 source $ROOT/completions.zsh
 source $ROOT/plugins.zsh
 source $ROOT/fzf.zsh
-source $ROOT/nvm.zsh
+source $ROOT/fnm.zsh
+
+#zprof
