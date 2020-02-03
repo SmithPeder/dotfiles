@@ -1,4 +1,4 @@
-all: brew neovim zsh
+all: brew neovim zsh kitty
 
 brew:
 	brew bundle

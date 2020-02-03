@@ -18,7 +18,7 @@ export TERM=xterm-256color
 # Node ENV
 export NODE_ENV='development'
 # Password store
-export PASSWORD_STORE_DIR=$HOME/code/password-store
+export PASSWORD_STORE_DIR=$HOME/.password-store
 # Fix brew
 export LC_ALL=en_US.UTF-8
 # Export GPG
