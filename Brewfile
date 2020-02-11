@@ -28,8 +28,10 @@ brew "arp-scan"
 brew "tree"
 brew "unrar"
 brew "powerlevel9k"
+brew "sshuttle"
 
 brew "vim"
+brew "newvim"
 brew "Schniz/tap/fnm"
 brew "fzf"
 brew "ripgrep"
@@ -43,6 +45,7 @@ brew "python@3"
 
 brew "go"
 brew "kubernetes-cli"
+brew "asdf"
 
 brew "postgresql", restart_service: true
 brew "redis", restart_service: true

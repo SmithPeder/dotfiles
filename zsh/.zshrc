@@ -51,4 +51,10 @@ source $ROOT/plugins.zsh
 source $ROOT/fzf.zsh
 source $ROOT/fnm.zsh
 
+. /usr/local/opt/asdf/asdf.sh
+. /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
+
+# Export Java 8 for SPARK
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+
 #zprof
