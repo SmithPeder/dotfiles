@@ -3,6 +3,7 @@
 
 # Path to zsh folder
 export ROOT=$HOME/dotfiles/zsh
+export DOTFILES=$HOME/dotfiles
 export COMPLETIONS=$HOME/dotfiles/zsh/completions
 export PLUGINS=$HOME/dotfiles/zsh/plugins
 # Path to bin
@@ -49,12 +50,15 @@ source $ROOT/aliases.zsh
 source $ROOT/completions.zsh
 source $ROOT/plugins.zsh
 source $ROOT/fzf.zsh
-source $ROOT/fnm.zsh
 
+# Source asdf
 . /usr/local/opt/asdf/asdf.sh
 . /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
 
 # Export Java 8 for SPARK
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+#export SPARK_MEM=${SPARK_MEM:-8192m}
+#export JAVA_OPTS="$JAVA_OPTS -Djava.library.path=$SPARK_LIBRARY_PATH"
+#export JAVA_OPTS="$JAVA_OPTS -Xms$SPARK_MEM -Xmx$SPARK_MEM"
 
 #zprof

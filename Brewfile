@@ -5,7 +5,6 @@ tap "homebrew/core"
 tap "homebrew/services"
 tap "homebrew/cask-fonts"
 tap "mongodb/brew"
-tap "sambadevi/powerlevel9k"
 
 # Brew
 brew "coreutils"
@@ -30,9 +29,8 @@ brew "unrar"
 brew "powerlevel9k"
 brew "sshuttle"
 
-brew "vim"
-brew "newvim"
-brew "Schniz/tap/fnm"
+brew "asdf"
+
 brew "fzf"
 brew "ripgrep"
 brew "zsh"
@@ -45,15 +43,6 @@ brew "python@3"
 
 brew "go"
 brew "kubernetes-cli"
-brew "asdf"
-
-brew "postgresql", restart_service: true
-brew "redis", restart_service: true
-brew "mongodb-community", restart_service: true
-brew "sqlite"
-
-brew "node"
-brew "yarn"
 
 # Cask
 cask "font-hack-nerd-font"

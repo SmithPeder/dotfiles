@@ -1,21 +1,20 @@
 # ====PROMPT-CONFIGURATION====
 
-# Source Powerlevel9k
-source /usr/local/opt/powerlevel9k/powerlevel9k.zsh-theme
+# Source Powerlevel10k
+source $PLUGINS/powerlevel10k/powerlevel10k.zsh-theme
 
 # Only show Cross on fault, no need for status-code
 POWERLEVEL9K_STATUS_CROSS=true
 
 # Left Prompt
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
+  virtualenv
   dir
   node_version
   vcs
   status
 )
-
-# Right Prompt
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=( )
 
 # DIR
 POWERLEVEL9K_DIR_DEFAULT_FOREGROUND='252'
