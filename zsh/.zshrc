@@ -1,5 +1,7 @@
-# ====ZSH-CONFIGURATION====
-#zmodload zsh/zprof
+# Enable Powerlevel10k instant prompt
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
 # Path to zsh folder
 export ROOT=$HOME/dotfiles/zsh
@@ -45,7 +47,6 @@ CASE_SENSITIVE="false"
 ssh-add 2> /dev/null
 
 # Source files
-source $ROOT/prompt.zsh
 source $ROOT/aliases.zsh
 source $ROOT/completions.zsh
 source $ROOT/plugins.zsh
@@ -57,8 +58,6 @@ source $ROOT/fzf.zsh
 
 # Export Java 8 for SPARK
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
-#export SPARK_MEM=${SPARK_MEM:-8192m}
-#export JAVA_OPTS="$JAVA_OPTS -Djava.library.path=$SPARK_LIBRARY_PATH"
-#export JAVA_OPTS="$JAVA_OPTS -Xms$SPARK_MEM -Xmx$SPARK_MEM"
 
-#zprof
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
