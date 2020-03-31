@@ -91,6 +91,7 @@
         \   'c': ['clang-format'],
         \   'python': ['yapf', 'isort', 'black'],
         \   'java': ['google_java_format'],
+        \   'markdown': ['prettier'],
         \   'rust': ['rustfmt'],
         \   'c++': ['clang-format'],
         \   'sh': ['shfmt']

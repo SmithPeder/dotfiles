@@ -29,7 +29,7 @@ export GPG_TTY=$(tty)
 
 # History settings
 HISTFILE=$HOME/.zsh_history
-HISTSIZE=1000
+HISTSIZE=100000
 SAVEHIST=$HISTSIZE
 # Remove older duplicate entries from history
 setopt hist_ignore_all_dups
