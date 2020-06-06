@@ -94,7 +94,8 @@
         \   'markdown': ['prettier'],
         \   'rust': ['rustfmt'],
         \   'c++': ['clang-format'],
-        \   'sh': ['shfmt']
+        \   'sh': ['shfmt'],
+        \   'yml': ['prettier'],
         \}
 
   let g:ale_linters = {
@@ -107,4 +108,5 @@
         \ 'python': ['pycodestyle', 'flake8'],
         \ 'graphql': ['prettier', 'eslint'],
         \ 'c': ['clang-format'],
+        \ 'yml': ['prettier'],
         \}

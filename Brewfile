@@ -28,6 +28,7 @@ brew "tree"
 brew "unrar"
 brew "powerlevel9k"
 brew "sshuttle"
+brew "pinentry-mac"
 
 brew "asdf"
 
@@ -54,3 +55,4 @@ cask "mongodb-compass"
 cask "minikube"
 cask "mactex-no-gui"
 cask "menumeters"
+cask "visual-studio-code"

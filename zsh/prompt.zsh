@@ -55,7 +55,7 @@
     # command_execution_time    # duration of the last command
     # background_jobs           # presence of background jobs
     # direnv                    # direnv status (https://direnv.net/)
-    asdf                        # asdf version manager (https://github.com/asdf-vm/asdf)
+    # asdf                        # asdf version manager (https://github.com/asdf-vm/asdf)
     virtualenv                  # python virtual environment (https://docs.python.org/3/library/venv.html)
     # anaconda                  # conda environment (https://conda.io/)
     # pyenv                     # python environment (https://github.com/pyenv/pyenv)
@@ -99,10 +99,10 @@
     # todo                      # todo items (https://github.com/todotxt/todo.txt-cli)
     # timewarrior               # timewarrior tracking status (https://timewarrior.net/)
     # taskwarrior               # taskwarrior task count (https://taskwarrior.org/)
-    public_ip                   # public IP address
+    # public_ip                   # public IP address
     # =========================[ Line #2 ]=========================
-    newline                     # \n
-    time                        # current time
+    # newline                     # \n
+    # time                        # current time
     # ip                        # ip address and bandwidth usage for a specified network interface
     # proxy                     # system-wide http/https/ftp proxy
     # battery                   # internal battery
@@ -177,15 +177,15 @@
   typeset -g POWERLEVEL9K_MULTILINE_NEWLINE_PROMPT_PREFIX='%240F├─'
   typeset -g POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX='%240F╰─'
   # Connect right prompt lines with these symbols.
-  typeset -g POWERLEVEL9K_MULTILINE_FIRST_PROMPT_SUFFIX='%240F─╮'
+  # typeset -g POWERLEVEL9K_MULTILINE_FIRST_PROMPT_SUFFIX='%240F─╮'
   typeset -g POWERLEVEL9K_MULTILINE_NEWLINE_PROMPT_SUFFIX='%240F─┤'
-  typeset -g POWERLEVEL9K_MULTILINE_LAST_PROMPT_SUFFIX='%240F─╯'
+  # typeset -g POWERLEVEL9K_MULTILINE_LAST_PROMPT_SUFFIX='%240F─╯'
 
   # Filler between left and right prompt on the first prompt line. You can set it to ' ', '·' or
   # '─'. The last two make it easier to see the alignment between left and right prompt and to
   # separate prompt from command output. You might want to set POWERLEVEL9K_PROMPT_ADD_NEWLINE=false
   # for more compact prompt if using using this option.
-  typeset -g POWERLEVEL9K_MULTILINE_FIRST_PROMPT_GAP_CHAR='·'
+  typeset -g POWERLEVEL9K_MULTILINE_FIRST_PROMPT_GAP_CHAR=' '
   typeset -g POWERLEVEL9K_MULTILINE_FIRST_PROMPT_GAP_BACKGROUND=
   if [[ $POWERLEVEL9K_MULTILINE_FIRST_PROMPT_GAP_CHAR != ' ' ]]; then
     # The color of the filler. You'll probably want to match the color of POWERLEVEL9K_MULTILINE
