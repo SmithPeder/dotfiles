@@ -1,0 +1,68 @@
+{
+  // EditorSettings
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "editor.renderIndentGuides": false,
+  "editor.suggestSelection": "first",
+  "editor.tabCompletion": "on",
+  "editor.fontSize": 14,
+  "editor.wordWrap": "on",
+  "explorer.confirmDragAndDrop": false,
+  "window.zoomLevel": -1,
+  "explorer.confirmDelete": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+
+  // Vim Settings
+  "vim.easymotion": true,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "j"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<leader>", "d"],
+      "after": ["d", "d"]
+    },
+    {
+      "before": ["<C-n>"],
+      "commands": [":nohl"]
+    },
+    {
+      "before": ["j"],
+      "after": ["g", "j"]
+    },
+    {
+      "before": ["k"],
+      "after": ["g", "k"]
+    }
+  ],
+  "vim.leader": "<space>",
+  "vim.hndleKeys": {
+    "<C-a>": false,
+    "<C-f>": false
+  },
+  "files.exclude": {
+    ".aux": true,
+    ".fdb_latexmk": true,
+    ".fls": true,
+    ".log": true,
+    ".ozf": true,
+    ".synctex.gz": true
+  },
+  "workbench.colorTheme": "Nord Wave",
+  "workbench.activityBar.visible": true,
+  "terminal.integrated.fontFamily": "monospace",
+  "workbench.startupEditor": "newUntitledFile",
+  "editor.fontFamily": "Hasklug Nerd Font Mono",
+  "terminal.integrated.shell.osx": "/bin/zsh",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "workbench.sideBar.location": "left"
+}
