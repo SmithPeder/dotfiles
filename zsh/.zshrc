@@ -52,12 +52,5 @@ source $ROOT/completions.zsh
 source $ROOT/plugins.zsh
 source $ROOT/fzf.zsh
 
-# Source asdf
-. /usr/local/opt/asdf/asdf.sh
-. /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
-
-# Export Java 8 for SPARK
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
