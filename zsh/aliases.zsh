@@ -64,5 +64,6 @@
 # Docker-compose
   alias d-c="docker-compose"
 
-# Unmap oz to ozengine
-  alias oz=ozengine
+# Ansible
+  alias ap="ansible-playbook"
+  alias av="ansible-vault"
