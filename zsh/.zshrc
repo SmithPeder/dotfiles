@@ -27,6 +27,10 @@ export LC_ALL=en_US.UTF-8
 # Export GPG
 export GPG_TTY=$(tty)
 
+# Fix shit
+export LC_CTYPE=C
+export LANG=C
+
 # History settings
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=100000
