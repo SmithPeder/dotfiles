@@ -14,3 +14,6 @@
   nnoremap <LEADER>c :Clap command<CR>
   " RipGrep search for buffers
   nnoremap <LEADER>b :Clap buffers<CR>
+
+  " Open CHAdTree file explorer
+  nnoremap <leader>v <cmd>CHADopen<cr>

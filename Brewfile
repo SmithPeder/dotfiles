@@ -30,8 +30,6 @@ brew "powerlevel9k"
 brew "sshuttle"
 brew "pinentry-mac"
 
-brew "asdf"
-
 brew "fzf"
 brew "ripgrep"
 brew "zsh"

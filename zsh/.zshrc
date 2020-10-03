@@ -27,6 +27,10 @@ export LC_ALL=en_US.UTF-8
 # Export GPG
 export GPG_TTY=$(tty)
 
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+
 # Fix shit
 export LC_CTYPE=C
 export LANG=C

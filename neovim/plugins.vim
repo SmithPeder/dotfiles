@@ -11,42 +11,39 @@
 " Plug install list
 " ===================================================
   call plug#begin('~/.vim/plugged')
+     " Git
+     Plug 'airblade/vim-rooter'
+     Plug 'airblade/vim-gitgutter'
+     Plug 'tpope/vim-fugitive'
 
-    " Git
-    Plug 'airblade/vim-rooter'
-    Plug 'airblade/vim-gitgutter'
+     " Search
+     Plug 'haya14busa/incsearch.vim'
+     Plug 'google/vim-searchindex'
+     Plug 'liuchengxu/vim-clap'
+     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+     Plug 'junegunn/fzf.vim'
 
-    " Search
-    Plug 'haya14busa/incsearch.vim'
-    Plug 'google/vim-searchindex'
-    Plug 'liuchengxu/vim-clap'
-    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-    Plug 'junegunn/fzf.vim'
+     " Language
+     Plug 'neovim/nvim-lspconfig'
+     Plug 'sheerun/vim-polyglot'
 
-    " coc
-    Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+     " UI
+     Plug 'sainnhe/sonokai'
+     Plug 'Yggdroot/indentLine'
+     Plug 'RRethy/vim-illuminate'
+     Plug 'ryanoasis/vim-devicons'
+     Plug 'mhinz/vim-startify'
+     Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': ':UpdateRemotePlugins'}
 
-    " UI
-    Plug 'kristijanhusak/vim-hybrid-material'
-    Plug 'itchyny/lightline.vim'
-    Plug 'mengelbrecht/lightline-bufferline'
-    Plug 'sheerun/vim-polyglot'
-    Plug 'RRethy/vim-illuminate'
-    Plug 'ryanoasis/vim-devicons'
-    Plug 'mhinz/vim-startify'
+     " Statusbars (top and bottom)
+     Plug 'itchyny/lightline.vim'
+     " Plug 'mengelbrecht/lightline-bufferline'
 
-    " Markdown preview
-    Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 
-    " Parentheses
-    Plug 'Raimondi/delimitMate'
+     " Parentheses
+     Plug 'Raimondi/delimitMate'
 
-    " Syntax
-    Plug 'leafgarland/typescript-vim'
-    Plug 'peitalin/vim-jsx-typescript'
-    Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-
-    " Linting
-    Plug 'w0rp/ale'
+     " Linting
+     Plug 'w0rp/ale'
 
   call plug#end()

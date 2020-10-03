@@ -11,7 +11,8 @@
   alias tree="exa --tree --level=3"
 
 # Vim
-  alias vim="nvim"
+  alias vim="/Users/smith/Downloads/nvim-osx64/bin/nvim"
+  alias nvim="/Users/smith/Downloads/nvim-osx64/bin/nvim"
 
 # Plz
   alias plz="sudo"
@@ -67,3 +68,6 @@
 # Ansible
   alias ap="ansible-playbook"
   alias av="ansible-vault"
+
+# Go to dotfiles
+  alias dotfiles="cd ~/dotfiles"

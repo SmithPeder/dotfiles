@@ -56,11 +56,6 @@
   noremap <Left> <NOP>
   noremap <Right> <NOP>
 
-" Open params with new-line
-  inoremap (<cr> (<cr>)<esc>O
-  inoremap {<cr> {<cr>}<esc>O
-  inoremap [<cr> [<cr>]<esc>O
-
 " Clear highlight search
   nmap <silent> <leader><space> :noh<CR>
 
@@ -70,11 +65,5 @@
 " Puts you in insertmode when file is gitcommit
   autocmd FileType gitcommit  exec 'au VimEnter * startinsert'
 
-" Illuminate the word under cursor
-  let g:Illuminate_highlightUnderCursor = 1
-
 " Correct comment highlighting
   autocmd FileType json syntax match Comment +\/\/.\+$+
-
-" Coc Highlight
-  autocmd CursorHold * silent call CocActionAsync('highlight')

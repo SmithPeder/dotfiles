@@ -4,27 +4,16 @@
   set laststatus=2
   let g:lightline = {}
   let g:lightline = {
-      \ 'colorscheme': 'one',
+      \ 'colorscheme': 'sonokai',
       \ 'active': {
       \   'left': [
-      \     [ 'mode', 'paste' ], [ 'status', 'filename' ]
+      \     [ 'mode', 'paste' ], [ 'readonly', 'status', 'filename' ]
       \   ],
-      \   'right': [ [ 'percent' ], [ 'cocstatus' ] ]
-      \ },
-      \ 'component_function': {
-			\		'cocstatus': 'coc#status',
-      \   'status': 'LightlineGitStatus',
+      \   'right': [ [ 'percent' ] ]
       \ },
       \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
       \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
       \ }
-
-  " Git status
-  function! LightlineGitStatus() abort
-    return get(g:, 'coc_git_status', '')
-  endfunction
-
-  autocmd User CocGitStatusChange {command}
 
   " Don't show the --INSERT-- tag as it's shown by lightline
   set noshowmode
