@@ -14,9 +14,6 @@
   alias vim="/Users/smith/Downloads/nvim-osx64/bin/nvim"
   alias nvim="/Users/smith/Downloads/nvim-osx64/bin/nvim"
 
-# Plz
-  alias plz="sudo"
-
 # Go back
   alias ..="cd .."
 

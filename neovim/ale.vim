@@ -5,12 +5,6 @@
   let g:ale_sign_column_always = 1
   " Run fixers on save
   let g:ale_fix_on_save = 1
-  " Use local prettier config
-  let g:ale_javascript_prettier_use_local_config = 1
-  " Use local eslint config
-  let g:ale_javascript_eslint_use_local_config = 1
-  " Autoimport TypeScript modules
-  let g:ale_completion_tsserver_autoimport = 1
   " Symbols
   let g:ale_sign_error = ''
   let g:ale_sign_warning = ''
@@ -35,3 +29,5 @@
         \   'go': ['gofmt'],
         \   'sh': ['shfmt'],
         \}
+
+  set omnifunc=ale#completion#OmniFunc

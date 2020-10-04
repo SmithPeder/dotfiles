@@ -37,13 +37,11 @@
 
      " Statusbars (top and bottom)
      Plug 'itchyny/lightline.vim'
-     " Plug 'mengelbrecht/lightline-bufferline'
-
 
      " Parentheses
      Plug 'Raimondi/delimitMate'
 
      " Linting
-     Plug 'w0rp/ale'
+""     Plug 'w0rp/ale'
 
   call plug#end()

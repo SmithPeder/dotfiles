@@ -1,0 +1,37 @@
+---
+colors:
+  primary:
+    background: '0x2c2e34'
+    foreground: '0xCCCCCC'
+
+font:
+  normal:
+    family: 'Hasklug Nerd Font'
+    style: Regular
+  size: 14.0
+
+window:
+  decorations: buttonless
+
+scrolling:
+  history: 10000
+  multiplier: 3
+
+bell:
+  animation: EaseOutExpo
+  duration: 0
+  color: "0xffffff"
+
+background_opacity: 1.0
+
+key_bindings:
+  - {key: Key0, mods: Command, action: ResetFontSize}
+  - {key: Equals, mods: Command, action: IncreaseFontSize}
+  - {key: Add, mods: Command, action: IncreaseFontSize}
+  - {key: Minus, mods: Command, action: DecreaseFontSize}
+  - {key: R, mods: Command, action: ClearHistory}
+  - {key: R, mods: Command, chars: "\x0c"}
+  - {key: V, mods: Command, action: Paste}
+  - {key: C, mods: Command, action: Copy}
+  - {key: Q, mods: Command, action: Quit}
+  - {key: W, mods: Command, action: Quit}
