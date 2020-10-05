@@ -26,6 +26,7 @@
      " Language
      Plug 'neovim/nvim-lspconfig'
      Plug 'sheerun/vim-polyglot'
+     Plug 'nvim-lua/completion-nvim'
 
      " UI
      Plug 'sainnhe/sonokai'

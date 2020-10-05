@@ -14,20 +14,18 @@
 
   autocmd FileType typescript setlocal formatprg=prettier\ --parser\ typescript
 
-  let g:ale_fixers = {
-        \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-        \   'javascript': ['prettier'],
-        \   'typescript': ['prettier'],
-        \   'typescriptreact': ['prettier'],
-        \   'markdown': ['prettier'],
-        \   'yml': ['prettier'],
-        \   'css': ['prettier'],
-        \   'c': ['clang-format'],
-        \   'python': ['black'],
-        \   'java': ['google_java_format'],
-        \   'rust': ['rustfmt'],
-        \   'go': ['gofmt'],
-        \   'sh': ['shfmt'],
-        \}
+  " Only use ALE for fixers
+  let g:ale_disable_lsp = 1
 
-  set omnifunc=ale#completion#OmniFunc
+  let g:ale_fixers = {
+  \   '*': ['remove_trailing_lines', 'trim_whitespace'],
+  \   'javascript': ['prettier'],
+  \   'typescript': ['prettier'],
+  \   'typescriptreact': ['prettier'],
+  \   'css': ['prettier'],
+  \   'markdown': ['prettier'],
+  \   'python': ['black'],
+  \   'rust': ['rustfmt'],
+  \   'go': ['gofmt']
+  \ }
+  let g:ale_fix_on_save = 1

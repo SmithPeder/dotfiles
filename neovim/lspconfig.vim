@@ -12,6 +12,22 @@ nnoremap <silent> gc    <cmd>lua vim.lsp.buf.declaration()<CR>
 
 " Set filetype omnifunc
 autocmd Filetype typescript setlocal omnifunc=v:lua.vim.lsp.omnifunc
+autocmd Filetype python setlocal omnifunc=v:lua.vim.lsp.omnifunc
+autocmd Filetype javascript setlocal omnifunc=v:lua.vim.lsp.omnifunc
+
+" Use completion-nvim in every buffer
+autocmd BufEnter * lua require'completion'.on_attach()
+
+" Use <Tab> and <S-Tab> to navigate through popup menu
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+" Set completeopt to have a better completion experience
+set completeopt=menuone,noinsert,noselect
+
+" Avoid showing message extra message when using completion
+set shortmess+=c
+
 
 lua <<EOF
 
@@ -22,13 +38,13 @@ require'nvim_lsp'.vimls.setup{}
 -- flow
 -- npx flow lsp --help
 require'nvim_lsp'.flow.setup{
-  filetypes = { "javascript", "javascriptreact", "javascript.jsx" }
+  on_attach=require'completion'.on_attach
 }
 
 -- typescript
 -- :LspInstall tsserver
 require'nvim_lsp'.tsserver.setup{
-  filetypes = {"typescript", "typescriptreact", "typescript.tsx"}
+  on_attach=require'completion'.on_attach
 }
 
 -- bash
