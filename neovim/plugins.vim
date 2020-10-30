@@ -43,6 +43,6 @@
      Plug 'Raimondi/delimitMate'
 
      " Linting
-""     Plug 'w0rp/ale'
+     Plug 'w0rp/ale'
 
   call plug#end()
