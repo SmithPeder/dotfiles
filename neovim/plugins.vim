@@ -34,7 +34,10 @@
      Plug 'RRethy/vim-illuminate'
      Plug 'ryanoasis/vim-devicons'
      Plug 'mhinz/vim-startify'
-     Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': ':UpdateRemotePlugins'}
+
+     " Explorer
+     Plug 'kyazdani42/nvim-web-devicons'
+     Plug 'kyazdani42/nvim-tree.lua'
 
      " Statusbars (top and bottom)
      Plug 'itchyny/lightline.vim'
