@@ -33,50 +33,50 @@ lua <<EOF
 
 -- vim
 -- yarn global add vim-language-server
-require'nvim_lsp'.vimls.setup{}
+require("lspconfig").vimls.setup{}
 
 -- flow
 -- npx flow lsp --help
-require'nvim_lsp'.flow.setup{
+require("lspconfig").flow.setup{
   on_attach=require'completion'.on_attach
 }
 
 -- typescript
 -- :LspInstall tsserver
-require'nvim_lsp'.tsserver.setup{
+require("lspconfig").tsserver.setup{
   on_attach=require'completion'.on_attach
 }
 
 -- bash
 -- :LspInstall bashls
-require'nvim_lsp'.bashls.setup{}
+require("lspconfig").bashls.setup{}
 
 -- css
 -- :LspInstall cssls
-require'nvim_lsp'.cssls.setup{}
+require("lspconfig").cssls.setup{}
 
 -- Docker
 -- :LspInstall dockerls
-require'nvim_lsp'.dockerls.setup{}
+require("lspconfig").dockerls.setup{}
 
 -- HTML
 -- LspInstall html
-require'nvim_lsp'.html.setup{}
+require("lspconfig").html.setup{}
 
 -- Java
 -- :LspInstall jdtls
-require'nvim_lsp'.jdtls.setup{}
+require("lspconfig").jdtls.setup{}
 
 -- python
 -- pip3 install -U jedi-language-server
-require'nvim_lsp'.jedi_language_server.setup{}
+require("lspconfig").jedi_language_server.setup{}
 
 -- json
 -- :LspInstall jsonls
-require'nvim_lsp'.jsonls.setup{}
+require("lspconfig").jsonls.setup{}
 
 -- yamlls
 -- :LspInstall yamlls
-require'nvim_lsp'.yamlls.setup{}
+require("lspconfig").yamlls.setup{}
 
 EOF
