@@ -4,6 +4,7 @@ runtime! ./settings.vim
 runtime! ./search.vim
 runtime! ./ale.vim
 runtime! ./lightline.vim
+runtime! ./barbar.vim
 runtime! ./git.vim
 runtime! ./lspconfig.vim
 runtime! ./tree.vim

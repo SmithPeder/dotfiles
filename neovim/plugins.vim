@@ -34,12 +34,15 @@ call plug#begin('~/.vim/plugged')
   Plug 'ryanoasis/vim-devicons'
   Plug 'mhinz/vim-startify'
 
-  " Explorer
+  " Icons
   Plug 'kyazdani42/nvim-web-devicons'
+
+  " Explorer
   Plug 'kyazdani42/nvim-tree.lua'
 
   " Statusbars (top and bottom)
   Plug 'itchyny/lightline.vim'
+  Plug 'romgrk/barbar.nvim'
 
   " Parentheses
   Plug 'Raimondi/delimitMate'
