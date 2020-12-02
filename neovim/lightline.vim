@@ -4,7 +4,7 @@
 set laststatus=2
 let g:lightline = {}
 let g:lightline = {
-    \ 'colorscheme': 'sonokai',
+    \ 'colorscheme': 'onehalfdark',
     \ 'active': {
     \   'left': [
     \     [ 'mode', 'paste' ], [ 'readonly', 'status', 'filename' ]

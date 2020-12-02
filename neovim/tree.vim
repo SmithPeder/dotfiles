@@ -1,5 +1,5 @@
 let g:lua_tree_side = "left"
-let g:lua_tree_width = 30
+let g:lua_tree_width = 35
 let g:lua_tree_ignore = [ '.git', 'node_modules', '.cache' ]
 let g:lua_tree_auto_close = 1
 let g:lua_tree_quit_on_open = 0

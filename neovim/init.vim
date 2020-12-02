@@ -5,6 +5,5 @@ runtime! ./search.vim
 runtime! ./ale.vim
 runtime! ./lightline.vim
 runtime! ./git.vim
-runtime! ./indentline.vim
 runtime! ./lspconfig.vim
 runtime! ./tree.vim
