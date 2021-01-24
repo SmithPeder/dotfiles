@@ -67,3 +67,6 @@
 
 # Go to dotfiles
   alias dotfiles="cd ~/dotfiles"
+
+# Take json from clipboard, fix and paste back
+  alias jsontidy="pbpaste | jq '.' | pbcopy"

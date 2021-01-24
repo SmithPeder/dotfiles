@@ -1,4 +1,4 @@
-" ===================================================
+"" ===================================================
 " Install Plug if it's not installed
 " ===================================================
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -19,9 +19,9 @@ call plug#begin('~/.vim/plugged')
   " Search
   Plug 'haya14busa/incsearch.vim'
   Plug 'google/vim-searchindex'
-  Plug 'liuchengxu/vim-clap'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
+  Plug 'ojroques/nvim-lspfuzzy', {'branch': 'main'}
 
   " Language
   Plug 'neovim/nvim-lspconfig'
