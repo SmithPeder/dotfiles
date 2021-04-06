@@ -1,14 +1,9 @@
-<p align="center">
-  <h1 align="center"> OSX dotfiles </h1>
-  <p align="center">
-    <img src="https://badgen.net/github/last-commit/smithpeder/dotfiles" />
-    <img src="https://badgen.net//badge/license/MIT/blue" />
-    <img src="https://img.shields.io/github/repo-size/smithpeder/dotfiles?color=gree&label=size" />
-  </p>
-    <p align="center">
-      <img src="https://i.imgur.com/kUoWMn9.png" width="600px" />
-    </p>
-</p>
+
+<h1 align="center">
+    <code>.dtfiles</code>
+</h1>
+
+<h4 align='center'>Configuration for neovim, zsh, fzf, iterm and more.</h4>
 
 ### Homebrew
 

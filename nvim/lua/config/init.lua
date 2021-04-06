@@ -1,0 +1,6 @@
+require("config.colorscheme")
+require("config.completion")
+require("config.navigator")
+require("config.telescope")
+require("config.lspkind")
+require("config.tree")

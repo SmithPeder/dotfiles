@@ -27,6 +27,9 @@ export LC_ALL=en_US.UTF-8
 # Export GPG
 export GPG_TTY=$(tty)
 
+export LDFLAGS="-L/usr/local/opt/llvm/lib"
+export CPPFLAGS="-I/usr/local/opt/llvm/include"
+
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
