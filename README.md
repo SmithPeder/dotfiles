@@ -3,29 +3,25 @@
     <code>.dtfiles</code>
 </h1>
 
-<h4 align='center'>Configuration for neovim, zsh, fzf, iterm and more.</h4>
+<h4 align='center'>Configuration for neovim, zsh, fzf, kitty and more.</h4>
+
+> If you can't see the apple icon => ,  then these dotfiles are not for you
 
 ### Homebrew
 
 Install `brew` packages from Brewfile
 
 ```sh
-$ make brew
+$ brew bundle
 ```
 
 ### kitty
 
-> Installed by brew
-
-All config located and loaded by `kitty/kitty.conf`
+All config located in `kitty.conf` with symlic from `~/.config/kitty/kitty.conf`
 
 ### NeoVim
 
-> Installed by brew
-
-```sh
-$ make neovim -B
-```
+Fully migrated to `lua` based config. All config located in `nvim/` with the whole nvim folder being a symlic from `~/.config/nvim/`
 
 <details><summary><code>Images</code></summary>
 <p>
@@ -35,11 +31,7 @@ $ make neovim -B
 
 ### ZSH Shell
 
-> Installed by brew
-
-```sh
-$ make zsh -B
-```
+Config root located in `zsh/zshrc` with symlic from `~/.zshrc`
 
 <details><summary><code>Images</code></summary>
 <p>
@@ -48,8 +40,6 @@ $ make zsh -B
 </details>
 
 ### Hasklig-nerd-font
-
-> Installed by brew
 
 This font is enabled by default in the `kitty.conf`.
 
@@ -61,8 +51,6 @@ This font is enabled by default in the `kitty.conf`.
 
 ### Fuzzyfinder (fzf)
 
-> Installed by brew
-
 `fzf` for searching in `CTRL-R` search. Comes with brew and vim install.
 
 <details><summary><code>Images</code></summary>
@@ -72,8 +60,6 @@ This font is enabled by default in the `kitty.conf`.
 </details>
 
 ### RipGrep (rg)
-
-> Installed by brew
 
 `ripgrep` for a multiple of fuzzysearch options, used by a multitude of the neovim plugins.
 
@@ -92,14 +78,3 @@ Search for commands
 </p>
 </details>
 
-### Fast Node Manager (fnm)
-
-> Installed by brew
-
-Used instead of the popular `nvm` which is very slow.
-
-<details><summary><code>Images</code></summary>
-<p>
-<img src="https://i.imgur.com/eUnXwdM.png" />
-</p>
-</details>
