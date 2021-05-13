@@ -3,22 +3,15 @@ return require("packer").startup(
         -- Packer can manage itself as an optional plugin
         use {"wbthomason/packer.nvim", opt = true}
 
-        --
-        use {
-            "nvim-lua/popup.nvim",
-            "nvim-lua/plenary.nvim"
-        }
+        -- General
+        use {"nvim-lua/popup.nvim", "nvim-lua/plenary.nvim"}
 
         -- Color scheme
-        use {
-            "joshdick/onedark.vim"
-        }
+        use "joshdick/onedark.vim"
+        use "SmithPeder/grey-moon"
 
         -- Fuzzy finder
-        use {
-            "nvim-telescope/telescope.nvim",
-            requires = {{"nvim-lua/popup.nvim"}, {"nvim-lua/plenary.nvim"}}
-        }
+        use {"nvim-telescope/telescope.nvim", requires = {{"nvim-lua/popup.nvim"}, {"nvim-lua/plenary.nvim"}}}
         use {
             "nvim-telescope/telescope-frecency.nvim",
             requires = {"tami5/sql.nvim"},
@@ -77,5 +70,12 @@ return require("packer").startup(
 
         -- ALE
         use {"dense-analysis/ale"}
+
+        -- Statusbar
+        use {"hoob3rt/lualine.nvim", requires = {"kyazdani42/nvim-web-devicons", opt = true}}
+        use {"akinsho/nvim-bufferline.lua", requires = "kyazdani42/nvim-web-devicons"}
+
+        -- Tresitter
+        use {"nvim-treesitter/nvim-treesitter"}
     end
 )

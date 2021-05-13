@@ -7,10 +7,11 @@ cmd "syntax enable"
 cmd "filetype plugin indent on"
 
 -- General options
+utils.opt("o", "mouse", "a")
 utils.opt("o", "hidden", true)
 utils.opt("o", "scrolloff", 4)
 utils.opt("o", "ttyfast", true)
-utils.opt("o", "mouse", "a")
+utils.opt("o", "ttyfast", true)
 
 -- Casing for search
 utils.opt("o", "ignorecase", true)

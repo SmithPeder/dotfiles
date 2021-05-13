@@ -31,10 +31,26 @@ local on_attach = function(client, bufnr)
     buf_set_keymap("n", "<leader>lca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
 end
 
--- To get builtin LSP running, do something like:
+-- Get builtin LSP running
 require("nlua.lsp.nvim").setup(
     require("lspconfig"),
     {
         on_attach = on_attach
     }
 )
+
+-- npm install -g pyright
+-- require "lspconfig".pyright.setup {}
+
+-- pip install -U jedi-language-server
+require "lspconfig".jedi_language_server.setup{}
+
+
+-- npm install -g typescript typescript-language-server
+require "lspconfig".tsserver.setup {}
+
+-- npm install -g vim-language-server
+require'lspconfig'.vimls.setup{}
+
+-- npm i -g bash-language-server
+require'lspconfig'.bashls.setup{}

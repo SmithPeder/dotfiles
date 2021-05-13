@@ -5,31 +5,47 @@ fi
 
 # Path to zsh folder
 export ROOT=$HOME/dotfiles/zsh
+
+# Path to dotfiles
 export DOTFILES=$HOME/dotfiles
-export COMPLETIONS=$HOME/dotfiles/zsh/completions
-export PLUGINS=$HOME/dotfiles/zsh/plugins
+
+# Path to zsh completion files
+export COMPLETIONS=$DOTFILES/zsh/completions
+
+# Path to zsh plugins
+export PLUGINS=$DOTFILES/zsh/plugins
+
+# Path to kitty terminal conf
+export KITTY_CONFIG_DIRECTORY=$DOTFILES
+
 # Path to bin
 export PATH=$PATH:/usr/local/bin
+
 # Path to password store
 export PASSWORD_STORE_DIR=$HOME/.password-store
-# Path to ssh
+
+# Path to ssh public key
 export SSH_KEY_PATH=$HOME/.ssh/rsa_id
+
 # Path to go
 export PATH=$HOME/go/bin:$PATH
+
 # Export colors
 export TERM=xterm-256color
-# Node ENV
-export NODE_ENV='development'
-# Password store
+
+# Export path to password store
 export PASSWORD_STORE_DIR=$HOME/.password-store
-# Fix brew
+
+# Fix brew stuff
 export LC_ALL=en_US.UTF-8
+
 # Export GPG
 export GPG_TTY=$(tty)
 
 export LDFLAGS="-L/usr/local/opt/llvm/lib"
 export CPPFLAGS="-I/usr/local/opt/llvm/include"
 
+# Fix pyenv init
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
@@ -38,18 +54,17 @@ fi
 export LC_CTYPE=C
 export LANG=C
 
+# Set Node ENV globally
+export NODE_ENV='development'
+
 # History settings
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=100000
 SAVEHIST=$HISTSIZE
-# Remove older duplicate entries from history
-setopt hist_ignore_all_dups
-# Remove superfluous blanks from history items
-setopt share_history
-# Activating auto cd
-setopt auto_cd
-# Activate highlight on completion
-zstyle ':completion:*' menu select
+setopt hist_ignore_all_dups # Remove older duplicate entries from history
+setopt share_history # Remove superfluous blanks from history items
+setopt auto_cd # Activating auto cd
+zstyle ':completion:*' menu select # Activate highlight on completion
 
 # Case-sensitive completion
 CASE_SENSITIVE="false"
