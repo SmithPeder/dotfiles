@@ -1,7 +1,7 @@
--- Eviline config for lualine
 local lualine = require "lualine"
 
--- Color table for highlights
+
+-- Color table
 local colors = {
     bg = "#151515",
     fg = "#bbc2cf",
@@ -30,7 +30,7 @@ local conditions = {
     end
 }
 
--- Config
+-- Define config object with empty sections
 local config = {
     options = {
         -- Disable sections and component separators
@@ -152,7 +152,7 @@ ins_left {
 }
 
 ins_left {
-    -- Lsp server name .
+    -- Lsp server
     function()
         local msg = "No Active Lsp"
         local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
@@ -177,7 +177,6 @@ ins_left {
     color = "LualineMode"
 }
 
--- Add components to right sections
 ins_right {
     "o:encoding", -- option component same as &encoding in viml
     upper = true, -- I'm not sure why it's upper case either ;)
@@ -194,12 +193,6 @@ ins_right {
 
 -- Location [200:14]
 ins_right {"location"}
-
--- Progress
-ins_right {
-    "progress",
-    color = {fg = colors.fg, gui = "bold"}
-}
 
 ins_right {
     -- filesize component
@@ -227,5 +220,4 @@ ins_right {
     right_padding = 2
 }
 
--- Now don't forget to initialize lualine
-lualine.setup(config)
+require"lualine".setup(config)

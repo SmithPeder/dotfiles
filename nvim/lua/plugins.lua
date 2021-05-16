@@ -1,5 +1,5 @@
 return require("packer").startup(
-    function()
+    function(use)
         -- Packer can manage itself as an optional plugin
         use {"wbthomason/packer.nvim", opt = true}
 
@@ -7,17 +7,17 @@ return require("packer").startup(
         use {"nvim-lua/popup.nvim", "nvim-lua/plenary.nvim"}
 
         -- Color scheme
-        use "joshdick/onedark.vim"
-        use "SmithPeder/grey-moon"
+        use {"SmithPeder/grey-moon"}
 
         -- Fuzzy finder
-        use {"nvim-telescope/telescope.nvim", requires = {{"nvim-lua/popup.nvim"}, {"nvim-lua/plenary.nvim"}}}
-        use {
-            "nvim-telescope/telescope-frecency.nvim",
-            requires = {"tami5/sql.nvim"},
-            config = function()
-                require("telescope").load_extension("frecency")
-            end
+        use {"nvim-telescope/telescope.nvim", 
+          requires = {{"nvim-lua/popup.nvim"}, {"nvim-lua/plenary.nvim"}}
+        }
+        use {"nvim-telescope/telescope-frecency.nvim",
+          requires = {"tami5/sql.nvim"},
+          config = function()
+            require("telescope").load_extension("frecency")
+          end
         }
         use {"nvim-telescope/telescope-symbols.nvim"}
 
@@ -52,8 +52,7 @@ return require("packer").startup(
         use {"tomtom/tcomment_vim"}
 
         -- GitSigns
-        use {
-            "lewis6991/gitsigns.nvim",
+        use {"lewis6991/gitsigns.nvim",
             requires = {
                 "nvim-lua/plenary.nvim"
             },
@@ -77,5 +76,9 @@ return require("packer").startup(
 
         -- Tresitter
         use {"nvim-treesitter/nvim-treesitter"}
+
+        -- Startsceen
+        use {"mhinz/vim-startify"}
+        use {"airblade/vim-rooter"}
     end
 )

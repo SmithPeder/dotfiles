@@ -39,12 +39,8 @@ require("nlua.lsp.nvim").setup(
     }
 )
 
--- npm install -g pyright
--- require "lspconfig".pyright.setup {}
-
 -- pip install -U jedi-language-server
 require "lspconfig".jedi_language_server.setup{}
-
 
 -- npm install -g typescript typescript-language-server
 require "lspconfig".tsserver.setup {}
