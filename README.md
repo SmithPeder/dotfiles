@@ -12,6 +12,7 @@ Fully migrated to `lua` based config. All config located in `nvim/` with the who
 <details><summary><code>Images</code></summary>
 <p>
 <img src="https://github.com/SmithPeder/dotfiles/blob/master/.github/nvim.png?raw=true" />
+<img src="https://github.com/SmithPeder/dotfiles/blob/master/.github/telescope.png?raw=true" />
 </p>
 </details>
 
