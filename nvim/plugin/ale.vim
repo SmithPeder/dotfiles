@@ -12,6 +12,8 @@ let g:ale_fixers = {
 \   'typescript': ['prettier'],
 \   'lua': ['luafmt'],
 \   'python': ['black', 'isort', 'autoimport', 'add_blank_lines_for_python_control_statements'],
+\   'tex': ['textlint'],
+\   'latex': ['textlint'],
 \}
 
 let g:ale_fix_on_save = 1
