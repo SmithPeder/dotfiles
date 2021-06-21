@@ -3,6 +3,12 @@ return require("packer").startup(
         -- Packer can manage itself as an optional plugin
         use {"wbthomason/packer.nvim", opt = true}
 
+        -- Colorizer
+        use {"norcalli/nvim-colorizer.lua", config = function()
+          require("colorizer").setup()
+        end
+        }
+
         -- General
         use {"nvim-lua/popup.nvim", "nvim-lua/plenary.nvim"}
 

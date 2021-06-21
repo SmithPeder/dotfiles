@@ -17,6 +17,8 @@ local install_path = fn.stdpath("data") .. "/site/pack/packer/opt/packer.nvim"
 if fn.empty(fn.glob(install_path)) > 0 then
     execute("!git clone https://github.com/wbthomason/packer.nvim " .. install_path)
 end
+
+-- Need to packadd packer since we have opt = true, and manage packer as a optional plugin
 vim.cmd [[packadd packer.nvim]]
 vim.cmd "autocmd BufWritePost plugins.lua PackerCompile"
 
