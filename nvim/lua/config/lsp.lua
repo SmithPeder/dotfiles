@@ -15,19 +15,19 @@ end
 
 
 -- lua LSP must be built and installed manually
-require("nlua.lsp.nvim").setup(
-    require("lspconfig"), { on_attach = on_attach }
-)
---
+-- require("nlua.lsp.nvim").setup(
+--     require("lspconfig"), { on_attach = on_attach }
+-- )
+
 -- pip install -U jedi-language-server
 nvim_lsp.jedi_language_server.setup{ on_attach = on_attach }
---
+
 -- npm install -g typescript typescript-language-server
 nvim_lsp.tsserver.setup{ on_attach = on_attach }
---
+
 -- npm install -g vim-language-server
 nvim_lsp.vimls.setup{ on_attach = on_attach }
---
+
 -- npm i -g bash-language-server
 nvim_lsp.bashls.setup{ on_attach = on_attach }
 

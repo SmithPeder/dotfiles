@@ -1,20 +1,83 @@
-local lualine = require "lualine"
-
-
--- Color table
 local colors = {
-    bg = "#151515",
-    fg = "#bbc2cf",
-    yellow = "#ECBE7B",
-    cyan = "#008080",
-    darkblue = "#081633",
-    green = "#98be65",
-    orange = "#FF8800",
-    violet = "#a9a1e1",
-    magenta = "#c678dd",
-    blue = "#51afef",
-    red = "#ec5f67"
+  blue      = '#61afef',
+  blue_2    = '#294963',
+  green     = '#98c379',
+  green_2   = '#495c3b',
+  purple    = '#c678dd',
+  purple_2  = '#52325c',
+  red       = '#e06c75',
+  red_2     = '#be5046',
+  yellow    = '#e5c07b',
+  fg        = '#eeeeee',
+  bg        = '#212121',
+  gray1     = '#313131',
+  gray2     = '#414141',
+  gray3     = '#515151',
 }
+
+-- Local lualine theme
+local smith = {
+  normal = {
+    a = {fg = colors.bg, bg = colors.green, gui = 'bold'},
+    b = {fg = colors.fg, bg = colors.green_2, gui = 'bold'},
+    c = {fg = colors.fg, bg = colors.bg, gui = 'bold'},
+  },
+  insert = {
+    a = {fg = colors.bg, bg = colors.blue, gui = 'bold'},
+    b = {fg = colors.fg, bg = colors.blue_2, gui = 'bold'},
+    c = {fg = colors.fg, bg = colors.bg, gui = 'bold'}
+  },
+  visual = {
+    a = {fg = colors.bg, bg = colors.purple, gui = 'bold'},
+    b = {fg = colors.fg, bg = colors.purple_2, gui = 'bold'},
+    c = {fg = colors.fg, bg = colors.bg, gui = 'bold'}
+  },
+  replace = {
+    a = {fg = colors.bg, bg = colors.red, gui = 'bold'},
+    b = {fg = colors.fg, bg = colors.red_2, gui = 'bold'},
+    c = {fg = colors.fg, bg = colors.bg, gui = 'bold'}
+  },
+  inactive = {
+    a = {fg = colors.bg, bg = colors.green, gui = 'bold'},
+    b = {fg = colors.fg, bg = colors.green_2, gui = 'bold'},
+    c = {fg = colors.fg, bg = colors.bg, gui = 'bold'},
+  }
+}
+
+
+-- Define config object
+local config = {
+    options = {
+        theme = smith
+    },
+    sections = {
+        lualine_a = {"mode"},
+        lualine_b = {"branch"},
+        lualine_c = {"filename"},
+        lualine_x = {"filetype"},
+        lualine_y = {"progress"},
+        lualine_z = {"location"},
+    },
+    inactive_sections = {
+        lualine_a = {},
+        lualine_b = {},
+        lualine_c = {'filename'},
+        lualine_x = {'location'},
+        lualine_y = {},
+        lualine_z = {}
+    },
+    extensions = {'nvim-tree'} -- custom view for nvim-tree
+}
+
+-- Inserts a component in lualine_c at left section
+local function ins_left(component)
+    table.insert(config.sections.lualine_c, component)
+end
+
+-- Inserts a component in lualine_x ot right section
+local function ins_right(component)
+    table.insert(config.sections.lualine_x, component)
+end
 
 local conditions = {
     buffer_not_empty = function()
@@ -30,102 +93,14 @@ local conditions = {
     end
 }
 
--- Define config object with empty sections
-local config = {
-    options = {
-        -- Disable sections and component separators
-        component_separators = "",
-        section_separators = "",
-        theme = {
-            -- We are going to use lualine_c an lualine_x as left and
-            -- right section. Both are highlighted by c theme .  So we
-            -- are just setting default looks o statusline
-            normal = {c = {fg = colors.fg, bg = colors.bg}},
-            inactive = {c = {fg = colors.fg, bg = colors.bg}}
-        }
-    },
-    sections = {
-        -- these are to remove the defaults
-        lualine_a = {},
-        lualine_b = {},
-        lualine_y = {},
-        lualine_z = {},
-        -- These will be filled later
-        lualine_c = {},
-        lualine_x = {}
-    },
-    inactive_sections = {
-        -- these are to remove the defaults
-        lualine_a = {},
-        lualine_v = {},
-        lualine_y = {},
-        lualine_z = {},
-        lualine_c = {},
-        lualine_x = {}
-    }
-}
-
--- Inserts a component in lualine_c at left section
-local function ins_left(component)
-    table.insert(config.sections.lualine_c, component)
-end
-
--- Inserts a component in lualine_x ot right section
-local function ins_right(component)
-    table.insert(config.sections.lualine_x, component)
-end
-
--- Return blocks in the color of the Vim mode
-local function blocks()
-    -- auto change color according to neovims mode
-    local mode_color = {
-        n = colors.green,
-        i = colors.blue,
-        v = colors.magenta,
-        [""] = colors.magenta,
-        V = colors.magenta,
-        c = colors.magenta,
-        no = colors.red,
-        s = colors.orange,
-        S = colors.orange,
-        [""] = colors.orange,
-        ic = colors.yellow,
-        R = colors.violet,
-        Rv = colors.violet,
-        cv = colors.red,
-        ce = colors.red,
-        r = colors.cyan,
-        rm = colors.cyan,
-        ["r?"] = colors.cyan,
-        ["!"] = colors.red,
-        t = colors.red
-    }
-    vim.api.nvim_command("hi! LualineMode guifg=" .. mode_color[vim.fn.mode()] .. " guibg=" .. colors.bg)
-    return ""
-end
-
 ins_left {
-    "branch",
-    icon = "",
-    condition = conditions.check_git_workspace,
-    color = {fg = colors.violet, gui = "bold"},
-    left_padding = 2
-}
-
-ins_left {
-    "filename",
-    condition = conditions.buffer_not_empty,
-    color = {fg = colors.magenta, gui = "bold"}
-}
-
-ins_right {
     "diff",
-    -- Is it me or the symbol for modified us really weird
-    symbols = {added = " ", modified = "柳 ", removed = " "},
+    symbols = {added = " ", modified = " ", removed = " "},
     color_added = colors.green,
-    color_modified = colors.orange,
+    color_modified = colors.yellow,
     color_removed = colors.red,
-    condition = conditions.hide_in_width
+    condition = conditions.hide_in_width,
+    color = { gui = "bold"}
 }
 
 ins_left {
@@ -134,27 +109,14 @@ ins_left {
     symbols = {error = " ", warn = " ", info = " "},
     color_error = colors.red,
     color_warn = colors.yellow,
-    color_info = colors.cyan
+    color_info = colors.cyan,
+    color = { gui = "bold"}
 }
 
--- Insert mid section. You can make any number of sections in neovim :)
--- for lualine it's any number greater then 2
-ins_left {
-    function()
-        return "%="
-    end
-}
-
-ins_left {
-    -- mode component
-    blocks,
-    color = "LualineMode"
-}
-
-ins_left {
+ins_right {
     -- Lsp server
     function()
-        local msg = "No Active Lsp"
+        local msg = "No Lsp"
         local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
         local clients = vim.lsp.get_active_clients()
         if next(clients) == nil then
@@ -168,13 +130,7 @@ ins_left {
         end
         return msg
     end,
-    color = "LualineMode"
-}
-
-ins_left {
-    -- mode component
-    blocks,
-    color = "LualineMode"
+    color = {fg = colors.purple, gui = "bold"}
 }
 
 ins_right {
@@ -190,9 +146,6 @@ ins_right {
     icons_enabled = false, -- I think icons are cool but Eviline doesn't have them. sigh
     color = {fg = colors.green, gui = "bold"}
 }
-
--- Location [200:14]
-ins_right {"location"}
 
 ins_right {
     -- filesize component

@@ -11,7 +11,7 @@ let g:ale_fixers = {
 \   'javascript': ['prettier'],
 \   'typescript': ['prettier'],
 \   'lua': ['luafmt'],
-\   'python': ['black', 'isort', 'autoimport', 'add_blank_lines_for_python_control_statements'],
+\   'python': ['black', 'isort', 'autoimport'],
 \   'tex': ['textlint'],
 \   'latex': ['textlint'],
 \}

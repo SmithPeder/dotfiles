@@ -12,11 +12,11 @@ return require("packer").startup(
         -- General
         use {"nvim-lua/popup.nvim", "nvim-lua/plenary.nvim"}
 
-        -- Color scheme
-        use {"SmithPeder/grey-moon"}
+        -- Colorscheme
+        use {"marko-cerovac/material.nvim"}
 
         -- Fuzzy finder
-        use {"nvim-telescope/telescope.nvim", 
+        use {"nvim-telescope/telescope.nvim",
           requires = {{"nvim-lua/popup.nvim"}, {"nvim-lua/plenary.nvim"}}
         }
         use {"nvim-telescope/telescope-frecency.nvim",
