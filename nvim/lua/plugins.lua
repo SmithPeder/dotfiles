@@ -31,7 +31,16 @@ return require("packer").startup(
         use {"neovim/nvim-lspconfig"}
         use {"onsails/lspkind-nvim"}
         use {"ray-x/lsp_signature.nvim"}
-        use {"hrsh7th/nvim-compe"}
+        use {
+          "hrsh7th/nvim-cmp",
+          requires = {
+            "hrsh7th/vim-vsnip",
+            "hrsh7th/cmp-buffer",
+            "hrsh7th/cmp-nvim-lsp",
+            "saadparwaiz1/cmp_luasnip",
+            "L3MON4D3/LuaSnip"
+          }
+        }
 
         -- Lua development
         use {"tjdevries/nlua.nvim"}
@@ -41,6 +50,7 @@ return require("packer").startup(
 
         -- Fugitive for Git
         use {"tpope/vim-fugitive"}
+        use {"rhysd/git-messenger.vim"}
 
         -- Navigation
         use {
@@ -82,6 +92,7 @@ return require("packer").startup(
 
         -- Tresitter
         use {"nvim-treesitter/nvim-treesitter"}
+        use {'nvim-treesitter/nvim-treesitter-textobjects'}
 
         -- Startsceen
         use {"mhinz/vim-startify"}

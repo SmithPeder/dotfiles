@@ -34,6 +34,8 @@ utils.opt("b", "expandtab", true)
 utils.opt("b", "smartindent", true)
 utils.opt("b", "autoindent", true)
 
+vim.opt.undofile = true -- persistent undo
+
 -- Clipboard
 utils.opt("o", "wildmode", "list:longest")
 utils.opt("o", "clipboard", "unnamed,unnamedplus")
