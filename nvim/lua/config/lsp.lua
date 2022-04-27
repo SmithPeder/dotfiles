@@ -14,16 +14,14 @@ local on_attach = function(_, bufnr)
 end
 
 
--- lua LSP must be built and installed manually
--- require("nlua.lsp.nvim").setup(
---     require("lspconfig"), { on_attach = on_attach }
--- )
-
 -- pip install -U jedi-language-server
 nvim_lsp.jedi_language_server.setup{ on_attach = on_attach }
 
 -- npm install -g typescript typescript-language-server
-nvim_lsp.tsserver.setup{ on_attach = on_attach }
+nvim_lsp.tsserver.setup{ on_attach = on_attach, filetypes = { "typescript", "typescriptreact", "typescript.tsx" } }
+
+-- npm install -g flow
+nvim_lsp.flow.setup{ on_attach = on_attach, filetypes = {"javascript", "javascriptreact", "javasc"} }
 
 -- npm install -g vim-language-server
 nvim_lsp.vimls.setup{ on_attach = on_attach }
@@ -32,4 +30,16 @@ nvim_lsp.vimls.setup{ on_attach = on_attach }
 nvim_lsp.bashls.setup{ on_attach = on_attach }
 
 -- brew install texlab
-nvim_lsp.texlab.setup{ on_attach = on_attach }
+nvim_lsp.texlab.setup{
+  on_attach = on_attach,
+  settings = {
+    texlab = {
+      rootDirectory = "/Users/smith/thesis",
+      build = {
+        onSave = true,
+        executable = 'tectonic',
+        args = { "%f", "--synctex", "--keep-logs", "--keep-intermediates", }
+      }
+    }
+  }
+}

@@ -5,6 +5,7 @@ local indent = 2
 
 cmd "syntax enable"
 cmd "filetype plugin indent on"
+cmd "set noswapfile"
 
 -- General options
 utils.opt("o", "mouse", "a")
@@ -54,3 +55,10 @@ vim.api.nvim_command("command! Wq :wq")
 vim.api.nvim_command("command! WQ :wq")
 vim.api.nvim_command("command! W :w")
 vim.api.nvim_command("command! Q :q")
+
+utils.map("n", "j", "gj")
+utils.map("n", "k", "gk")
+
+-- Set default behavior of tex_flavor
+
+vim.api.nvim_command("let g:tex_flavor = 'tex'")

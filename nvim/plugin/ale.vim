@@ -14,6 +14,7 @@ let g:ale_fixers = {
 \   'python': ['black', 'isort', 'autoimport'],
 \   'tex': ['textlint'],
 \   'latex': ['textlint'],
+\   'markdown': ['prettier'],
 \}
 
 let g:ale_fix_on_save = 1

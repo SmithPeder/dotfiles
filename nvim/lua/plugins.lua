@@ -34,11 +34,12 @@ return require("packer").startup(
         use {
           "hrsh7th/nvim-cmp",
           requires = {
-            "hrsh7th/vim-vsnip",
+            "hrsh7th/cmp-cmdline",
+            "hrsh7th/cmp-path",
             "hrsh7th/cmp-buffer",
             "hrsh7th/cmp-nvim-lsp",
-            "saadparwaiz1/cmp_luasnip",
-            "L3MON4D3/LuaSnip"
+            "hrsh7th/cmp-vsnip",
+            "hrsh7th/vim-vsnip"
           }
         }
 
@@ -78,7 +79,11 @@ return require("packer").startup(
         }
 
         -- Tree
-        use {"kyazdani42/nvim-tree.lua"}
+        use {
+          'kyazdani42/nvim-tree.lua',
+          requires = 'kyazdani42/nvim-web-devicons',
+          config = function() require'nvim-tree'.setup {} end
+        }
 
         -- Pairs
         use {"jiangmiao/auto-pairs"}

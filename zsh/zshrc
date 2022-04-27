@@ -66,6 +66,12 @@ setopt share_history # Remove superfluous blanks from history items
 setopt auto_cd # Activating auto cd
 zstyle ':completion:*' menu select # Activate highlight on completion
 
+# stuff
+export GPF_INSTALL_LOCATION=/usr/local/bin/git-push-fork-to-upstream-branch
+export GPF_URL=https://raw.githubusercontent.com/jklukas/git-push-fork-to-upstream-branch/master/git-push-fork-to-upstream-branch
+export GPF_USE_SSH=true
+
+
 # Case-sensitive completion
 CASE_SENSITIVE="false"
 
@@ -82,3 +88,8 @@ source $ROOT/fzf.zsh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/bin/terraform terraform
+
+export PATH="$HOME/.poetry/bin:$PATH"

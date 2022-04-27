@@ -1,9 +1,7 @@
 require"bufferline".setup {
     options = {
         view = "multiwindow",
-        numbers = "ordinal",
-        number_style = { "none", "subscript" }, -- buffer_id at index 1, ordinal at index 2
-        mappings = true, -- maps LEADER 1-9 to bufferline picks
+        numbers = "buffer_id",
         buffer_close_icon= "",
         modified_icon = "●",
         close_icon = "",
@@ -22,20 +20,9 @@ require"bufferline".setup {
         show_close_icon = false,
         show_tab_indicators = true,
         persist_buffer_sort = false,
-        -- separator_style = "thick",
-        separator_style = { "|", "|" },
+        separator_style = "thick",
         enforce_regular_tabs = false,
         always_show_bufferline = true,
         offsets = {{filetype = "NvimTree", text = "File Explorer", text_align = "left"}},
       },
-    highlights = {
-      fill = {
-        guifg = '#fefefe',
-        guibg = '#151515'
-      },
-      background = {
-        guifg = '#fefefe',
-        guibg = '#151515'
-      }
-    }
   }
