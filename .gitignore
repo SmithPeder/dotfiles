@@ -11,3 +11,8 @@ yarn.lock
 Brewfile.lock.json
 
 .netrwhist
+
+docs/node_modules
+docs/.temp
+docs/.cache
+*.vuepress
