@@ -6,7 +6,6 @@ utils.opt("o", "termguicolors", true)
 vim.g.material_style = "darker"
 require('material').setup({
 
-	contrast = true, -- Enable contrast for sidebars, floating windows and popup menus like Nvim-Tree
 	borders = false, -- Enable borders between verticaly split windows
 
 	popup_menu = "dark", -- Popup menu style ( can be: 'dark', 'light', 'colorful' or 'stealth' )

@@ -24,12 +24,16 @@ brew "tree"
 brew "sshuttle"
 brew "pinentry-mac"
 
+brew "neovim"
+
 brew "fzf"
 brew "ripgrep"
 brew "zsh"
 
-# brew "python@2"
-# brew "python@3"
+brew "python@2"
+brew "python@3.8"
+brew "python@3.9"
+brew "python@3.10"
 
 brew "go"
 
@@ -39,5 +43,5 @@ cask "font-hasklig-nerd-font"
 cask "font-hasklig-nerd-font-mono"
 cask "kitty"
 cask "postman"
-cask "menumeters"
 cask "visual-studio-code"
+cask "iterm2-nightly"
