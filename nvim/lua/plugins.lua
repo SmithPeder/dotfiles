@@ -7,7 +7,7 @@ return require("packer").startup(
         use {"nvim-lua/popup.nvim", "nvim-lua/plenary.nvim"}
 
         -- Colorscheme
-        use {"marko-cerovac/material.nvim"}
+        use { "themercorp/themer.lua" }
 
         -- Fuzzy finder
         use {"nvim-telescope/telescope.nvim",
@@ -94,13 +94,5 @@ return require("packer").startup(
         -- Startsceen
         use {"mhinz/vim-startify"}
         use {"airblade/vim-rooter"}
-        use({
-          "kylechui/nvim-surround",
-          config = function()
-              require("nvim-surround").setup({
-                  -- Configuration here, or leave empty to use defaults
-              })
-          end
-        })
     end
 )

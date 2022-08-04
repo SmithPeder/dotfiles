@@ -9,6 +9,7 @@ cmd "set noswapfile"
 
 -- General options
 utils.opt("o", "mouse", "a")
+utils.opt("o", "signcolumn", "yes")
 utils.opt("o", "hidden", true)
 utils.opt("o", "scrolloff", 4)
 utils.opt("o", "ttyfast", true)
