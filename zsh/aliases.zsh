@@ -1,10 +1,5 @@
 # ====ALIAS-CONFIGURATION====
 
-# Run list when directory changes
-  function chpwd() {
-    exa --long --all --header --git
-  }
-
 # Exa ls
   alias ls="exa --all"
   alias l="exa --long --all --header --git"
@@ -51,6 +46,9 @@
 
 # Django migrate
   alias migrate="./manage.py migrate"
+
+# Shell pluss
+  alias shell="./manage.py shell_plus"
 
 # Cat with color
   alias cat="ccat"

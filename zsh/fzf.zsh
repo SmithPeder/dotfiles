@@ -8,10 +8,6 @@ fi
 # ---------------
 [[ $- == *i* ]] && source "/usr/local/opt/fzf/shell/completion.zsh" 2> /dev/null
 
-# Key bindings
-# ------------
-source "/usr/local/opt/fzf/shell/key-bindings.zsh"
-
 rga-fzf() {
 	RG_PREFIX="rga --files-with-matches"
 	local file

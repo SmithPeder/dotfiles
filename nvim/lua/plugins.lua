@@ -3,12 +3,6 @@ return require("packer").startup(
         -- Packer can manage itself as an optional plugin
         use {"wbthomason/packer.nvim", opt = true}
 
-        -- Colorizer
-        use {"norcalli/nvim-colorizer.lua", config = function()
-          require("colorizer").setup()
-        end
-        }
-
         -- General
         use {"nvim-lua/popup.nvim", "nvim-lua/plenary.nvim"}
 
@@ -38,7 +32,6 @@ return require("packer").startup(
             "hrsh7th/cmp-path",
             "hrsh7th/cmp-buffer",
             "hrsh7th/cmp-nvim-lsp",
-            "hrsh7th/cmp-vsnip",
             "hrsh7th/vim-vsnip"
           }
         }
@@ -97,10 +90,17 @@ return require("packer").startup(
 
         -- Tresitter
         use {"nvim-treesitter/nvim-treesitter"}
-        use {'nvim-treesitter/nvim-treesitter-textobjects'}
 
         -- Startsceen
         use {"mhinz/vim-startify"}
         use {"airblade/vim-rooter"}
+        use({
+          "kylechui/nvim-surround",
+          config = function()
+              require("nvim-surround").setup({
+                  -- Configuration here, or leave empty to use defaults
+              })
+          end
+        })
     end
 )

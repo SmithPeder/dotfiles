@@ -173,4 +173,9 @@ ins_right {
     right_padding = 2
 }
 
-require"lualine".setup(config)
+require("lualine").setup(config)
+-- require('lualine').setup {
+--     options = {
+--       theme = 'material'
+--     }
+--   }
