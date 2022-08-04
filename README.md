@@ -60,9 +60,6 @@ $ make brew
 
 My main terminal atm is Warp. I am still in a trail phase here and will decide later if will stay. At this time there is no exportable configuration.
 
-```sh
-$ make kitty
-```
 
 ### kitty terminal config
 
