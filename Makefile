@@ -6,9 +6,9 @@ PACKAGE = brew list --versions $(1) > /dev/null || brew install $(1)$(2)
 # Install a Homebrew Cask application only when it is not already installed
 CASK = brew list --cask $(1) > /dev/null 2>&1 || brew install --cask $(1)
 
-.PHONEY: link install brew taps packages casks list clean
+.PHONEY: links install brew taps packages casks lists clean
 
-link: | neovim zsh kitty
+links: | neovim zsh kitty
 
 install: | taps packages casks link clean
 
@@ -77,7 +77,7 @@ casks: | brew
 				$(call CASK, slack)
 
 # Use to update install lists.
-list:
+lists:
 	brew tap
 	@echo "\n"
 	brew leaves
@@ -99,4 +99,4 @@ zsh:
 
 # Ensure kitty has the correct path config
 kitty:
-	ln -F -s ~/dotfiles/kitty ~/.config/kitty
+	ln -F -s ~/dotfiles/kitty.conf ~/.config/kitty/kitty.conf
