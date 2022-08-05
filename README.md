@@ -38,16 +38,25 @@ $ make install
 $ make install
 ```
 
-### NeoVim
+## Editor - NeoVim
 
-Fully migrated `lua` based config. All config located in `nvim/` with the whole nvim folder being a symlink from `~/.config/nvim/` making `init.lua` the config entrypoing.
+Fully migrated `lua` based config. All config located in [nvim](https://github.com/smithpeder/dotfiles/nvim) with the whole nvim folder being a symlink from `~/.config/nvim/` making [nvim/init](https://github.com/smithpeder/dotfiles/nvim/init.lua) the config entrypoint. Default _(core)_ settings are located in [nvim/settings](https://github.com/smithpeder/dotfiles/nvim/settings,lua). 
 
 ```sh
 $ make neovim
 ```
 
+### NeoVim Plugins
 
-### Homebrew
+The configuration uses a lot of custom nvim plugins `(lua)`. The full list can be found at [nvim/lua/plugins](https://github.com/smithpeder/dotfiles/nvim/lua/plugins.lua) and uses [packer](https://github.com/wbthomason/packer.nvim) as the default package manager. Many plugins have additional configuration found within the [nvim/lua/config/](https://github.com/smithpeder/dotfiles/nvim/lua/config/) folder.
+
+### Search - Fuzzyfinder (fzf) and RipGrep (rg)
+
+`fzf` is used for searching in `CTRL-R` search and is used by a multitude of the neovim plugins. `ripgrep` is used for a multiple of fuzzysearch options, used by a multitude of the neovim plugins.
+
+
+
+## Homebrew
 
 This configuration uses the `brew` package manager. The ``Brewfile`` contains a lot of core packages, as well as a lot of the GUI based programs I use on a day-to-day basis.
 
@@ -55,6 +64,7 @@ This configuration uses the `brew` package manager. The ``Brewfile`` contains a 
 $ make brew
 ```
 
+## Terminal
 
 ### Warp terminal config
 
@@ -78,12 +88,3 @@ Config root located in `zsh/zshrc` with symlink from `~/.zshrc`
 
 This font is enabled by default in the `kitty.conf` and is installed via Brew.
 
-
-### Fuzzyfinder (fzf)
-
-`fzf` for searching in `CTRL-R` search. Comes with brew and neovim install.
-
-
-### RipGrep (rg)
-
-`ripgrep` for a multiple of fuzzysearch options, used by a multitude of the neovim plugins.
