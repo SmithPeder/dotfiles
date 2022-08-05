@@ -20,13 +20,7 @@ fi
 # Yarn completion
 if [[ ! -f $COMPLETIONS/_yarn ]]; then
   echo "Installing yarn completion"
-  curl -fLo $COMPLETIONS/_yarn https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/plugins/yarn/_yarn 
-fi
-
-# Redis completion
-if [[ ! -f $COMPLETIONS/_redis-cli ]]; then
-  echo "Installing redis completion"
-  curl -fLo $COMPLETIONS/_redis-cli https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/plugins/redis-cli/_redis-cli
+  curl -fLo $COMPLETIONS/_yarn https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/plugins/yarn/_yarn
 fi
 
 # Completion
