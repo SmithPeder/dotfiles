@@ -1,4 +1,4 @@
-require("config.colorscheme")
+require("config.catppuccin")
 require("config.completion")
 require("config.navigator")
 require("config.telescope")

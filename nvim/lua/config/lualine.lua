@@ -1,54 +1,7 @@
-local colors = {
-  blue      = '#61afef',
-  blue_2    = '#294963',
-  green     = '#98c379',
-  green_2   = '#495c3b',
-  purple    = '#c678dd',
-  purple_2  = '#52325c',
-  red       = '#e06c75',
-  red_2     = '#be5046',
-  yellow    = '#e5c07b',
-  fg        = '#eeeeee',
-  bg        = '#15171c',
-  gray1     = '#313131',
-  gray2     = '#414141',
-  gray3     = '#515151',
-}
-
--- Local lualine theme
-local smith = {
-  normal = {
-    a = {fg = colors.bg, bg = colors.green, gui = 'bold'},
-    b = {fg = colors.fg, bg = colors.green_2, gui = 'bold'},
-    c = {fg = colors.fg, bg = colors.bg, gui = 'bold'},
-  },
-  insert = {
-    a = {fg = colors.bg, bg = colors.blue, gui = 'bold'},
-    b = {fg = colors.fg, bg = colors.blue_2, gui = 'bold'},
-    c = {fg = colors.fg, bg = colors.bg, gui = 'bold'}
-  },
-  visual = {
-    a = {fg = colors.bg, bg = colors.purple, gui = 'bold'},
-    b = {fg = colors.fg, bg = colors.purple_2, gui = 'bold'},
-    c = {fg = colors.fg, bg = colors.bg, gui = 'bold'}
-  },
-  replace = {
-    a = {fg = colors.bg, bg = colors.red, gui = 'bold'},
-    b = {fg = colors.fg, bg = colors.red_2, gui = 'bold'},
-    c = {fg = colors.fg, bg = colors.bg, gui = 'bold'}
-  },
-  inactive = {
-    a = {fg = colors.bg, bg = colors.green, gui = 'bold'},
-    b = {fg = colors.fg, bg = colors.green_2, gui = 'bold'},
-    c = {fg = colors.fg, bg = colors.bg, gui = 'bold'},
-  }
-}
-
-
 -- Define config object
 local config = {
     options = {
-        theme = smith
+        theme = "catppuccin"
     },
     sections = {
         lualine_a = {"mode"},
@@ -67,6 +20,23 @@ local config = {
         lualine_z = {}
     },
     extensions = {'nvim-tree'} -- custom view for nvim-tree
+}
+
+local colors = {
+  blue      = '#61afef',
+  blue_2    = '#294963',
+  green     = '#98c379',
+  green_2   = '#495c3b',
+  purple    = '#c678dd',
+  purple_2  = '#52325c',
+  red       = '#e06c75',
+  red_2     = '#be5046',
+  yellow    = '#e5c07b',
+  fg        = '#eeeeee',
+  bg        = '#15171c',
+  gray1     = '#313131',
+  gray2     = '#414141',
+  gray3     = '#515151',
 }
 
 -- Inserts a component in lualine_c at left section
@@ -174,8 +144,3 @@ ins_right {
 }
 
 require("lualine").setup(config)
--- require('lualine').setup {
---     options = {
---       theme = 'material'
---     }
---   }

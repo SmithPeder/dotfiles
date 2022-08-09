@@ -7,7 +7,8 @@ return require("packer").startup(
         use {"nvim-lua/popup.nvim", "nvim-lua/plenary.nvim"}
 
         -- Colorscheme
-        use { "themercorp/themer.lua" }
+        -- use { "themercorp/themer.lua" }
+        use { "catppuccin/nvim", as = "catppuccin" }
 
         -- Fuzzy finder
         use {"nvim-telescope/telescope.nvim",
