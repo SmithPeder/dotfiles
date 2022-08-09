@@ -91,10 +91,12 @@ return require("packer").startup(
 
 
         -- Tresitter
-        use {"nvim-treesitter/nvim-treesitter"}
+        use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
 
         -- Startsceen
         use {"mhinz/vim-startify"}
+
+        -- Make sure the vim navigation is rooted in the .git
         use {"airblade/vim-rooter"}
     end
 )

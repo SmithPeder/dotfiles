@@ -59,6 +59,3 @@ vim.api.nvim_command("command! Q :q")
 
 utils.map("n", "j", "gj")
 utils.map("n", "k", "gk")
-
--- Set default behavior of tex_flavor
-vim.api.nvim_command("let g:tex_flavor = 'tex'")
