@@ -29,17 +29,5 @@ nvim_lsp.vimls.setup{ on_attach = on_attach }
 -- npm i -g bash-language-server
 nvim_lsp.bashls.setup{ on_attach = on_attach }
 
--- brew install texlab
-nvim_lsp.texlab.setup{
-  on_attach = on_attach,
-  settings = {
-    texlab = {
-      rootDirectory = "/Users/smith/thesis",
-      build = {
-        onSave = true,
-        executable = 'tectonic',
-        args = { "%f", "--synctex", "--keep-logs", "--keep-intermediates", }
-      }
-    }
-  }
-}
+-- brew install lua-language-server
+nvim_lsp.sumneko_lua.setup{ on_attach = on_attach }
