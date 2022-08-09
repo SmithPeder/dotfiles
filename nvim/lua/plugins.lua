@@ -87,7 +87,8 @@ return require("packer").startup(
 
         -- Statusbar
         use {"hoob3rt/lualine.nvim", requires = {"kyazdani42/nvim-web-devicons", opt = true}}
-        use {"akinsho/nvim-bufferline.lua", requires = "kyazdani42/nvim-web-devicons"}
+        use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
+
 
         -- Tresitter
         use {"nvim-treesitter/nvim-treesitter"}
