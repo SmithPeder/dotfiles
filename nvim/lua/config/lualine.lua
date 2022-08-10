@@ -117,30 +117,5 @@ ins_right {
     color = {fg = colors.green, gui = "bold"}
 }
 
-ins_right {
-    -- filesize component
-    function()
-        local function format_file_size(file)
-            local size = vim.fn.getfsize(file)
-            if size <= 0 then
-                return ""
-            end
-            local sufixes = {"b", "k", "m", "g"}
-            local i = 1
-            while size > 1024 do
-                size = size / 1024
-                i = i + 1
-            end
-            return string.format("%.1f%s", size, sufixes[i])
-        end
-        local file = vim.fn.expand("%:p")
-        if string.len(file) == 0 then
-            return ""
-        end
-        return format_file_size(file)
-    end,
-    condition = conditions.buffer_not_empty,
-    right_padding = 2
-}
 
 require("lualine").setup(config)
