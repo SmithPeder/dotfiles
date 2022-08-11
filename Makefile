@@ -65,7 +65,6 @@ packages: | brew
 casks: | brew
 				$(call CASK, alfred)
 				$(call CASK, kitty)
-				$(call CASK, warp)
 				$(call CASK, font-hack-nerd-font)
 				$(call CASK, google-cloud-sdk)
 				$(call CASK, github)

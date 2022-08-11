@@ -66,14 +66,10 @@ $ make brew
 
 ## Terminal
 
-### Warp terminal config
-
-My main terminal atm is Warp. I am still in a trail phase here and will decide later if will stay. At this time there is no exportable configuration.
-
 
 ### kitty terminal config
 
-I use kitty as my secondary terminal. It is specifically configured to have neovim open at all times. All config located in `kitty.conf` with symlink from `~/.config/kitty/kitty.conf`.
+I use kitty as my main terminal. It is specifically configured to match my neovim conf. All config is located in `kitty.conf` with symlink from `~/.config/kitty/kitty.conf`.
 
 ```sh
 $ make kitty
