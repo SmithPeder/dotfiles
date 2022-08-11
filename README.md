@@ -14,8 +14,12 @@
   <h2> ━━━━━━    ━━━━━━ </h2>
 
 
-  <a href="https://github.com/neovim/neovim"> <img src="https://img.shields.io/badge/requires-neovim%200.8%2B-green?color=76946A&labelColor=16161D&style=for-the-badge&logo=neovim"> </a>
+  <a href="https://github.com/neovim/neovim"> 
+    <img src="https://img.shields.io/badge/requires-neovim%200.8%2B-green?color=76946A&labelColor=16161D&style=for-the-badge&logo=neovim"> 
+  </a>
   <img src="https://img.shields.io/github/repo-size/smithpeder/dotfiles?color=C34043&labelColor=16161D&style=for-the-badge">
+  <a href="https://brew.sh/index_nb"> 
+    <img src="https://img.shields.io/badge/packagemanager-homebrew%203.5%2B-green?color=f9d094&labelColor=16161D&style=for-the-badge&logo=homebrew"> 
   </a>
 </div>
 
@@ -83,4 +87,3 @@ Config root located in `zsh/zshrc` with symlink from `~/.zshrc`
 ### Hasklig-nerd-font
 
 This font is enabled by default in the `kitty.conf` and is installed via Brew.
-
