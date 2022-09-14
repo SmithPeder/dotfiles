@@ -98,5 +98,11 @@ return require("packer").startup(
 
         -- Make sure the vim navigation is rooted in the .git
         use {"airblade/vim-rooter"}
+
+        -- Debugger
+        use {"mfussenegger/nvim-dap"}
+        use {"rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+
+
     end
 )

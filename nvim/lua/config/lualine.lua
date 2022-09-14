@@ -1,25 +1,33 @@
 -- Define config object
 local config = {
-    options = {
-        theme = "catppuccin"
-    },
-    sections = {
-        lualine_a = {"mode"},
-        lualine_b = {"branch"},
-        lualine_c = {"filename"},
-        lualine_x = {"filetype"},
-        lualine_y = {"progress"},
-        lualine_z = {"location"},
-    },
-    inactive_sections = {
-        lualine_a = {},
-        lualine_b = {},
-        lualine_c = {'filename'},
-        lualine_x = {'location'},
-        lualine_y = {},
-        lualine_z = {}
-    },
-    extensions = {'nvim-tree'} -- custom view for nvim-tree
+  options = {
+    theme = "catppuccin"
+  },
+  sections = {
+    lualine_a = {"mode"},
+    lualine_b = {"branch"},
+    lualine_c = {"filename"},
+    lualine_x = {"filetype"},
+    lualine_y = {"progress"},
+    lualine_z = {"location"},
+  },
+  inactive_sections = {
+    lualine_a = {},
+    lualine_b = {},
+    lualine_c = {'filename'},
+    lualine_x = {'location'},
+    lualine_y = {},
+    lualine_z = {}
+  },
+  extensions = {'nvim-tree'},
+  tabline = {
+    lualine_a = {'buffers'},
+    lualine_b = {'filename'},
+    lualine_c = {},
+    lualine_x = {},
+    lualine_y = {},
+    lualine_z = {'tabs'}
+  }
 }
 
 local colors = {

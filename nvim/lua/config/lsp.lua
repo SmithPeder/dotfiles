@@ -15,13 +15,69 @@ end
 
 
 -- pip install -U jedi-language-server
-nvim_lsp.jedi_language_server.setup{ on_attach = on_attach }
+-- nvim_lsp.jedi_language_server.setup{ on_attach = on_attach }
+nvim_lsp.pylsp.setup{
+  on_attach = on_attach,
+  filetypes = { "python" },
+  configurationSources= { 'flake8' },
+  settings = {
+    pyls = {
+      plugins = {
+        -- Optional providers
+        rope = {
+          enabled = true
+        },
+        pyflakes = {
+          enabled = false
+        },
+        mccabe = {
+          enabled = false
+        },
+        pycodestyle = {
+          enabled = false,
+        },
+        pydocstyle = {
+          enabled = true
+        },
+        autopep8 = {
+          enabled = true
+        },
+        yapf = {
+          enabled = true
+        },
+        flake8 = {
+          enabled = true,
+          maxLineLength = 160
+        },
+        pylint = {
+          enabled = true
+        },
+        -- 3er Party plugins
+        pyls_mypy = {
+          enabled = true
+        },
+        pyls_isort = {
+          enabled = true
+        },
+        pyls_lsp_black = {
+          enabled = true
+        },
+        pyls_memestra = {
+          enabled = true
+        },
+        pyls_rope = {
+          enabled = true
+        },
+      }
+    }
+}
+                              }
 
 -- npm install -g typescript typescript-language-server
 nvim_lsp.tsserver.setup{ on_attach = on_attach, filetypes = { "typescript", "typescriptreact", "typescript.tsx" } }
 
 -- npm install -g flow
-nvim_lsp.flow.setup{ on_attach = on_attach, filetypes = {"javascript", "javascriptreact", "javasc"} }
+-- nvim_lsp.flow.setup{ on_attach = on_attach, filetypes = {"javascript", "javascriptreact", "javasc"} }
 
 -- npm install -g vim-language-server
 nvim_lsp.vimls.setup{ on_attach = on_attach }

@@ -30,7 +30,8 @@
   alias gd="git diff"
 
 # Git checkout master
-  alias gcm="git checkout master"
+  # alias gcm="git checkout master"
+  alias gcm="git checkout main"
 
 # Git checkout new branch
   alias gcn="git checkout -b"
@@ -68,3 +69,8 @@
 
 # Take json from clipboard, fix and paste back
   alias jsontidy="pbpaste | jq '.' | pbcopy"
+
+# Jump to tienda
+  alias tienda="cd ~/code/oda/tienda"
+
+  alias mat='curl https://portal.ny28.no/wp-content/uploads/meny28.pdf --silent | pdftotext - -'
