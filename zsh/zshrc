@@ -125,6 +125,9 @@ export PATH="$HOME/.poetry/bin:$PATH"
 # Export path to password store
 export TIENDA=$HOME/code/oda/tienda
 
+export PATH="/Users/smith/.local/bin:$PATH"
+
+eval $(thefuck --alias)
 
 # Configure direnv
 eval "$(direnv hook zsh)"

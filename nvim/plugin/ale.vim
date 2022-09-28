@@ -9,7 +9,9 @@
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'javascript': ['prettier'],
+\   'javascriptreact': ['prettier'],
 \   'typescript': ['prettier'],
+\   'typescriptreact': ['prettier'],
 \   'lua': ['luafmt'],
 \   'python': ['black', 'isort', 'autoimport'],
 \   'tex': ['textlint'],

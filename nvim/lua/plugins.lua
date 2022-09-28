@@ -80,7 +80,10 @@ return require("packer").startup(
         }
 
         -- Pairs
-        use {"jiangmiao/auto-pairs"}
+        use {
+          "windwp/nvim-autopairs",
+          config = function() require("nvim-autopairs").setup {} end
+        }
 
         -- ALE
         use {"dense-analysis/ale"}
@@ -102,6 +105,13 @@ return require("packer").startup(
         -- Debugger
         use {"mfussenegger/nvim-dap"}
         use {"rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+
+        use { "folke/trouble.nvim",
+          requires = "kyazdani42/nvim-web-devicons",
+          config = function()
+            require("trouble").setup {}
+          end
+        }
 
 
     end

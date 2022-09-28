@@ -50,7 +50,7 @@ nvim_lsp.pylsp.setup{
           maxLineLength = 160
         },
         pylint = {
-          enabled = true
+          enabled = false
         },
         -- 3er Party plugins
         pyls_mypy = {
