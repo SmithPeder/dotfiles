@@ -3,6 +3,10 @@ return require("packer").startup(
         -- Packer can manage itself as an optional plugin
         use {"wbthomason/packer.nvim", opt = true}
 
+        -- Manson manager
+        use {'williamboman/mason.nvim'}
+        use {'williamboman/mason-lspconfig.nvim'}
+
         -- General
         use {"nvim-lua/popup.nvim", "nvim-lua/plenary.nvim"}
 
@@ -101,25 +105,6 @@ return require("packer").startup(
 
         -- Make sure the vim navigation is rooted in the .git
         use {"airblade/vim-rooter"}
-
-        -- Debugging
-        use {
-          "mfussenegger/nvim-dap",
-          opt = true,
-          event = "BufReadPre",
-          module = { "dap" },
-          wants = { "nvim-dap-virtual-text", "DAPInstall.nvim", "nvim-dap-ui", "nvim-dap-python", "which-key.nvim" },
-          requires = {
-            "Pocco81/DAPInstall.nvim", -- Install debuggers
-            "mfussenegger/nvim-dap-python", -- Language exension for python
-            "theHamsta/nvim-dap-virtual-text", -- UI/UX
-            "rcarriga/nvim-dap-ui", -- UI/UX
-            "nvim-telescope/telescope-dap.nvim", -- UI/UX
-          },
-          config = function()
-            require("config.dap").setup()
-          end,
-        }
 
         use {
           "folke/which-key.nvim",

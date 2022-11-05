@@ -16,74 +16,74 @@ end
 
 -- pip install -U jedi-language-server
 -- nvim_lsp.jedi_language_server.setup{ on_attach = on_attach }
-nvim_lsp.pylsp.setup{
-  on_attach = on_attach,
-  filetypes = { "python" },
-  configurationSources= { 'flake8' },
-  settings = {
-    pyls = {
-      plugins = {
-        -- Optional providers
-        rope = {
-          enabled = true
-        },
-        pyflakes = {
-          enabled = false
-        },
-        mccabe = {
-          enabled = false
-        },
-        pycodestyle = {
-          enabled = false,
-        },
-        pydocstyle = {
-          enabled = true
-        },
-        autopep8 = {
-          enabled = true
-        },
-        yapf = {
-          enabled = true
-        },
-        flake8 = {
-          enabled = true,
-          maxLineLength = 160
-        },
-        pylint = {
-          enabled = false
-        },
-        -- 3er Party plugins
-        pyls_mypy = {
-          enabled = true
-        },
-        pyls_isort = {
-          enabled = true
-        },
-        pyls_lsp_black = {
-          enabled = true
-        },
-        pyls_memestra = {
-          enabled = true
-        },
-        pyls_rope = {
-          enabled = true
-        },
-      }
-    }
-}
-                              }
+-- nvim_lsp.pylsp.setup{
+--   on_attach = on_attach,
+--   filetypes = { "python" },
+--   configurationSources= { 'flake8' },
+--   settings = {
+--     pyls = {
+--       plugins = {
+--         -- Optional providers
+--         rope = {
+--           enabled = true
+--         },
+--         pyflakes = {
+--           enabled = false
+--         },
+--         mccabe = {
+--           enabled = false
+--         },
+--         pycodestyle = {
+--           enabled = false,
+--         },
+--         pydocstyle = {
+--           enabled = true
+--         },
+--         autopep8 = {
+--           enabled = true
+--         },
+--         yapf = {
+--           enabled = true
+--         },
+--         flake8 = {
+--           enabled = true,
+--           maxLineLength = 160
+--         },
+--         pylint = {
+--           enabled = false
+--         },
+--         -- 3er Party plugins
+--         pyls_mypy = {
+--           enabled = true
+--         },
+--         pyls_isort = {
+--           enabled = true
+--         },
+--         pyls_lsp_black = {
+--           enabled = true
+--         },
+--         pyls_memestra = {
+--           enabled = true
+--         },
+--         pyls_rope = {
+--           enabled = true
+--         },
+--       }
+--     }
+-- }
+                              -- }
 
 -- npm install -g typescript typescript-language-server
-nvim_lsp.tsserver.setup{ on_attach = on_attach, filetypes = { "typescript", "typescriptreact", "typescript.tsx" } }
-
+-- nvim_lsp.tsserver.setup{ on_attach = on_attach, filetypes = { "typescript", "typescriptreact", "typescript.tsx" } }
+--
 -- npm install -g flow
 -- nvim_lsp.flow.setup{ on_attach = on_attach, filetypes = {"javascript", "javascriptreact", "javasc"} }
 
 -- npm install -g vim-language-server
-nvim_lsp.vimls.setup{ on_attach = on_attach }
+-- nvim_lsp.vimls.setup{ on_attach = on_attach }
 
 -- npm i -g bash-language-server
-nvim_lsp.bashls.setup{ on_attach = on_attach }
+-- nvim_lsp.bashls.setup{ on_attach = on_attach }
 
 -- brew install lua-language-server
-nvim_lsp.sumneko_lua.setup{ on_attach = on_attach }
+-- nvim_lsp.sumneko_lua.setup{ on_attach = on_attach }
