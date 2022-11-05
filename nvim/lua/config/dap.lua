@@ -23,6 +23,11 @@ require('dap').configurations.python = {
     end;
   },
 }
+dap.adapters.python = {
+      type = 'executable';
+      command = os.getenv('HOME') .. '/.virtualenvs/tools/bin/python';
+      args = { '-m', 'debugpy.adapter' };
+    }
 
 require("dapui").setup({
   icons = { expanded = "▾", collapsed = "▸" },

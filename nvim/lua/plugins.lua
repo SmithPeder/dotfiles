@@ -102,14 +102,46 @@ return require("packer").startup(
         -- Make sure the vim navigation is rooted in the .git
         use {"airblade/vim-rooter"}
 
-        -- Debugger
-        use {"mfussenegger/nvim-dap"}
-        use {"rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+        -- Debugging
+        use {
+          "mfussenegger/nvim-dap",
+          opt = true,
+          event = "BufReadPre",
+          module = { "dap" },
+          wants = { "nvim-dap-virtual-text", "DAPInstall.nvim", "nvim-dap-ui", "nvim-dap-python", "which-key.nvim" },
+          requires = {
+            "Pocco81/DAPInstall.nvim", -- Install debuggers
+            "mfussenegger/nvim-dap-python", -- Language exension for python
+            "theHamsta/nvim-dap-virtual-text", -- UI/UX
+            "rcarriga/nvim-dap-ui", -- UI/UX
+            "nvim-telescope/telescope-dap.nvim", -- UI/UX
+          },
+          config = function()
+            require("config.dap").setup()
+          end,
+        }
+
+        use {
+          "folke/which-key.nvim",
+          config = function()
+            require("which-key").setup {}
+          end
+        }
 
         use { "folke/trouble.nvim",
           requires = "kyazdani42/nvim-web-devicons",
           config = function()
             require("trouble").setup {}
+          end
+        }
+
+        use {
+          'LukasPietzschmann/telescope-tabs',
+          requires = { 'nvim-telescope/telescope.nvim' },
+          config = function()
+            require'telescope-tabs'.setup{
+              -- Your custom config :^)
+            }
           end
         }
 
