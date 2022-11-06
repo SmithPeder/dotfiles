@@ -13,13 +13,12 @@
 
   <h2> ━━━━━━    ━━━━━━ </h2>
 
-
-  <a href="https://github.com/neovim/neovim"> 
-    <img src="https://img.shields.io/badge/requires-neovim%200.8%2B-green?color=76946A&labelColor=16161D&style=for-the-badge&logo=neovim"> 
+  <a href="https://github.com/neovim/neovim">
+    <img src="https://img.shields.io/badge/requires-neovim%200.9%2B-green?color=76946A&labelColor=16161D&style=for-the-badge&logo=neovim">
   </a>
   <img src="https://img.shields.io/github/repo-size/smithpeder/dotfiles?color=C34043&labelColor=16161D&style=for-the-badge">
-  <a href="https://brew.sh/index_nb"> 
-    <img src="https://img.shields.io/badge/packagemanager-homebrew%203.5%2B-green?color=f9d094&labelColor=16161D&style=for-the-badge&logo=homebrew"> 
+  <a href="https://brew.sh/index_nb">
+    <img src="https://img.shields.io/badge/packagemanager-homebrew%203.5%2B-green?color=f9d094&labelColor=16161D&style=for-the-badge&logo=homebrew">
   </a>
 </div>
 
@@ -32,7 +31,7 @@
 
 ### Quickstart!
 
-> **There is no __automatic__ backup of your all configuration here!**
+> **OBS: There is no **automatic** backup of your old configuration here!**
 
 ```sh
 # Install all required software using brew
@@ -44,7 +43,7 @@ $ make install
 
 ## Editor - NeoVim
 
-Fully migrated `lua` based config. All config located in [nvim](https://github.com/smithpeder/dotfiles/nvim) with the whole nvim folder being a symlink from `~/.config/nvim/` making [nvim/init](https://github.com/smithpeder/dotfiles/nvim/init.lua) the config entrypoint. Default _(core)_ settings are located in [nvim/settings](https://github.com/smithpeder/dotfiles/nvim/settings,lua). 
+Fully migrated `lua` based config. All config located in [nvim](https://github.com/smithpeder/dotfiles/nvim) with the whole nvim folder being a symlink from `~/.config/nvim/` making [nvim/init](https://github.com/smithpeder/dotfiles/nvim/init.lua) the config entrypoint. Default _(core)_ settings are located in [nvim/settings](https://github.com/smithpeder/dotfiles/nvim/settings,lua).
 
 ```sh
 $ make neovim
@@ -58,18 +57,15 @@ The configuration uses a lot of custom nvim plugins `(lua)`. The full list can b
 
 `fzf` is used for searching in `CTRL-R` search and is used by a multitude of the neovim plugins. `ripgrep` is used for a multiple of fuzzysearch options, used by a multitude of the neovim plugins.
 
-
-
 ## Homebrew
 
-This configuration uses the `brew` package manager. The ``Brewfile`` contains a lot of core packages, as well as a lot of the GUI based programs I use on a day-to-day basis.
+This configuration uses the `brew` package manager. The `Brewfile` contains a lot of core packages, as well as a lot of the GUI based programs I use on a day-to-day basis.
 
 ```sh
 $ make brew
 ```
 
 ## Terminal
-
 
 ### kitty terminal config
 
@@ -82,7 +78,6 @@ $ make kitty
 ### ZSH Shell
 
 Config root located in `zsh/zshrc` with symlink from `~/.zshrc`
-
 
 ### Hasklig-nerd-font
 

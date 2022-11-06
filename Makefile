@@ -99,3 +99,7 @@ zsh:
 # Ensure kitty has the correct path config
 kitty:
 	ln -F -s ~/dotfiles/kitty.conf ~/.config/kitty/kitty.conf
+
+# macOS sed is a bitch, use gsed instead
+gsed:
+	sudo ln -s /usr/local/gsed /usr/local/sed
