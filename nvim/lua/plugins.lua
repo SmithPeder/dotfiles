@@ -1,135 +1,142 @@
-return require("packer").startup(
-    function(use)
-        -- Packer can manage itself as an optional plugin
-        use {"wbthomason/packer.nvim", opt = true}
+return require("packer").startup(function(use)
+	-- Packer can manage itself as an optional plugin
+	use({ "wbthomason/packer.nvim", opt = true })
 
-        -- Manson manager
-        use {'williamboman/mason.nvim'}
-        use {'williamboman/mason-lspconfig.nvim'}
+	-- Manson manager
+	use({
+		"williamboman/mason.nvim",
+		"williamboman/mason-lspconfig.nvim",
+	})
 
-        -- General
-        use {"nvim-lua/popup.nvim", "nvim-lua/plenary.nvim"}
+	-- Configure Linters
+	use({ "mfussenegger/nvim-lint" })
 
-        -- Colorscheme
-        -- use { "themercorp/themer.lua" }
-        use { "catppuccin/nvim", as = "catppuccin" }
+	-- Configure Formatters
+	use({ "mhartington/formatter.nvim" })
 
-        -- Fuzzy finder
-        use {"nvim-telescope/telescope.nvim",
-          requires = {{"nvim-lua/popup.nvim"}, {"nvim-lua/plenary.nvim"}}
-        }
-        use {"nvim-telescope/telescope-frecency.nvim",
-          requires = {"tami5/sql.nvim"},
-          config = function()
-            require("telescope").load_extension("frecency")
-          end
-        }
-        use {"nvim-telescope/telescope-symbols.nvim"}
+	-- General
+	use({ "nvim-lua/popup.nvim", "nvim-lua/plenary.nvim" })
 
-        -- LSP and completion
-        use {"neovim/nvim-lspconfig"}
-        use {"onsails/lspkind-nvim"}
-        use {"ray-x/lsp_signature.nvim"}
-        use {
-          "hrsh7th/nvim-cmp",
-          requires = {
-            "hrsh7th/cmp-cmdline",
-            "hrsh7th/cmp-path",
-            "hrsh7th/cmp-buffer",
-            "hrsh7th/cmp-nvim-lsp",
-            "hrsh7th/vim-vsnip"
-          }
-        }
+	-- Colorscheme
+	use({ "catppuccin/nvim", as = "catppuccin" })
 
-        -- Lua development
-        use {"tjdevries/nlua.nvim"}
+	-- Fuzzy finder
+	use({
+		"nvim-telescope/telescope.nvim",
+		requires = { { "nvim-lua/popup.nvim" }, { "nvim-lua/plenary.nvim" } },
+	})
+	use({
+		"nvim-telescope/telescope-frecency.nvim",
+		requires = { "tami5/sql.nvim" },
+		config = function()
+			require("telescope").load_extension("frecency")
+		end,
+	})
+	use({ "nvim-telescope/telescope-symbols.nvim" })
 
-        -- Vim dispatch
-        use {"tpope/vim-dispatch"}
+	-- LSP and completion
+	use({ "neovim/nvim-lspconfig" })
+	use({ "onsails/lspkind-nvim" })
+	use({ "ray-x/lsp_signature.nvim" })
+	use({
+		"hrsh7th/nvim-cmp",
+		requires = {
+			"hrsh7th/cmp-cmdline",
+			"hrsh7th/cmp-path",
+			"hrsh7th/cmp-buffer",
+			"hrsh7th/cmp-nvim-lsp",
+			"hrsh7th/vim-vsnip",
+		},
+	})
 
-        -- Fugitive for Git
-        use {"tpope/vim-fugitive"}
-        use {"rhysd/git-messenger.vim"}
+	-- Lua development
+	use({ "tjdevries/nlua.nvim" })
 
-        -- Navigation
-        use {
-            "numToStr/Navigator.nvim",
-            config = function()
-                require("Navigator").setup()
-            end
-        }
+	-- Vim dispatch
+	use({ "tpope/vim-dispatch" })
 
-        -- Icons
-        use {"ryanoasis/vim-devicons"}
-        use {"kyazdani42/nvim-web-devicons"}
+	-- Fugitive for Git
+	use({ "tpope/vim-fugitive" })
+	use({ "rhysd/git-messenger.vim" })
 
-        -- Comment out stuff
-        use {"tomtom/tcomment_vim"}
+	-- Navigation
+	use({
+		"numToStr/Navigator.nvim",
+		config = function()
+			require("Navigator").setup()
+		end,
+	})
 
-        -- GitSigns
-        use {"lewis6991/gitsigns.nvim",
-            requires = {
-                "nvim-lua/plenary.nvim"
-            },
-            config = function()
-                require("gitsigns").setup()
-            end
-        }
+	-- Icons
+	use({ "ryanoasis/vim-devicons" })
+	use({ "kyazdani42/nvim-web-devicons" })
 
-        -- Tree
-        use {
-          'kyazdani42/nvim-tree.lua',
-          requires = 'kyazdani42/nvim-web-devicons',
-          config = function() require'nvim-tree'.setup {} end
-        }
+	-- Comment out stuff
+	use({ "tomtom/tcomment_vim" })
 
-        -- Pairs
-        use {
-          "windwp/nvim-autopairs",
-          config = function() require("nvim-autopairs").setup {} end
-        }
+	-- GitSigns
+	use({
+		"lewis6991/gitsigns.nvim",
+		requires = {
+			"nvim-lua/plenary.nvim",
+		},
+		config = function()
+			require("gitsigns").setup()
+		end,
+	})
 
-        -- ALE
-        use {"dense-analysis/ale"}
+	-- Tree
+	use({
+		"kyazdani42/nvim-tree.lua",
+		requires = "kyazdani42/nvim-web-devicons",
+		config = function()
+			require("nvim-tree").setup({})
+		end,
+	})
 
-        -- Statusbar
-        use {"hoob3rt/lualine.nvim", requires = {"kyazdani42/nvim-web-devicons", opt = true}}
-        use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
+	-- Pairs
+	use({
+		"windwp/nvim-autopairs",
+		config = function()
+			require("nvim-autopairs").setup({})
+		end,
+	})
 
+	-- Statusbar
+	use({ "hoob3rt/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons", opt = true } })
+	use({ "akinsho/bufferline.nvim", tag = "v2.*", requires = "kyazdani42/nvim-web-devicons" })
 
-        -- Tresitter
-        use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+	-- Tresitter
+	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
 
-        -- Startsceen
-        use {"mhinz/vim-startify"}
+	-- Startsceen
+	use({ "mhinz/vim-startify" })
 
-        -- Make sure the vim navigation is rooted in the .git
-        use {"airblade/vim-rooter"}
+	-- Make sure the vim navigation is rooted in the .git
+	use({ "airblade/vim-rooter" })
 
-        use {
-          "folke/which-key.nvim",
-          config = function()
-            require("which-key").setup {}
-          end
-        }
+	use({
+		"folke/which-key.nvim",
+		config = function()
+			require("which-key").setup({})
+		end,
+	})
 
-        use { "folke/trouble.nvim",
-          requires = "kyazdani42/nvim-web-devicons",
-          config = function()
-            require("trouble").setup {}
-          end
-        }
+	use({
+		"folke/trouble.nvim",
+		requires = "kyazdani42/nvim-web-devicons",
+		config = function()
+			require("trouble").setup({})
+		end,
+	})
 
-        use {
-          'LukasPietzschmann/telescope-tabs',
-          requires = { 'nvim-telescope/telescope.nvim' },
-          config = function()
-            require'telescope-tabs'.setup{
-              -- Your custom config :^)
-            }
-          end
-        }
-
-
-    end
-)
+	use({
+		"LukasPietzschmann/telescope-tabs",
+		requires = { "nvim-telescope/telescope.nvim" },
+		config = function()
+			require("telescope-tabs").setup({
+				-- Your custom config :^)
+			})
+		end,
+	})
+end)

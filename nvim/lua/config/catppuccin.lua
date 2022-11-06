@@ -10,7 +10,7 @@ require("catppuccin").setup({
 	term_colors = false,
 	compile = {
 		enabled = false,
-		path = vim.fn.stdpath "cache" .. "/catppuccin",
+		path = vim.fn.stdpath("cache") .. "/catppuccin",
 	},
 	styles = {
 		comments = { "italic" },
@@ -94,4 +94,4 @@ require("catppuccin").setup({
 	highlight_overrides = {},
 })
 
-vim.cmd [[colorscheme catppuccin]]
+vim.cmd([[colorscheme catppuccin]])

@@ -3,9 +3,9 @@ local utils = require("utils")
 local cmd = vim.cmd
 local indent = 2
 
-cmd "syntax enable"
-cmd "filetype plugin indent on"
-cmd "set noswapfile"
+cmd("syntax enable")
+cmd("filetype plugin indent on")
+cmd("set noswapfile")
 
 -- General options
 utils.opt("o", "mouse", "a")
@@ -36,19 +36,20 @@ utils.opt("b", "expandtab", true)
 utils.opt("b", "smartindent", true)
 utils.opt("b", "autoindent", true)
 
-vim.opt.undofile = true -- persistent undo
+-- Persistent undo, note this never disappears
+vim.opt.undofile = true
 
 -- Clipboard
 utils.opt("o", "wildmode", "list:longest")
 utils.opt("o", "clipboard", "unnamed,unnamedplus")
 
 -- Highlight on yank
-cmd "au TextYankPost * lua vim.highlight.on_yank {on_visual = false}"
+cmd("au TextYankPost * lua vim.highlight.on_yank {on_visual = false}")
 
 -- Always go to INSERT modo when in git commit file
 vim.api.nvim_command("autocmd FileType gitcommit  exec 'au VimEnter * startinsert'")
 
--- Clear hightlight
+-- Clear hightlight with leader space
 utils.map("n", "<leader><space>", "<cmd>noh<CR>")
 
 -- Allow misspellings
@@ -57,5 +58,14 @@ vim.api.nvim_command("command! WQ :wq")
 vim.api.nvim_command("command! W :w")
 vim.api.nvim_command("command! Q :q")
 
+-- Move correctly over wrapped text
 utils.map("n", "j", "gj")
 utils.map("n", "k", "gk")
+
+-- Format on save
+vim.cmd([[
+	augroup FormatAutogroup
+	  autocmd!
+	  autocmd BufWritePost * FormatWrite
+	augroup END
+]])
