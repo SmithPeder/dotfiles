@@ -68,7 +68,7 @@
   alias dotfiles="cd ~/dotfiles"
 
 # Take json from clipboard, fix and paste back
-  alias jsontidy="pbpaste | jq '.' | pbcopy"
+  alias jt="pbpaste | jq '.' | pbcopy"
 
 # Jump to tienda
   alias tienda="cd ~/code/oda/tienda"

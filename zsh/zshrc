@@ -138,3 +138,4 @@ if [ -f '/Users/smith/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/smith/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/smith/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 export HOMEBREW_NO_AUTO_UPDATE=true
+export PATH="/opt/homebrew/opt/ruby@2.7/bin:$PATH"
