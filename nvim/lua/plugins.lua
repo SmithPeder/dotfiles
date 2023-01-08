@@ -20,11 +20,18 @@ return require("packer").startup(function(use)
 	-- Colorscheme
 	use({ "catppuccin/nvim", as = "catppuccin" })
 
-	-- Fuzzy finder
+	-----------------------------------------------------------------------------
+	---------------------------Telescope section---------------------------------
 	use({
 		"nvim-telescope/telescope.nvim",
-		requires = { { "nvim-lua/popup.nvim" }, { "nvim-lua/plenary.nvim" } },
+		requires = {
+			{ "nvim-lua/plenary.nvim" }, -- required dependency
+			{ "nvim-lua/popup.nvim" },
+		},
 	})
+	-- Add a native telescope sorter to significantly improve sorting performance.
+	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- this requires gcc or clang and make
+
 	use({
 		"nvim-telescope/telescope-frecency.nvim",
 		requires = { "tami5/sql.nvim" },
@@ -33,6 +40,18 @@ return require("packer").startup(function(use)
 		end,
 	})
 	use({ "nvim-telescope/telescope-symbols.nvim" })
+	use({
+		"LukasPietzschmann/telescope-tabs",
+		requires = { "nvim-telescope/telescope.nvim" },
+		config = function()
+			require("telescope-tabs").setup({
+				-- Your custom config :^)
+			})
+		end,
+	})
+
+	-- Project configuration
+	use({ "ahmedkhalf/project.nvim" })
 
 	-- LSP and completion
 	use({ "neovim/nvim-lspconfig" })
@@ -85,13 +104,13 @@ return require("packer").startup(function(use)
 		end,
 	})
 
-	-- Tree
+	-- Nvim-tree
 	use({
-		"kyazdani42/nvim-tree.lua",
-		requires = "kyazdani42/nvim-web-devicons",
-		config = function()
-			require("nvim-tree").setup({})
-		end,
+		"nvim-tree/nvim-tree.lua",
+		requires = {
+			"nvim-tree/nvim-web-devicons",
+		},
+		tag = "nightly", -- optional, updated every week
 	})
 
 	-- Pairs
@@ -112,9 +131,6 @@ return require("packer").startup(function(use)
 	-- Startsceen
 	use({ "mhinz/vim-startify" })
 
-	-- Make sure the vim navigation is rooted in the .git
-	use({ "airblade/vim-rooter" })
-
 	use({
 		"folke/which-key.nvim",
 		config = function()
@@ -127,16 +143,6 @@ return require("packer").startup(function(use)
 		requires = "kyazdani42/nvim-web-devicons",
 		config = function()
 			require("trouble").setup({})
-		end,
-	})
-
-	use({
-		"LukasPietzschmann/telescope-tabs",
-		requires = { "nvim-telescope/telescope.nvim" },
-		config = function()
-			require("telescope-tabs").setup({
-				-- Your custom config :^)
-			})
 		end,
 	})
 end)

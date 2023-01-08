@@ -54,7 +54,10 @@ utils.map("n", "<leader><space>", "<cmd>noh<CR>")
 
 -- Allow misspellings
 vim.api.nvim_command("command! Wq :wq")
+vim.api.nvim_command("command! Wqa :wqa")
 vim.api.nvim_command("command! WQ :wq")
+vim.api.nvim_command("command! WQa :wqa")
+vim.api.nvim_command("command! WQA :wqa")
 vim.api.nvim_command("command! W :w")
 vim.api.nvim_command("command! Q :q")
 

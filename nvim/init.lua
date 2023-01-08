@@ -15,12 +15,16 @@ local execute = vim.api.nvim_command
 -- Auto install packer.nvim if not exists
 local install_path = fn.stdpath("data") .. "/site/pack/packer/opt/packer.nvim"
 if fn.empty(fn.glob(install_path)) > 0 then
-    execute("!git clone https://github.com/wbthomason/packer.nvim " .. install_path)
+	execute("!git clone https://github.com/wbthomason/packer.nvim " .. install_path)
 end
 
 -- Need to packadd packer since we have opt = true, and manage packer as a optional plugin
-vim.cmd [[packadd packer.nvim]]
-vim.cmd "autocmd BufWritePost plugins.lua PackerCompile"
+vim.cmd([[packadd packer.nvim]])
+vim.cmd("autocmd BufWritePost plugins.lua PackerCompile")
+
+-- Disable netrw at the very start (strongly advised)
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
 -- Modules
 require("settings")

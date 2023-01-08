@@ -3,10 +3,11 @@ local utils = require("utils")
 
 -- Go to definition
 utils.map("n", "gd", "<Cmd>lua vim.lsp.buf.definition()<CR>")
-utils.map("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>")
 utils.map("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>")
-utils.map("n", "gs", "<cmd>lua vim.lsp.buf.signature_help()<CR>")
 utils.map("n", "gh", "<Cmd>lua vim.lsp.buf.hover()<CR>")
+
+utils.map("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>")
+utils.map("n", "gs", "<cmd>lua vim.lsp.buf.signature_help()<CR>")
 
 local on_attach = function(_, bufnr)
 	local function buf_set_option(...)
