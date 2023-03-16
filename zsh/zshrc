@@ -70,15 +70,17 @@ export LC_ALL=en_US.UTF-8
 # Export GPG
 export GPG_TTY=$(tty)
 
-# Klipy
-export PATH=$PATH:/Users/smith/.klipy/bin/
-alias klipy="/Users/smith/code/oda/klipy/.venv/bin/python -m klipy"
-
 # Spicetify upgrade && spicetify backup apply && spicetify restore backup apply
 export PATH=$PATH:/Users/smith/.spicetify
 
-export LDFLAGS="-L/usr/local/opt/llvm/lib"
-export CPPFLAGS="-I/usr/local/opt/llvm/include"
+
+# Klipy
+export CFLAGS="-I /opt/homebrew/opt/openssl/include"
+export LDFLAGS="-L /opt/homebrew/opt/openssl/lib"
+export GRPC_PYTHON_BUILD_SYSTEM_OPENSSL=1
+export GRPC_PYTHON_BUILD_SYSTEM_ZLIB=1
+alias klipy="/Users/smith/code/oda/klipy/.venv/bin/python -m klipy"
+export PATH="/Users/smith/.klipy/bin:$PATH"
 
 # Fix shit
 export LC_CTYPE=C
@@ -139,3 +141,5 @@ if [ -f '/Users/smith/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users
 if [ -f '/Users/smith/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/smith/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 export HOMEBREW_NO_AUTO_UPDATE=true
 export PATH="/opt/homebrew/opt/ruby@2.7/bin:$PATH"
+export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+export PATH="/usr/local/opt/python@2/libexec/bin:$PATH"

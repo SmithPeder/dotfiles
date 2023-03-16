@@ -74,6 +74,11 @@
   alias tienda="cd ~/code/oda/tienda"
   alias web="cd ~/code/oda/tienda-web"
 
-  alias mat="echo '\e[0;31mNY28:\033[0m' && curl -s https://portal.ny28.no/wp-content/uploads/meny28.pdf | pdftotext - - && echo '\e[0;31mNY24:\033[0m' && curl -s https://www.ny24.no/api/fetch/$(date '+%u') | jq"
+  alias mat='echo "\e[0;31mNY28:\033[0m" && curl -s https://portal.ny28.no/wp-content/uploads/meny28.pdf | pdftotext - - && echo "\e[0;31mNY24:\033[0m" && curl -s https://www.ny24.no/api/fetch/$(date "+%u") | jq'
 
   alias fixshell="stty sane"
+
+  alias deskbooker='~/code/oda/deskbooker/.venv/bin/python ~/code/oda/deskbooker/deskbooker/deskbooker.py'
+
+# Rebase with master
+  alias grom='git fetch && git rebase origin/main'
