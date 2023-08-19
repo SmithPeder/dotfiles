@@ -47,7 +47,7 @@ utils.opt("o", "clipboard", "unnamed,unnamedplus")
 cmd("au TextYankPost * lua vim.highlight.on_yank {on_visual = false}")
 
 -- Always go to INSERT modo when in git commit file
-vim.api.nvim_command("autocmd FileType gitcommit  exec 'au VimEnter * startinsert'")
+vim.api.nvim_command("autocmd FileType gitcommit exec 'au VimEnter * startinsert'")
 
 -- Clear hightlight with leader space
 utils.map("n", "<leader><space>", "<cmd>noh<CR>")

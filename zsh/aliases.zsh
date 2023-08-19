@@ -40,7 +40,7 @@
   alias gb="git branch"
 
 # Django runserver
-  alias runserver="./manage.py runserver 0.0.0.0:8000"
+  alias runserver="./manage.py runserver"
 
 # Django make migrations
   alias makemigrations="./manage.py makemigrations"
@@ -72,6 +72,7 @@
 
 # Jump to tienda
   alias tienda="cd ~/code/oda/tienda"
+  alias t="cd ~/code/oda/tienda"
   alias web="cd ~/code/oda/tienda-web"
 
   alias mat='echo "\e[0;31mNY28:\033[0m" && curl -s https://portal.ny28.no/wp-content/uploads/meny28.pdf | pdftotext - - && echo "\e[0;31mNY24:\033[0m" && curl -s https://www.ny24.no/api/fetch/$(date "+%u") | jq'
