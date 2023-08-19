@@ -1,6 +1,3 @@
--- Utilities for creating configurations
-local util = require("formatter.util")
-
 require("formatter").setup({
 	-- Enable or disable logging
 	logging = true,

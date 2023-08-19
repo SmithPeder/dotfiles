@@ -1,19 +1,22 @@
-vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
-
 require("catppuccin").setup({
+	flavour = "mocha", -- latte, frappe, macchiato, mocha
+	background = { -- :h background
+		light = "latte",
+		dark = "mocha",
+	},
+	transparent_background = false, -- disables setting the background color.
+	show_end_of_buffer = false, -- shows the '~' characters after the end of buffers
+	term_colors = false, -- sets terminal colors (e.g. `g:terminal_color_0`)
 	dim_inactive = {
-		enabled = false,
+		enabled = false, -- dims the background color of inactive window
 		shade = "dark",
-		percentage = 0.15,
+		percentage = 0.15, -- percentage of the shade to apply to the inactive window
 	},
-	transparent_background = false,
-	term_colors = false,
-	compile = {
-		enabled = false,
-		path = vim.fn.stdpath("cache") .. "/catppuccin",
-	},
-	styles = {
-		comments = { "italic" },
+	no_italic = false, -- Force no italic
+	no_bold = false, -- Force no bold
+	no_underline = false, -- Force no underline
+	styles = { -- Handles the styles of general hi groups (see `:h highlight-args`):
+		comments = { "italic" }, -- Change the style of comments
 		conditionals = { "italic" },
 		loops = {},
 		functions = {},
@@ -26,72 +29,18 @@ require("catppuccin").setup({
 		types = {},
 		operators = {},
 	},
-	integrations = {
-		treesitter = true,
-		native_lsp = {
-			enabled = true,
-			virtual_text = {
-				errors = { "italic" },
-				hints = { "italic" },
-				warnings = { "italic" },
-				information = { "italic" },
-			},
-			underlines = {
-				errors = { "underline" },
-				hints = { "underline" },
-				warnings = { "underline" },
-				information = { "underline" },
-			},
-		},
-		coc_nvim = false,
-		lsp_trouble = false,
-		cmp = true,
-		lsp_saga = false,
-		gitgutter = false,
-		gitsigns = true,
-		leap = false,
-		telescope = true,
-		nvimtree = {
-			enabled = true,
-			show_root = true,
-			transparent_panel = true,
-		},
-		neotree = {
-			enabled = false,
-			show_root = true,
-			transparent_panel = false,
-		},
-		dap = {
-			enabled = false,
-			enable_ui = false,
-		},
-		which_key = false,
-		indent_blankline = {
-			enabled = true,
-			colored_indent_levels = false,
-		},
-		dashboard = true,
-		neogit = false,
-		vim_sneak = false,
-		fern = false,
-		barbar = false,
-		bufferline = true,
-		markdown = true,
-		lightspeed = false,
-		ts_rainbow = false,
-		hop = false,
-		notify = true,
-		telekasten = true,
-		symbols_outline = true,
-		mini = false,
-		aerial = false,
-		vimwiki = true,
-		beacon = true,
-		navic = false,
-		overseer = false,
-	},
 	color_overrides = {},
-	highlight_overrides = {},
+	custom_highlights = {},
+	integrations = {
+		cmp = true,
+		gitsigns = true,
+		nvimtree = true,
+		treesitter = true,
+		notify = false,
+		mini = false,
+		-- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
+	},
 })
 
-vim.cmd([[colorscheme catppuccin]])
+-- setup must be called before loading
+vim.cmd.colorscheme("catppuccin")

@@ -26,7 +26,6 @@ nvim_tree.setup({
 	},
 	view = {
 		width = width,
-		height = height,
 		centralize_selection = true,
 		cursorline = true,
 		signcolumn = "yes",

@@ -76,4 +76,4 @@ nvim_lsp.pylsp.setup({
 nvim_lsp.tsserver.setup({ on_attach = on_attach, filetypes = { "typescript", "typescriptreact", "typescript.tsx" } })
 nvim_lsp.vimls.setup({ on_attach = on_attach })
 nvim_lsp.bashls.setup({ on_attach = on_attach })
-nvim_lsp.sumneko_lua.setup({ on_attach = on_attach })
+nvim_lsp.lua_ls.setup({ on_attach = on_attach })
