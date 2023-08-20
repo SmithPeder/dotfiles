@@ -1,6 +1,25 @@
-require'nvim-treesitter.configs'.setup {
-    highlight = {
-      enable = true,
-      additional_vim_regex_highlighting = false,
-    },
-  }
+require("nvim-treesitter.configs").setup({
+	ensure_installed = {
+		"c",
+		"lua",
+		"vim",
+		"vimdoc",
+		"query",
+		"python",
+		"javascript",
+		"typescript",
+		"tsx",
+		"html",
+		"css",
+		"scss",
+		"yaml",
+		"json",
+		"dockerfile",
+		"make",
+		"bash",
+	},
+	highlight = {
+		enable = true,
+		additional_vim_regex_highlighting = false,
+	},
+})
